@@ -1,0 +1,14 @@
+/* mobile */
+@media (max-width: 576px) {}
+
+/* web */
+@media (min-width: 578px) {
+
+  .card {
+    background-color: rgba(133, 49, 43, 0.8);
+  }
+
+  .row {
+    margin-bottom: 30px;
+  }
+}

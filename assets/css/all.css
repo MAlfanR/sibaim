@@ -1,0 +1,10 @@
+/* mobile */
+@media (max-width: 576px) {}
+
+/* web */
+@media (min-width: 578px) {
+  body {
+    background-image: url(../images/backgroundPattern.png);
+  }
+
+}
