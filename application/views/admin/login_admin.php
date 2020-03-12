@@ -7,10 +7,10 @@
   <title>Login</title>
 
   <!-- bootstrap -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- css -->
-  <link rel="stylesheet" href="../assets/css/all.css">
-  <link rel="stylesheet" href="../assets/css/login_admin.css">
+  <link rel="stylesheet" href="assets/css/all.css">
+  <link rel="stylesheet" href="assets/css/login_admin.css">
 
 </head>
 
@@ -20,7 +20,7 @@
 
     <div class="text-center p-4">
       <!-- logo -->
-      <img src="../assets/images/logoBaim.png" class="mx-auto d-block" alt="" width="80px">
+      <img src="assets/images/logoBaim.png" class="mx-auto d-block" alt="" width="80px">
       <h1>SIBAIM</h1>
       <h6>Sistem Informasi Masjid Baitul Ilmi</h6>
     </div>
