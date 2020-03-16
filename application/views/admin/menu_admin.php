@@ -27,7 +27,7 @@
       <div class="col-lg-8">
         <div class="text-center p-4">
           <!-- logo -->
-          <img src="../assets/images/logoBaim.png" class="mx-auto d-block" alt="" width="80px">
+          <img src="assets/images/logoBaim.png" class="mx-auto d-block" alt="" width="80px">
           <h1>SIBAIM</h1>
           <h6>Sistem Informasi Masjid Baitul Ilmi</h6>
         </div>
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="col text-center">
-            <p><img src="../assets/images/administrator.png" class="w-100" alt=""></p>
+            <p><img src="assets/images/administrator.png" class="w-100" alt=""></p>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <div class="card">
             <h5 class="card-title text-center text-white">Update informasi barang hilang</h5>
             <div class="card-body text-center">
-              <img src="../assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang" class="w-25">
+              <img src="assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang" class="w-25">
             </div>
           </div>
         </a>
@@ -74,7 +74,7 @@
 
             <h5 class="card-title text-center text-white">Update Donasi</h5>
             <div class="card-body text-center">
-              <img src="../assets/images/ikon_update_donasi.png" alt="menu update donasi" class="w-25">
+              <img src="assets/images/ikon_update_donasi.png" alt="menu update donasi" class="w-25">
             </div>
 
           </div>
@@ -86,7 +86,7 @@
           <div class="card">
             <h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
             <div class="card-body text-center">
-              <img src="../assets/images/ikon_inventori_masjid.png" alt="menu peminjaman inventori" class="w-25">
+              <img src="assets/images/ikon_inventori_masjid.png" alt="menu peminjaman inventori" class="w-25">
             </div>
           </div>
         </a>
