@@ -122,33 +122,74 @@
 
 	<!-- section informasi barang hilang -->
 	<section class="text-center m-3">
-		<h1>informasi barang hilang</h1>
-		<div class="card">
-			<div class="card-body">
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="..." class="d-block w-100" alt="...">
-						</div>
-						<div class="carousel-item">
-							<img src="..." class="d-block w-100" alt="...">
-						</div>
-						<div class="carousel-item">
-							<img src="..." class="d-block w-100" alt="...">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+    <h1>informasi barang hilang</h1>
+    <div class="card">
+      <div class="card-body">
+        <div id="carouselBarangHilang" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+
+              <div class="row justify-content-center">
+                <div class="col">
+                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+              </div>
+
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col">
+                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col">
+                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+                <div class="col">
+                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselBarangHilang" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselBarangHilang" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 	<!-- end section barang hilang -->
 
 	<!-- section layanan masjid -->
