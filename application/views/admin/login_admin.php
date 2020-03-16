@@ -31,15 +31,15 @@
 
         <h3 class="card-title">Login</h3>
 
-        <form action="#" method="#">
+        <form action="<?= base_url('login/login'); ?>" method="POST">
           <div class="form-group">
             <label for="" class="float-left">Username</label>
-            <input type="text" class="form-control" id="" aria-describedby="">
+            <input type="text" class="form-control" name="username">
           </div>
 
           <div class="form-group">
             <label for="" class="float-left">Password</label>
-            <input type="password" class="form-control" id="">
+            <input type="password" class="form-control" name="password">
           </div>
 
           <a href="#" class="d-block mb-3 text-white text-decoration-none mx-auto w-25">Lupa Password ?</a>
