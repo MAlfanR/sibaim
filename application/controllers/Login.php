@@ -44,16 +44,16 @@ class Login extends CI_Controller {
 
     }
 
-    // menghancurkan session
-    function logout(){
-      $this->session->session_destroy();
-      
-      // kembali ke view login
-      redirect(base_url('login'));
-      
-    }
   }
 
+  // menghancurkan session
+  function logout(){
+    $this->session->sess_destroy();
+    
+    // kembali ke view login
+    redirect(base_url('login'));
+    
+  }
 }
 
 /* End of file Login.php */

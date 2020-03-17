@@ -42,7 +42,7 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Sign-out</a>
+                <a class="dropdown-item" href="<?= base_url('Login/logout'); ?>">Sign-out</a>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@
   </script>
   <script src="assets/js/popper.min.js">
   </script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>
