@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- css -->
   <link rel="stylesheet" href="assets/css/all.css">
-  <link rel="stylesheet" href="assets/css/menu_admin.css">
+  <link rel="stylesheet" href="assets/css/<?= $css; ?>.css">
 
 </head>
 
