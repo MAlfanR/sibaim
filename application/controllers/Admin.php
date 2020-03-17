@@ -29,5 +29,7 @@ class Admin extends CI_Controller {
     public function index(){
         $this->load->view('admin/menu_admin');
     }
+
+
 	
 }
