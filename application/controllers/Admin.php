@@ -35,6 +35,14 @@ class Admin extends CI_Controller {
         $this->load->view('template_admin/footer');
     }
 
+    public function view_update_donasi(){
+
+        $data['css'] = 'update_donasi';
+
+        $this->load->view('template_admin/header',$data);
+        $this->load->view('admin/update_donasi');
+        $this->load->view('template_admin/footer');
+    }
 
 	
 }
