@@ -21,7 +21,7 @@
 	<!-- masih belum dibuat -->
 	<!-- end running text -->
 
-	<div class="container-md-fluid  overflow-hidden">
+	<div class="container-md-fluid">
 
 		<!-- navigasi -->
 		<div class="row bg-white pt-2 pb-2">
@@ -40,16 +40,20 @@
 				<div>
 					<ul class="nav">
 						<li class="nav-item">
-							<a href="#" class="nav-link">BERANDA</a>
+							<a href="<?= base_url(); ?>" class="nav-link">BERANDA</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toogle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TENTANG</a>
+							<div class="dropdown-menu">
+								<a href="" class="dropdown-item">Sejarah</a>
+								<a href="" class="dropdown-item">Organisasi</a>
+							</div>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">TENTANG</a>
+							<a href="#layanan" class="nav-link">PELAYANAN</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">PELAYANAN</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">KONTAK</a>
+							<a href="#kontak" class="nav-link">KONTAK</a>
 						</li>
 					</ul>
 				</div>
@@ -193,7 +197,7 @@
 	<!-- end section barang hilang -->
 
 	<!-- section layanan masjid -->
-	<section class="text-center m-3">
+	<section class="text-center m-3" id="layanan">
 		<h1>layanan masjid</h1>
 		<div class="container">
 			<div class="row">
@@ -225,7 +229,7 @@
 	<!-- end section layanan masjid -->
 
 	<!-- footer -->
-	<div class="card bg-dark">
+	<div class="card bg-dark" id="kontak">
 		<div class="card-title">
 			<h2 class="text-center text-white">Kontak Kami</h2>
 			<div class="card-body">
