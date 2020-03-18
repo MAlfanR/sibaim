@@ -3,8 +3,7 @@
 
 /* web */
 @media (min-width: 578px) {
-  body {
-    background-image: url(../images/backgroundPattern.png);
-  }
-
+	body {
+		background-image: url(../images/backgroundPattern.png);
+	}
 }
