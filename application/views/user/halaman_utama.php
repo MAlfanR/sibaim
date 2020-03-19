@@ -45,8 +45,8 @@
 						<h4>Masjid Baitul Ilmi ITERA</h4>
 						<p>Rp.xxxxxxxx terkumpul dari Rp. xxxxxxx</p>
 						<div class="progress">
-							<div class="progress-bar bg-dark" role="progressbar" style="width: 50%" aria-valuenow="50"
-								aria-valuemin="0" aria-valuemax="100">50%
+							<div class="progress-bar bg-dark" role="progressbar" style="width: <?php var_dump($persen); ?>%" aria-valuenow="<?=$persen; ?>"
+								aria-valuemin="0" aria-valuemax="100"><?= $persen; ?>%
 							</div>
 						</div>
 
