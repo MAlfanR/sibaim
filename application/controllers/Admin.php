@@ -11,21 +11,6 @@ class Admin extends CI_Controller {
         }
     }
 
-    // public function view($admin){
-
-    //       if(!file_exists(APPPATH."views/admin/".$admin.'.php')){
-    //           show_404();
-    //       }
-
-    //     if($admin =='menu_admin'){
-    //         $this->load->view('admin/'.$admin);
-    //     }else{
-    //         $this->load->view('admin/'.$admin);
-    //     }
-       
-        
-    // }
-
     public function index(){
         
         $data['css'] = 'menu_admin';
@@ -38,6 +23,7 @@ class Admin extends CI_Controller {
     public function view_update_donasi(){
 
         $data['css'] = 'update_donasi';
+        $data['donasi_kitabisa'] = $this->Admin_model->ambil_total_kitabisa();
         $data['total_donasi_langsung'] = $this->Admin_model->ambil_total_donasi();
         $data['value_total_donasi'] = $data['total_donasi_langsung']; 
 
@@ -46,5 +32,21 @@ class Admin extends CI_Controller {
         $this->load->view('template_admin/footer');
     }
 
-	
+	public function update_donasi(){
+        $nama_donasi = $this->input->post('nama_donasi');
+        $jumlah_donasi = $this->input->post('jumlah_donasi');
+        $tanggal_donasi = $this->input->post('tanggal_donasi');
+        $total_donasi_kitabisa = $this->input->post('total_donasi_kitabisa');
+        $total_donasi_langsung = $this->input->post('total_donasi_langsung');
+
+        $data = array(
+            'nama_donasi'           => $nama_donasi,
+            'jumlah_donasi'         => $jumlah_donasi,
+            'tanggal_donasi'        => $tanggal_donasi,
+            'total_langsung_donasi' => $total_donasi_langsung,
+            'total_kitabisa_donasi' => $total_donasi_kitabisa
+        );
+
+        $this->Admin_model->insert_donasi($data);
+    }
 }
