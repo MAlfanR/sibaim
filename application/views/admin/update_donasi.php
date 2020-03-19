@@ -14,7 +14,7 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label "><h5 class="text-center">Jumlah Donasi</h5></label>
           <div class="col-sm-9">
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" id="donasi" onkeyup="hitung_total(<?= $total_donasi_langsung; ?>, <?= $value_total_donasi; ?>)">
           </div>
         </div>
         <div class="form-group row">
@@ -35,7 +35,7 @@
         <div class="form-group row">
           <label class="col-sm-3 col-form-label "><h5 class="text-center">Total donasi langsung</h5></label>
           <div class="col-sm-9">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" id="total_donasi" value="<?= $value_total_donasi; ?>" readonly>
           </div>
         </div>
 
@@ -44,3 +44,5 @@
     </div>
   </div>
 </div>
+
+<script src="<?= base_url('assets/js/app.js'); ?>"></script>
