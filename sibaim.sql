@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2020 at 11:29 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Waktu pembuatan: 19 Mar 2020 pada 15.24
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_admin`, `email_admin`, `nama_admin`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_adm
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barangtemu`
+-- Struktur dari tabel `barangtemu`
 --
 
 CREATE TABLE `barangtemu` (
@@ -61,7 +61,7 @@ CREATE TABLE `barangtemu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `civitas`
+-- Struktur dari tabel `civitas`
 --
 
 CREATE TABLE `civitas` (
@@ -75,7 +75,7 @@ CREATE TABLE `civitas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donasi`
+-- Struktur dari tabel `donasi`
 --
 
 CREATE TABLE `donasi` (
@@ -87,10 +87,18 @@ CREATE TABLE `donasi` (
   `total_kitabisa_donasi` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `donasi`
+--
+
+INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
+(1, 'Hamba Allah', '1000000', '2020-03-19', 1000000, 6854162),
+(2, 'Hamba Allah', '1000000', '2020-03-19', 2000000, 6854162);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventory`
+-- Struktur dari tabel `inventory`
 --
 
 CREATE TABLE `inventory` (
@@ -105,7 +113,7 @@ CREATE TABLE `inventory` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lampiran`
+-- Struktur dari tabel `lampiran`
 --
 
 CREATE TABLE `lampiran` (
@@ -118,7 +126,7 @@ CREATE TABLE `lampiran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peminjaman`
+-- Struktur dari tabel `peminjaman`
 --
 
 CREATE TABLE `peminjaman` (
@@ -150,7 +158,7 @@ CREATE TABLE `peminjaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengambil`
+-- Struktur dari tabel `pengambil`
 --
 
 CREATE TABLE `pengambil` (
@@ -169,7 +177,7 @@ CREATE TABLE `pengambil` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tentang`
+-- Struktur dari tabel `tentang`
 --
 
 CREATE TABLE `tentang` (
@@ -183,95 +191,95 @@ CREATE TABLE `tentang` (
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `barangtemu`
+-- Indeks untuk tabel `barangtemu`
 --
 ALTER TABLE `barangtemu`
   ADD PRIMARY KEY (`id_barangtemu`);
 
 --
--- Indexes for table `civitas`
+-- Indeks untuk tabel `civitas`
 --
 ALTER TABLE `civitas`
   ADD PRIMARY KEY (`id_civitas`);
 
 --
--- Indexes for table `donasi`
+-- Indeks untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
   ADD PRIMARY KEY (`id_donasi`);
 
 --
--- Indexes for table `inventory`
+-- Indeks untuk tabel `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`id_inventory`);
 
 --
--- Indexes for table `peminjaman`
+-- Indeks untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`);
 
 --
--- Indexes for table `pengambil`
+-- Indeks untuk tabel `pengambil`
 --
 ALTER TABLE `pengambil`
   ADD PRIMARY KEY (`id_pengambil`);
 
 --
--- Indexes for table `tentang`
+-- Indeks untuk tabel `tentang`
 --
 ALTER TABLE `tentang`
   ADD PRIMARY KEY (`id_tentang`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `barangtemu`
+-- AUTO_INCREMENT untuk tabel `barangtemu`
 --
 ALTER TABLE `barangtemu`
   MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `donasi`
+-- AUTO_INCREMENT untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `inventory`
+-- AUTO_INCREMENT untuk tabel `inventory`
 --
 ALTER TABLE `inventory`
   MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `peminjaman`
+-- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
   MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pengambil`
+-- AUTO_INCREMENT untuk tabel `pengambil`
 --
 ALTER TABLE `pengambil`
   MODIFY `id_pengambil` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tentang`
+-- AUTO_INCREMENT untuk tabel `tentang`
 --
 ALTER TABLE `tentang`
   MODIFY `id_tentang` int(3) NOT NULL AUTO_INCREMENT;
