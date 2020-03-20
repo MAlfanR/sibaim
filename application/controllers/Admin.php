@@ -47,6 +47,26 @@ class Admin extends CI_Controller {
             'total_kitabisa_donasi' => $total_donasi_kitabisa
         );
 
-        $this->Admin_model->insert_donasi($data);
+        // jika ada data baru nilai lebih dari 0
+        $affect_rows = $this->Admin_model->insert_donasi($data);
+
+        if($affect_rows > 0){
+            $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Done!</strong> Data berhasil disimpan.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+
+            redirect(base_url('admin/view_update_donasi'));
+        }else{
+            $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Failed!</strong> Data tidak berhasil disimpan.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+            redirect(base_url('admin/view_update_donasi'));
+        }
     }
 }

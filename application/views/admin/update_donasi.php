@@ -1,8 +1,10 @@
+<div class="flash"></div>
 <div class="container-fluid p-0">
   <div class="card text-white">
     <div class="card-title text-center">
       <h2>Update Donasi</h2>
     </div>
+    <?= $this->session->flashdata('flash'); ?>
     <div class="card-body">
       <form class="text-center" action="<?= base_url('admin/update_donasi'); ?>" method="POST">
         <div class="form-group row">
@@ -44,5 +46,3 @@
     </div>
   </div>
 </div>
-
-<script src="<?= base_url('assets/js/app.js'); ?>"></script>

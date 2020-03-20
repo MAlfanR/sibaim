@@ -51,7 +51,7 @@ class Login extends CI_Controller {
     $this->session->sess_destroy();
     
     // kembali ke view login
-    redirect(base_url('login'));
+    redirect(base_url('admin'));
     
   }
 }

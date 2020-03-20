@@ -31,6 +31,7 @@ class Admin_model extends CI_Model {
   // fungsi memasukkan data baru ke tabel donasi
   function insert_donasi($data){
     $this->db->insert('donasi',$data);
+    return $this->db->affected_rows();
   }
 
 }
