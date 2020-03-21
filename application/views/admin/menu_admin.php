@@ -44,9 +44,9 @@
       <div class="col-lg-5">
         <a href="#">
           <div class="card">
-            <h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
+            <h5 class="card-title text-center text-white">Update informasi masjid</h5>
             <div class="card-body text-center">
-              <img src="assets/images/ikon_inventori_masjid.png" alt="menu peminjaman inventori">
+              <img src="assets/images/ikon_konten.png" alt="menu peminjaman inventori">
             </div>
           </div>
         </a>

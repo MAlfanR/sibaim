@@ -29,4 +29,12 @@ class User extends CI_Controller {
 		$this->load->view('user/tentang_sejarah');
 		$this->load->view('template_user/footer');
 	}
+
+	public function view_organisasi(){
+		$data['css'] = 'tentang_organisasi';
+
+		$this->load->view('template_user/header', $data);
+		$this->load->view('user/tentang_organisasi');
+		$this->load->view('template_user/footer');
+	}
 }

@@ -46,6 +46,10 @@ class Login extends CI_Controller {
 
   }
 
+  function view_lupa_password(){
+    $this->load->view('admin/lupa_password');
+  }
+
   // menghancurkan session
   function logout(){
     $this->session->sess_destroy();
