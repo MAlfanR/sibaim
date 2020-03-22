@@ -50,7 +50,7 @@
 							</div>
 						</div>
 
-						<a href="#" class="btn btn-dark m-4">Donasi</a>
+						<a href="<?= base_url('user/view_donasi_masjid'); ?>" class="btn btn-dark m-4">Donasi</a>
 					</div>
 				</div>
 			</div>

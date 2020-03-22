@@ -37,4 +37,13 @@ class User extends CI_Controller {
 		$this->load->view('user/tentang_organisasi');
 		$this->load->view('template_user/footer');
 	}
+
+	// load halaman donasi masjid
+	public function view_donasi_masjid(){
+		$data['css'] = 'donasi_masjid';
+
+		$this->load->view('template_user/header',$data);
+		$this->load->view('user/donasi_masjid');
+		$this->load->view('template_user/footer');
+	}
 }
