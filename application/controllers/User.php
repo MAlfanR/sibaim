@@ -30,6 +30,15 @@ class User extends CI_Controller {
 		$this->load->view('template_user/footer');
 	}
 
+	//form peminjaman
+	public function form_peminjaman(){
+		$data['css'] = 'form_peminjaman';
+		$this->load->view('template_user/header', $data);
+		$this->load->view('user/form_peminjaman');
+		$this->load->view('template_user/footer');
+
+	}
+
 	public function view_organisasi(){
 		$data['css'] = 'tentang_organisasi';
 

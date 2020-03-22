@@ -137,7 +137,7 @@
 			<div class="row">
 
 				<div class="col-lg">
-					<a href="#">
+				<a href="<?= base_url('user/form_peminjaman'); ?>"</a>
 						<div class="card">
 							<h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
 							<div class="card-body text-center">
