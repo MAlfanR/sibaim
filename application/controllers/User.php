@@ -64,4 +64,13 @@ class User extends CI_Controller {
 		$this->load->view('user/list_inventori');
 		$this->load->view('template_user/footer');
 	}
+
+	// load halaman detail barang ditemukan
+	public function view_detail_barang_hilang(){
+		$data['css'] = 'barang_hilang';
+
+		$this->load->view('template_user/header',$data);
+		$this->load->view('user/barang_hilang');
+		$this->load->view('template_user/footer');
+	}
 }
