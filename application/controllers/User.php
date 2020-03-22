@@ -46,4 +46,13 @@ class User extends CI_Controller {
 		$this->load->view('user/donasi_masjid');
 		$this->load->view('template_user/footer');
 	}
+
+	// load halaman daftar peminjaman barang
+	public function view_daftar_peminjaman_barang(){
+		$data['css'] = 'daftar_peminjaman_barang';
+
+		$this->load->view('template_user/header',$data);
+		$this->load->view('user/daftar_peminjaman_barang');
+		$this->load->view('template_user/footer');
+	}
 }
