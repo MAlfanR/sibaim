@@ -69,4 +69,13 @@ class Admin extends CI_Controller {
             redirect(base_url('admin/view_update_donasi'));
         }
     }
+
+    public function view_barang_hilang(){
+
+        $data['css'] = 'update_barang_hilang';
+
+        $this->load->view('template_admin/header',$data);
+        $this->load->view('admin/update_barang_hilang');
+        $this->load->view('template_admin/footer');
+    }
 }

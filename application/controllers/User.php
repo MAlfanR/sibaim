@@ -55,4 +55,13 @@ class User extends CI_Controller {
 		$this->load->view('user/daftar_peminjaman_barang');
 		$this->load->view('template_user/footer');
 	}
+
+	// load halaman list inventori
+	public function view_list_inventori(){
+		$data['css'] = 'list_inventori';
+
+		$this->load->view('template_user/header',$data);
+		$this->load->view('user/list_inventori');
+		$this->load->view('template_user/footer');
+	}
 }
