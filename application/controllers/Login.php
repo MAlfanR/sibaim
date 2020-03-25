@@ -58,6 +58,88 @@ class Login extends CI_Controller {
     redirect(base_url('admin'));
     
   }
+
+  //fungsi lupa password
+  public function forgot_password(){
+    
+    $email = $this->input->post('email');
+    // token lupa password dengan expire time
+    $token = base64_encode(random_bytes(32));
+    $time = time();
+     
+    $data = array(
+      'email'         => $email,
+      'token'         => $token,
+      'time_created'  => $time
+    );
+
+    // insert token baru di tabel admin_token
+    $this->Admin_model->insert_token($data);
+
+    $this->_send_forgot_password($email, $token);
+
+    redirect(base_url('admin'));
+  }
+
+  // fungsi mengirim link ganti password
+  private function _send_forgot_password($email, $token){
+    $config = [
+      'protocol'  => 'smtp',
+      'smtp_host' => 'ssl://smtp.googlemail.com',
+      'smtp_user' => 'sibaimitera@gmail.com',
+      'smtp_pass' => '1rengoku^',
+      'smtp_port' => 465,
+      'mailtype'  => 'html',
+      'charset'   => 'utf-8',
+      'newline'   => "\r\n"
+    ];
+
+    $this->email->initialize($config);
+
+    $this->email->from('sibaimitera@gmail.com', 'sibaim');
+    $this->email->to($email);
+    $this->email->subject('Change Password');
+    $this->email->message('Klik tautan untuk mengubah password : <a href="'.base_url().'login/ubah_password?email='.$email.'&token='. urlencode($token) .'">Ubah Password</a>');
+
+    $this->email->send();
+  }
+
+  // fungsi pergi ke halaman ubah password
+  public function ubah_password(){
+    $email = $this->input->get('email');
+    $token = $this->input->get('token');
+
+    $admin = $this->Admin_model->get_data_token();
+
+    if($admin->email == $email && $admin->token == $token && (time() - intval($admin->time_created) < 60*60*24)){
+      $data['email'] = $email;
+      $data['token'] = $token;
+
+      $this->load->view('admin/ubah_password', $data);
+    }else if($admin){
+      $this->Admin_model->delete_token($admin->token);
+    }else{
+      echo "cek kode lagi";
+    }
+  }
+
+  // fungsi mengubah password & menghapus data token
+  public function act_ubah_password(){
+    $email = $this->input->post('email');
+    $token = $this->input->post('token');
+    $password = $this->input->post('password');
+
+    // data dari tabel admin
+    $data_admin = $this->Admin_model->get_data_admin();
+
+    if($data_admin['email_admin'] == $email){
+      $this->Admin_model->ubah_password($password, $email);
+      $this->Admin_model->delete_token($token);
+      redirect('admin');
+    }else{
+      echo "email tidak ada di database";
+    }
+  }
 }
 
 /* End of file Login.php */

@@ -34,6 +34,35 @@ class Admin_model extends CI_Model {
     return $this->db->affected_rows();
   }
 
+  // fungsi memasukkan token baru ke tabel admin_token
+  function insert_token($data){
+    $this->db->insert('admin_token', $data);
+  }
+
+  // fungsi mengambil data dari tabel admin_token
+  function get_data_token(){
+    $data = $this->db->get('admin_token')->result_object();
+    return $data[0];
+  }
+
+  // fungsi mengambil data admin, digunakan untuk mengubah password
+  function get_data_admin(){
+    $data = $this->db->get('admin')->result_array();
+    return $data[0];
+  }
+
+  // fungsi mengubah password
+  function ubah_password($password, $email){
+    $data = array('password_admin' => $password);
+    $this->db->where('email_admin', $email);
+    $this->db->update('admin', $data);
+  }
+
+  // fungsi menghapus data token
+  function delete_token($token){
+    $this->db->where('token', $token);
+    $this->db->delete('admin_token');
+  }
 }
 
 /* End of file Admin_model.php */

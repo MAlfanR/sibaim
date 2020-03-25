@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
   <!-- css -->
   <link rel="stylesheet" href="<?= base_url('assets/css/all.css'); ?>">
-  <link rel="stylesheet" href="<?= base_url('assets/css/lupa_password.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/css/ubah_password.css'); ?>">
 
 </head>
 
@@ -29,16 +29,28 @@
     <div class="card w-75 mx-auto rounded-lg">
       <div class="card-body text-white text-center ">
 
-        <h3 class="card-title">Lupa Password</h3>
+        <h3 class="card-title">Ubah Password</h3>
 
-        <form action="<?= base_url('login/forgot_password'); ?>" method="POST">
-          <div class="form-group">
-            <label for="email_pemulihan" class="float-left">Masukkan alamat email pemulihan Anda</label>
-            <input type="email" class="form-control" id="email_pemulihan" name="email">
-            <small class="form-text text-white">Kirim pemulihan password</small>
+        <form action="<?= base_url('login/act_ubah_password'); ?>" method="POST">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" name="email" value="<?= $email; ?>" readonly>
+            </div>
           </div>
-
-          <button type="submit" class="btn btn-dark font-weight-bold">Kirim</button>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Token</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="token" value="<?= $token; ?>" readonly>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">New Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark">Ubah</button>
         </form>
 
       </div>

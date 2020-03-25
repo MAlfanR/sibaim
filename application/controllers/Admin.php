@@ -78,4 +78,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/update_barang_hilang');
         $this->load->view('template_admin/footer');
     }
+
+    public function view_permohonan_pinjaman(){
+        $data['css'] = 'permohonan_pinjaman';
+
+        $this->load->view('template_admin/header',$data);
+        $this->load->view('admin/permohonan_pinjaman');
+        $this->load->view('template_admin/footer');
+    }
 }
