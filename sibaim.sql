@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Mar 2020 pada 15.24
+-- Waktu pembuatan: 27 Mar 2020 pada 10.17
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -42,7 +42,20 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_admin`, `email_admin`, `nama_admin`) VALUES
-(1, 'admin', '12345', '082245667666', 'admin@gmail.com', 'andre');
+(1, 'admin', '54321', '082245667666', 'janatri1398@gmail.com', 'nardiyansah');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin_token`
+--
+
+CREATE TABLE `admin_token` (
+  `id` int(11) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `token` varchar(128) NOT NULL,
+  `time_created` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -93,7 +106,9 @@ CREATE TABLE `donasi` (
 
 INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
 (1, 'Hamba Allah', '1000000', '2020-03-19', 1000000, 6854162),
-(2, 'Hamba Allah', '1000000', '2020-03-19', 2000000, 6854162);
+(21, 'mawar', '1000000', '2020-03-21', 2000000, 6854162),
+(22, 'mawar', '1000000', '2020-03-26', 3000000, 6854162),
+(23, 'aldi', '50000000', '2020-03-26', 53000000, 6854162);
 
 -- --------------------------------------------------------
 
@@ -197,6 +212,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Indeks untuk tabel `admin_token`
+--
+ALTER TABLE `admin_token`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `barangtemu`
 --
 ALTER TABLE `barangtemu`
@@ -246,7 +267,13 @@ ALTER TABLE `tentang`
 -- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `admin_token`
+--
+ALTER TABLE `admin_token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `barangtemu`
@@ -258,7 +285,7 @@ ALTER TABLE `barangtemu`
 -- AUTO_INCREMENT untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `inventory`
