@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card p-4">
     <div class="card-title text-center text-white">
       <h2>Daftar Peminjaman Barang</h2>
     </div>
@@ -88,5 +88,5 @@
       </table>
     </div>
 
-    <a href="" class="btn btn-dark mx-auto" style="width: fit-content;">Kembali</a>
+    <a href="<?= base_url('Form_peminjaman'); ?>" class="btn btn-dark mx-auto" style="width: fit-content;">Ajukan Peminjaman Baru</a>
   </div>

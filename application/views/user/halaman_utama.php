@@ -137,9 +137,9 @@
 			<div class="row">
 
 				<div class="col-lg">
-				<a href="<?= base_url('user/form_peminjaman'); ?>"</a>
+				<a href="<?= base_url('Peminjaman_barang_user'); ?>"</a>
 						<div class="card">
-							<h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
+							<h5 class="card-title text-center text-white">Peminjaman Inventori Masjid</h5>
 							<div class="card-body text-center">
 								<img src="assets/images/ikon_inventori_masjid.png" alt="menu peminjaman inventori" class="w-25">
 							</div>
@@ -150,7 +150,7 @@
 				<div class="col-lg">
 					<a href="#">
 						<div class="card">
-							<h5 class="card-title text-center text-white">Update informasi barang hilang</h5>
+							<h5 class="card-title text-center text-white">Informasi barang hilang</h5>
 							<div class="card-body text-center">
 								<img src="assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang" class="w-25">
 							</div>
