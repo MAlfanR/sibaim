@@ -6,7 +6,7 @@
     </div>
     <?= $this->session->flashdata('flash'); ?>
     <div class="card-body">
-      <form class="text-center" action="<?= base_url('admin/update_donasi'); ?>" method="POST">
+      <form class="text-center" action="<?= base_url('Update_donasi/act_update_donasi'); ?>" method="POST">
         <div class="form-group row">
           <label class="col-sm-3 col-form-label "><h5 class="text-center">Nama Donasi</h5></label>
           <div class="col-sm-9">

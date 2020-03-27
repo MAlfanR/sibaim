@@ -21,14 +21,6 @@ class User extends CI_Controller {
 		$this->load->view('user/halaman_utama',$data);
 		$this->load->view('template_user/footer');
 	}
-	
-	public function view_sejarah(){
-		$data['css'] = 'tentang_sejarah';
-
-		$this->load->view('template_user/header', $data);
-		$this->load->view('user/tentang_sejarah');
-		$this->load->view('template_user/footer');
-	}
 
 	//form peminjaman
 	public function form_peminjaman(){
@@ -38,15 +30,7 @@ class User extends CI_Controller {
 		$this->load->view('template_user/footer');
 
 	}
-
-	public function view_organisasi(){
-		$data['css'] = 'tentang_organisasi';
-
-		$this->load->view('template_user/header', $data);
-		$this->load->view('user/tentang_organisasi');
-		$this->load->view('template_user/footer');
-	}
-
+	
 	// load halaman donasi masjid
 	public function view_donasi_masjid(){
 		$data['css'] = 'donasi_masjid';

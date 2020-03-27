@@ -31,7 +31,7 @@
 
         <h3 class="card-title">Ubah Password</h3>
 
-        <form action="<?= base_url('login/act_ubah_password'); ?>" method="POST">
+        <form action="<?= base_url('Ubah_password/act_ubah_password'); ?>" method="POST">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">

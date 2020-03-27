@@ -31,7 +31,7 @@
 
         <h3 class="card-title">Lupa Password</h3>
 
-        <form action="<?= base_url('login/forgot_password'); ?>" method="POST">
+        <form action="<?= base_url('Lupa_password/forgot_password'); ?>" method="POST">
           <div class="form-group">
             <label for="email_pemulihan" class="float-left">Masukkan alamat email pemulihan Anda</label>
             <input type="email" class="form-control" id="email_pemulihan" name="email">

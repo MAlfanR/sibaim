@@ -15,7 +15,7 @@
       </div>
 
       <div class="col-lg-5">
-        <a href="<?= base_url('admin/view_update_donasi'); ?>">
+        <a href="<?= base_url('Update_donasi'); ?>">
           <div class="card">
 
             <h5 class="card-title text-center text-white">Update Donasi</h5>

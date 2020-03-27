@@ -42,7 +42,7 @@
             <input type="password" class="form-control" name="password">
           </div>
 
-          <a href="<?= base_url('login/view_lupa_password'); ?>" class="d-block mb-3 text-white text-decoration-none mx-auto w-25">Lupa Password ?</a>
+          <a href="<?= base_url('Lupa_password'); ?>" class="d-block mb-3 text-white text-decoration-none mx-auto w-25">Lupa Password ?</a>
 
           <button type="submit" class="btn btn-dark font-weight-bold">Login</button>
         </form>
