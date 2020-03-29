@@ -22,7 +22,7 @@ class Login extends CI_Controller {
     $password = $this->input->post('password');
     $where = array(
       'username_admin' => $username,
-      'password_admin' => $password
+      'password_admin' => md5($password)
     );
 
     // cek dengan fungsi di admin_model

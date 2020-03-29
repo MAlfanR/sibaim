@@ -29,12 +29,12 @@ class Ubah_password extends CI_Controller {
      $email = $this->input->post('email');
      $token = $this->input->post('token');
      $password = $this->input->post('password');
-  
+
      // data dari tabel admin
      $data_admin = $this->Admin_model->get_data_admin();
   
      if($data_admin['email_admin'] == $email){
-       $this->Admin_model->ubah_password($password, $email);
+       $this->Admin_model->ubah_password(md5($password), $email);
        $this->Admin_model->delete_token($token);
        redirect('admin');
      }else{
