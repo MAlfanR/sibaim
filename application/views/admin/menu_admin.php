@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
 
       <div class="col-lg-5">
-        <a href="<?= base_url('admin/view_barang_hilang'); ?>">
+        <a href="<?= base_url('Update_barang_hilang'); ?>">
           <div class="card">
             <h5 class="card-title text-center text-white">Update informasi barang hilang</h5>
             <div class="card-body text-center">
