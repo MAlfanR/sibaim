@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="keterangan" class="col-sm-2 col-form-label text-left">Keterangan: </label>
+            <label for="keterangan" class="col-sm-2 col-form-label text-left">Tanggal: </label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="keterangan">
             </div>

@@ -31,7 +31,7 @@
 
     <div class="row justify-content-center">
       <div class="col-lg-5">
-        <a href="#">
+        <a href="<?= base_url('Update_peminjaman_inventori'); ?>">
           <div class="card">
             <h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
             <div class="card-body text-center">
