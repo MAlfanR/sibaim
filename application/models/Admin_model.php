@@ -63,6 +63,12 @@ class Admin_model extends CI_Model {
     $this->db->where('token', $token);
     $this->db->delete('admin_token');
   }
+
+  // fungsi memasukkan data barang temua/hilang
+  function insert_barang_temu($data){
+    $this->db->insert('barangtemu', $data);
+    return $this->db->affected_rows();
+  }
 }
 
 /* End of file Admin_model.php */
