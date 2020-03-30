@@ -43,14 +43,14 @@
 
 						<h4>Bantu Pembangunan</h4>
 						<h4>Masjid Baitul Ilmi ITERA</h4>
-						<p>Rp.xxxxxxxx terkumpul dari Rp. 210000000</p>
+						<p>Rp. <?= $total_donasi; ?> terkumpul dari Rp. 210.000.000,00</p>
 						<div class="progress">
 							<div class="progress-bar bg-dark" role="progressbar" style="width: <?=$persen; ?>%" aria-valuenow="<?= $persen; ?>"
 								aria-valuemin="0" aria-valuemax="100"><?= $persen; ?>%
 							</div>
 						</div>
 
-						<a href="<?= base_url('user/view_donasi_masjid'); ?>" class="btn btn-dark m-4">Donasi</a>
+						<a href="<?= base_url('Donasi_masjid'); ?>" class="btn btn-dark m-4">Donasi</a>
 					</div>
 				</div>
 			</div>

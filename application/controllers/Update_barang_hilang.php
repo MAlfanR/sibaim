@@ -45,10 +45,11 @@ class Update_barang_hilang extends CI_Controller {
       $foto = $_FILES["foto"]["name"];
       
       $data = array(
-        "nama_barangtemu"     => $nama,
-        "tanggal_barangtemu"  => $tanggal,
-        "foto_barangtemu"     => $foto,
-        "lokasi_barangtemu"   => $lokasi
+        "nama_barangtemu"       => $nama,
+        "tanggal_barangtemu"    => $tanggal,
+        "keterangan_barangtemu" => $keterangan,
+        "foto_barangtemu"       => $foto,
+        "lokasi_barangtemu"     => $lokasi
       );
 
       $affect_rows = $this->Admin_model->insert_barang_temu($data);

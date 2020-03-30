@@ -21,6 +21,14 @@ class User_model extends CI_Model {
 
   }
 
+  function jumlah_total_donasi(){
+    $last_row = $this->db->order_by('id_donasi', 'DESC')->limit(1)->get('donasi')->result_array();
+    // ambil indeks ke-0
+    $donasi = $last_row[0];
+
+    return $donasi['total_langsung_donasi'] + $donasi['total_kitabisa_donasi'];
+  }
+
 }
 
 /* End of file User_model.php */

@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-8 text-center text-white">
-          <p><strong>Rp. xxxxxxxxxxxxx terkumpul dari Rp. xxxxxxxxxxxx</strong></p>
+          <p><strong>Rp. <?= $total_donasi; ?> terkumpul dari Rp. 210.000.000,00</strong></p>
 
           <div class="progress" style="height: 25px;">
 						<div class="progress-bar bg-dark" role="progressbar" style="width:70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%
