@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Mar 2020 pada 10.17
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.4.2
+-- Generation Time: Mar 30, 2020 at 03:54 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,42 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
   `id_admin` int(3) NOT NULL,
   `username_admin` varchar(12) NOT NULL,
-  `password_admin` varchar(12) NOT NULL,
+  `password_admin` varchar(255) NOT NULL,
   `kontak_admin` varchar(14) NOT NULL,
   `email_admin` varchar(50) NOT NULL,
   `nama_admin` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_admin`, `email_admin`, `nama_admin`) VALUES
-(1, 'admin', '54321', '082245667666', 'janatri1398@gmail.com', 'nardiyansah');
+(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', '0434324', 'dadasdsad', 'Ranger');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin_token`
---
-
-CREATE TABLE `admin_token` (
-  `id` int(11) NOT NULL,
-  `email` varchar(128) NOT NULL,
-  `token` varchar(128) NOT NULL,
-  `time_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `barangtemu`
+-- Table structure for table `barangtemu`
 --
 
 CREATE TABLE `barangtemu` (
@@ -68,13 +55,14 @@ CREATE TABLE `barangtemu` (
   `nama_barangtemu` varchar(50) NOT NULL,
   `tanggal_barangtemu` date NOT NULL,
   `foto_barangtemu` varchar(50) NOT NULL,
-  `lokasi_barangtemu` varchar(200) NOT NULL
+  `lokasi_barangtemu` varchar(200) NOT NULL,
+  `keterangan_barangtemu` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `civitas`
+-- Table structure for table `civitas`
 --
 
 CREATE TABLE `civitas` (
@@ -88,7 +76,7 @@ CREATE TABLE `civitas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `donasi`
+-- Table structure for table `donasi`
 --
 
 CREATE TABLE `donasi` (
@@ -101,19 +89,17 @@ CREATE TABLE `donasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `donasi`
+-- Dumping data for table `donasi`
 --
 
 INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
 (1, 'Hamba Allah', '1000000', '2020-03-19', 1000000, 6854162),
-(21, 'mawar', '1000000', '2020-03-21', 2000000, 6854162),
-(22, 'mawar', '1000000', '2020-03-26', 3000000, 6854162),
-(23, 'aldi', '50000000', '2020-03-26', 53000000, 6854162);
+(2, 'Hamba Allah', '1000000', '2020-03-19', 2000000, 6854162);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `inventory`
+-- Table structure for table `inventory`
 --
 
 CREATE TABLE `inventory` (
@@ -128,71 +114,53 @@ CREATE TABLE `inventory` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lampiran`
+-- Table structure for table `lampiran`
 --
 
 CREATE TABLE `lampiran` (
   `id_lampiran` int(11) NOT NULL,
   `foto_lampiran` varchar(50) NOT NULL,
-  `keterangan_lampiran` varchar(30) NOT NULL,
-  `file_lampiran` varchar(50) DEFAULT NULL
+  `keterangan_lampiran` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peminjaman`
+-- Table structure for table `peminjaman`
 --
 
 CREATE TABLE `peminjaman` (
   `id_peminjaman` int(11) NOT NULL,
   `id_civitas` int(40) NOT NULL,
   `id_inventory` int(10) NOT NULL,
-  `nama_peminjaman` varchar(50) NOT NULL,
-  `noidentitas_peminjaman` int(40) NOT NULL,
-  `instansi_peminjaman` varchar(50) NOT NULL,
-  `acara_peminjaman` varchar(100) NOT NULL,
   `keperluan_peminjaman` varchar(300) NOT NULL,
-  `jaminan_peminjaman` varchar(50) NOT NULL,
-  `barang1_peminjaman` varchar(50) NOT NULL,
-  `barang2_peminjaman` varchar(50) DEFAULT NULL,
-  `barang3_peminjaman` varchar(50) DEFAULT NULL,
-  `barang4_peminjaman` varchar(50) DEFAULT NULL,
-  `barang5_peminjaman` varchar(50) DEFAULT NULL,
-  `jumlah1_peminjaman` int(4) NOT NULL,
-  `jumlah2_peminjaman` int(4) DEFAULT NULL,
-  `jumlah3_peminjaman` int(4) DEFAULT NULL,
-  `jumlah4_peminjaman` int(4) DEFAULT NULL,
-  `jumlah5_peminjaman` int(4) DEFAULT NULL,
-  `denda_peminjaman` int(10) NOT NULL,
   `tanggal_peminjaman` date NOT NULL,
   `tanggal_pengembalian` date NOT NULL,
-  `totalbayar_peminjaman` int(10) NOT NULL
+  `jumlah_peminjaman` int(5) DEFAULT NULL,
+  `totalharga_peminjaman` int(8) DEFAULT NULL,
+  `status_peminjaman` varchar(50) DEFAULT NULL,
+  `denda_peminjaman` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengambil`
+-- Table structure for table `pengambil`
 --
 
 CREATE TABLE `pengambil` (
   `id_pengambil` int(11) NOT NULL,
   `id_civitas` int(11) NOT NULL,
   `id_barangtemu` int(11) NOT NULL,
-  `nama_pengambil` varchar(50) NOT NULL,
-  `noidentitas_pengambil` int(40) NOT NULL,
-  `kontak_pengambil` int(14) NOT NULL,
-  `jaminan_pengambil` varchar(50) NOT NULL,
-  `fotobarang_pengambil` varchar(50) DEFAULT NULL,
   `keterangan_pengambil` varchar(200) DEFAULT NULL,
-  `namabarang_pengambil` varchar(50) NOT NULL
+  `namabarang_pengambil` varchar(50) NOT NULL,
+  `fotobarang_pengambil` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tentang`
+-- Table structure for table `tentang`
 --
 
 CREATE TABLE `tentang` (
@@ -206,110 +174,120 @@ CREATE TABLE `tentang` (
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `admin_token`
---
-ALTER TABLE `admin_token`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `barangtemu`
+-- Indexes for table `barangtemu`
 --
 ALTER TABLE `barangtemu`
   ADD PRIMARY KEY (`id_barangtemu`);
 
 --
--- Indeks untuk tabel `civitas`
+-- Indexes for table `civitas`
 --
 ALTER TABLE `civitas`
   ADD PRIMARY KEY (`id_civitas`);
 
 --
--- Indeks untuk tabel `donasi`
+-- Indexes for table `donasi`
 --
 ALTER TABLE `donasi`
   ADD PRIMARY KEY (`id_donasi`);
 
 --
--- Indeks untuk tabel `inventory`
+-- Indexes for table `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`id_inventory`);
 
 --
--- Indeks untuk tabel `peminjaman`
+-- Indexes for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  ADD PRIMARY KEY (`id_peminjaman`);
+  ADD PRIMARY KEY (`id_peminjaman`),
+  ADD KEY `id_civitas` (`id_civitas`),
+  ADD KEY `id_inventory` (`id_inventory`);
 
 --
--- Indeks untuk tabel `pengambil`
+-- Indexes for table `pengambil`
 --
 ALTER TABLE `pengambil`
-  ADD PRIMARY KEY (`id_pengambil`);
+  ADD PRIMARY KEY (`id_pengambil`),
+  ADD KEY `id_civitas` (`id_civitas`),
+  ADD KEY `id_barangtemu` (`id_barangtemu`);
 
 --
--- Indeks untuk tabel `tentang`
+-- Indexes for table `tentang`
 --
 ALTER TABLE `tentang`
   ADD PRIMARY KEY (`id_tentang`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `admin_token`
---
-ALTER TABLE `admin_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT untuk tabel `barangtemu`
+-- AUTO_INCREMENT for table `barangtemu`
 --
 ALTER TABLE `barangtemu`
   MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `donasi`
+-- AUTO_INCREMENT for table `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `inventory`
+-- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
   MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `peminjaman`
+-- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
   MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pengambil`
+-- AUTO_INCREMENT for table `pengambil`
 --
 ALTER TABLE `pengambil`
   MODIFY `id_pengambil` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tentang`
+-- AUTO_INCREMENT for table `tentang`
 --
 ALTER TABLE `tentang`
   MODIFY `id_tentang` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`id_civitas`) REFERENCES `civitas` (`id_civitas`),
+  ADD CONSTRAINT `peminjaman_ibfk_2` FOREIGN KEY (`id_inventory`) REFERENCES `inventory` (`id_inventory`);
+
+--
+-- Constraints for table `pengambil`
+--
+ALTER TABLE `pengambil`
+  ADD CONSTRAINT `pengambil_ibfk_1` FOREIGN KEY (`id_civitas`) REFERENCES `civitas` (`id_civitas`),
+  ADD CONSTRAINT `pengambil_ibfk_2` FOREIGN KEY (`id_barangtemu`) REFERENCES `barangtemu` (`id_barangtemu`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

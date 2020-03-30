@@ -43,7 +43,7 @@
           <div class="btn btn-primary btn-lg btn-block">
             <div class="row">
               <div class="col-2"><img src="<?= base_url('assets/images/1.png'); ?>" class="float-left"></div>
-              <div class="col-10 text-left">Memberikan langsung donasi ke pengurus masjid di lokasi (Masjid Baitul </div>
+              <div class="col-10 text-left">Memberikan langsung donasi ke pengurus masjid di lokasi (Masjid Baitul Ilmi) </div>
             </div> 
           </div>
           <div class="btn btn-primary btn-lg btn-block">
