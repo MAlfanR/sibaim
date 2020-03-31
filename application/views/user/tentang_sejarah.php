@@ -3,12 +3,36 @@
 
 <div class="card">
   <div class="card-body text-center">
-    <p class="text-white text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nostrum facilis minima maiores, quam laboriosam tempore aliquam minus sed odio? Consectetur reprehenderit officiis facere aperiam rem sint eos dicta aut? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus deserunt aperiam delectus. Eum, vero corrupti doloribus error tempore saepe excepturi rerum quam nihil, voluptatum, suscipit temporibus blanditiis cumque quos quisquam.
-    </p>
-    <img src="<?= base_url('assets/images/logoBaim.png'); ?>" alt="">
-    <p class="text-white text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nostrum facilis minima maiores, quam laboriosam tempore aliquam minus sed odio? Consectetur reprehenderit officiis facere aperiam rem sint eos dicta aut? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus deserunt aperiam delectus. Eum, vero corrupti doloribus error tempore saepe excepturi rerum quam nihil, voluptatum, suscipit temporibus blanditiis cumque quos quisquam.
-    </p>
-    <p class="text-white text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nostrum facilis minima maiores, quam laboriosam tempore aliquam minus sed odio? Consectetur reprehenderit officiis facere aperiam rem sint eos dicta aut? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus deserunt aperiam delectus. Eum, vero corrupti doloribus error tempore saepe excepturi rerum quam nihil, voluptatum, suscipit temporibus blanditiis cumque quos quisquam.
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3500">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="<?= base_url('assets/images/SejarahBaim/1.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('assets/images/SejarahBaim/2.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('assets/images/SejarahBaim/3.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('assets/images/SejarahBaim/4.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('assets/images/SejarahBaim/5.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('assets/images/SejarahBaim/6.JPG'); ?>" class="d-block w-50 mx-auto" alt="...">
+        </div>
+      </div>
+    </div>
+
+    <p class="text-white text-left mt-3">
+    Masjid Baitul Ilmi ITERA merupakan masjid yang diinisiasi oleh Ikatan Orang Tua Mahasiswa pada tahun 2016 karena minimnya tempat ibadah yang tersedia waktu itu.
+    <br>
+    Pada rancangan awal, masjid membutuhkan dana senilai +- 500 juta rupiah. Saat ini, progres pengembangan telah sampai pada tahap 4 yakni pengerjaan plafond, tembok dan green wall. Setelah sebelumnya terhenti karena kekurangan dana.
+    <br>
+    Masjid ini berkapasitas +- 500 orang. Masjid ini digunakan untuk sholat berjama'ah, sholat Jum'at, kajian, dan kegiatan lainnya.
     </p>
   </div>
 </div>

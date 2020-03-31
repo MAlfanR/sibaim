@@ -9,6 +9,10 @@ class Donasi_masjid extends CI_Controller {
   {	
   // load halaman donasi masjid
     $data['css'] = 'donasi_masjid';
+    
+    $target_donasi = 210000000;
+    $persen_donasi = $this->User_model->persen_donasi($target_donasi);
+    $data['persen'] = $persen_donasi;
     $data['total_donasi'] = number_format($this->User_model->jumlah_total_donasi(),2,',','.');
 
     $this->load->view('template_user/header',$data);
