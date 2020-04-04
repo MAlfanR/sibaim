@@ -29,6 +29,17 @@ class User_model extends CI_Model {
     return $donasi['total_langsung_donasi'] + $donasi['total_kitabisa_donasi'];
   }
 
+  function get_teks($label){
+    $data = $this->db->order_by('id_teks', 'DESC')->limit(1)->get_where('tekstentang', array('label' => $label))->result_array();
+
+    return $data[0]['isi'];
+  }
+
+  function get_foto($label){
+    $data = $this->db->get_where('fototentang', array('label' => $label))->result_array();
+    return $data;
+  }
+
 }
 
 /* End of file User_model.php */

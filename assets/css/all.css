@@ -7,6 +7,26 @@
 		background-image: url(../images/backgroundPattern.png);
 	}
 
+	.img-masjid {
+		width: 150%;
+	}
+
+	#logo {
+		width: 50%;
+	}
+
+	.nav-link {
+		color: black;
+	}
+
+	.nav-link:hover {
+		color: #85312B;
+	}
+
+	a.nav-link {
+		font-size: 1.5vw;
+	}
+
 	.card {
 		background-color: rgba(133, 49, 43, 0.8);
 	  }
@@ -18,4 +38,5 @@
 	.t-body {
 		background-color: #E5E5E5;
 	}
+
 }
