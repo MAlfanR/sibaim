@@ -6,4 +6,16 @@
 	body {
 		background-image: url(../images/backgroundPattern.png);
 	}
+
+	.card {
+		background-color: rgba(133, 49, 43, 0.8);
+	  }
+
+	.t-head {
+		background-color: #85312B;
+	}
+
+	.t-body {
+		background-color: #E5E5E5;
+	}
 }

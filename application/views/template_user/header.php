@@ -10,9 +10,7 @@
 	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 
 	<!-- style css -->
-	<link rel="stylesheet" href="<?= base_url('assets/css/all.css'); ?>">
-	<link rel="stylesheet" href="<?= base_url('assets/css/'.$css.'.css'); ?>">
-
+	<link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
 </head>
 
 <body>

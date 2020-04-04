@@ -6,7 +6,7 @@
       <div class="col-lg-5">
         <a href="<?= base_url('Update_barang_hilang'); ?>">
           <div class="card">
-            <h5 class="card-title text-center text-white">Update informasi barang hilang</h5>
+            <h5 class="card-title text-center text-white">Update Informasi Barang Hilang</h5>
             <div class="card-body text-center">
               <img src="assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang">
             </div>
@@ -29,11 +29,11 @@
 
     </div>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-4">
       <div class="col-lg-5">
         <a href="<?= base_url('Update_peminjaman_inventori'); ?>">
           <div class="card">
-            <h5 class="card-title text-center text-white">Update Peminjaman inventori masjid</h5>
+            <h5 class="card-title text-center text-white">Update Peminjaman Inventori Masjid</h5>
             <div class="card-body text-center">
               <img src="assets/images/ikon_inventori_masjid.png" alt="menu peminjaman inventori">
             </div>
@@ -42,9 +42,9 @@
       </div>
 
       <div class="col-lg-5">
-        <a href="#">
+        <a href="<?= base_url('Update_sejarah'); ?>">
           <div class="card">
-            <h5 class="card-title text-center text-white">Update informasi masjid</h5>
+            <h5 class="card-title text-center text-white">Update Sejarah & Organisasi Masjid</h5>
             <div class="card-body text-center">
               <img src="assets/images/ikon_konten.png" alt="menu peminjaman inventori">
             </div>

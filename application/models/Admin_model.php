@@ -69,6 +69,22 @@ class Admin_model extends CI_Model {
     $this->db->insert('barangtemu', $data);
     return $this->db->affected_rows();
   }
+
+  // fungsi mengambil data barang hilang
+  function get_barang_hilang(){
+    $data = $this->db->get('barangtemu')->result_array();
+    return $data;
+  }
+
+  function insert_teks_tentang($data){
+    $this->db->insert('tekstentang', $data);
+    return $this->db->affected_rows();
+  }
+
+  function insert_foto_tentang($data){
+    $this->db->insert('fototentang', $data);
+    return $this->db->affected_rows();
+  }
 }
 
 /* End of file Admin_model.php */

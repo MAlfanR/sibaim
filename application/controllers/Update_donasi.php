@@ -18,12 +18,11 @@ class Update_donasi extends CI_Controller {
 
   public function index()
   {
-    $data['css'] = 'update_donasi';
     $data['donasi_kitabisa'] = $this->Admin_model->ambil_total_kitabisa();
     $data['total_donasi_langsung'] = $this->Admin_model->ambil_total_donasi();
     $data['value_total_donasi'] = $data['total_donasi_langsung']; 
 
-    $this->load->view('template_admin/header',$data);
+    $this->load->view('template_admin/header');
     $this->load->view('admin/update_donasi',$data);
     $this->load->view('template_admin/footer');
   }

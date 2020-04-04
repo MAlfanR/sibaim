@@ -11,15 +11,13 @@ class Update_peminjaman_inventori extends CI_Controller {
     parent::__construct();
     if($this->session->userdata('status') != "login"){
       redirect(base_url('login'));
-  }
+    }
   }
   
 
   public function index()
   {
-    $data['css'] = 'update_peminjaman_inventori';
-
-    $this->load->view('template_admin/header',$data);
+    $this->load->view('template_admin/header');
     $this->load->view('admin/update_peminjaman_inventori');
     $this->load->view('template_admin/footer');
   }

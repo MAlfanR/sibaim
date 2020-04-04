@@ -12,10 +12,7 @@ class Admin extends CI_Controller {
     }
 
     public function index(){
-        
-        $data['css'] = 'menu_admin';
-
-        $this->load->view('template_admin/header',$data);
+        $this->load->view('template_admin/header');
         $this->load->view('admin/menu_admin');
         $this->load->view('template_admin/footer');
     }

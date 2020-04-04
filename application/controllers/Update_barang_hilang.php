@@ -17,10 +17,7 @@ class Update_barang_hilang extends CI_Controller {
 
   public function index()
   {
-    $data['css'] = 'update_barang_hilang';
-
-    // $data['error'] = '';
-    $this->load->view('template_admin/header',$data);
+    $this->load->view('template_admin/header');
     $this->load->view('admin/update_barang_hilang');
     $this->load->view('template_admin/footer');
   }
