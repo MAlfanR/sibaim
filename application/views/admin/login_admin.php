@@ -9,7 +9,7 @@
   <!-- bootstrap -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/all.css">
   <link rel="stylesheet" href="assets/css/login_admin.css">
 
 </head>

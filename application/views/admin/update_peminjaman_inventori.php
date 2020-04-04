@@ -65,6 +65,9 @@
       </table>
 
       <h4 class="text-center text-white mb-4 mt-5">List Inventori Masjid</h4>
+      <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#formInventori">
+        Tambah Barang Inventory
+      </button>
       <table class="table table-bordered">
         <thead class="t-head">
           <tr class="text-white">
@@ -74,20 +77,78 @@
             <th scope="col">Biaya per/hari</th>
             <th scope="col">Denda per/hari</th>
             <th scope="col">Foto</th>
+            <th scope="col">Aksi</th>
           </tr>
         </thead>
         <tbody class="t-body">
+          <?php $i=1; foreach($inventori as $row): ?>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <th scope="row"><?= $i; ?></th>
+            <td><?= $row['nama_inventory'];?></td>
+            <td><?= $row['jumlah_inventory']; ?></td>
+            <td><?= $row['harga_inventory']; ?></td>
+            <td><?= $row['denda_inventory']; ?></td>
+            <td><?= $row['foto_inventory']; ?></td>
+            <td>
+              <a href="<?= $row['id_inventory']; ?>" type="button" class="btn badge badge-warning" data-id="<?= $row['id_inventory']; ?>">
+              Edit
+              </a>
+              <a href="" class="badge badge-danger">Delete</a>
+            </td>
+            <?php $i++; ?>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
   </div>
-  
+
+
+
+  <!-- Modal section -->
+
+<!-- Edit inventori masjid -->
+<div class="modal fade" id="formInventori" tabindex="-1" role="dialog" aria-labelledby="formInventoriLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formInventoriLabel">Tambah Inventori</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?= base_url('Update_peminjaman_inventori/tambahInventori') ?>" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label>Nama Barang</label>
+            <input type="text" class="form-control" name="nama">
+          </div>
+          <div class="form-group">
+            <label>Jumlah Barang</label>
+            <input type="number" class="form-control" name="jumlah">
+          </div>
+          <div class="form-group">
+            <label>Biaya Barang</label>
+            <input type="number" class="form-control" name="biaya">
+          </div>
+          <div class="form-group">
+            <label>Denda Barang</label>
+            <input type="number" class="form-control" name="denda">
+          </div>
+          <div class="form-group">
+            <label>Foto Barang</label>
+            <input type="file" class="form-control-file" name="foto">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+<!-- End Edit inventori masjid -->
+
+  <!-- End Modal section  -->
 <!-- load footer admin in controller -->

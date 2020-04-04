@@ -85,6 +85,17 @@ class Admin_model extends CI_Model {
     $this->db->insert('fototentang', $data);
     return $this->db->affected_rows();
   }
+
+  function get_inventori(){
+    $data = $this->db->get('inventory')->result_array();
+    return $data;
+  }
+
+  function insertInventori($data){
+    $this->db->insert('inventory', $data);
+    return $this->db->affected_rows();
+    
+  }
 }
 
 /* End of file Admin_model.php */
