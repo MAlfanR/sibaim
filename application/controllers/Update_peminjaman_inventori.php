@@ -58,6 +58,16 @@ class Update_peminjaman_inventori extends CI_Controller {
     }
   }
 
+  public function delete_inventory($id){
+    $query = $this->db->query('SELECT foto_inventory FROM inventory WHERE id_inventory = '.$id);
+    $foto = $query->result_array()[0]["foto_inventory"];
+    $row = $this->Admin_model->delete_inventory($id);
+    if($row > 0){
+      unlink('assets/images/Inventori/'.$foto);
+    }else{
+      
+    }
+  }
 }
 
 /* End of file Update_peminjaman_inventori.php */

@@ -94,7 +94,12 @@ class Admin_model extends CI_Model {
   function insertInventori($data){
     $this->db->insert('inventory', $data);
     return $this->db->affected_rows();
-    
+  }
+
+  function delete_inventory($id){
+    $this->db->where('id_inventory', $id);
+    $this->db->delete('inventory');
+    return $this->db->affected_rows();
   }
 }
 

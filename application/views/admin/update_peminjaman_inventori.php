@@ -90,10 +90,7 @@
             <td><?= $row['denda_inventory']; ?></td>
             <td><?= $row['foto_inventory']; ?></td>
             <td>
-              <a href="<?= $row['id_inventory']; ?>" type="button" class="btn badge badge-warning" data-id="<?= $row['id_inventory']; ?>">
-              Edit
-              </a>
-              <a href="" class="badge badge-danger">Delete</a>
+              <a href="<?= base_url('Update_peminjaman_inventori/delete_inventory/'.$row['id_inventory']); ?>" class="badge badge-danger">Delete</a>
             </td>
             <?php $i++; ?>
           </tr>
