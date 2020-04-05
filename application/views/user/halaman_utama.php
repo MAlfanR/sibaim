@@ -63,58 +63,46 @@
     <h1>informasi barang hilang</h1>
     <div class="card">
       <div class="card-body">
-        <div id="carouselBarangHilang" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-
-              <div class="row justify-content-center">
-                <div class="col">
-                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh1.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-              </div>
-
-            </div>
+        <div id="carouselBarangHilang" class="carousel slide" data-ride="carousel" data-interval="2000">
+          <div class="carousel-inner text-white">
+		  <?php
+		  $i = 1;
+		  foreach($foto_barangtemu as $row):
+			if($i == 1){?>
+			<div class="carousel-item active">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-4 text-left">
+							<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
+							<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
+							<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
+							<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+						</div>
+						<div class="col-6">
+							<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+						</div>
+					</div>				
+				</div>
+			</div>
+			<?php }else{?>
             <div class="carousel-item">
-              <div class="row justify-content-center">
-                <div class="col">
-                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh2.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-              </div>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-4 text-left">
+							<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
+							<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
+							<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
+							<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+						</div>
+						<div class="col-6">
+							<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+						</div>
+					</div>				
+				</div>
             </div>
-            <div class="carousel-item">
-              <div class="row justify-content-center">
-                <div class="col">
-                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-                <div class="col">
-                  <img src="assets/images/bh3.png" class="d-block img-thumbnail float-left mx-auto" alt="...">
-                </div>
-              </div>
-            </div>
+			<?php }
+			$i++;?>
+			<?php endforeach; ?>
           </div>
           <a class="carousel-control-prev" href="#carouselBarangHilang" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

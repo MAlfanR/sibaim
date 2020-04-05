@@ -47,8 +47,12 @@
 								<a href="<?= base_url('organisasi'); ?>" class="dropdown-item">Organisasi</a>
 							</div>
 						</li>
-						<li class="nav-item">
-							<a href="#layanan" class="nav-link">PELAYANAN</a>
+						<li class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toogle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PELAYANAN</a>
+							<div class="dropdown-menu">
+								<a href="<?= base_url('Peminjaman_barang_user'); ?>" class="dropdown-item">Peminjaman Barang</a>
+								<a href="#" class="dropdown-item">Info Barang Hilang</a>
+							</div>
 						</li>
 						<li class="nav-item">
 							<a href="#kontak" class="nav-link">KONTAK</a>

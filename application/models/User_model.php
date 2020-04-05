@@ -40,6 +40,11 @@ class User_model extends CI_Model {
     return $data;
   }
 
+  function get_foto_barangtemu(){
+    $data = $this->db->get('barangtemu')->result_array();
+    return $data;
+  }
+
 }
 
 /* End of file User_model.php */

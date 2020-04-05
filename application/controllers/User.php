@@ -15,6 +15,9 @@ class User extends CI_Controller {
 		$data['persen'] = $persen_donasi;
 		$data['total_donasi'] = number_format($this->User_model->jumlah_total_donasi(),2,',','.');
 
+		// mengambil data foto baranghilang
+		$data['foto_barangtemu'] = $this->User_model->get_foto_barangtemu();
+
 		$this->load->view('template_user/header');
 		$this->load->view('user/halaman_utama',$data);
 		$this->load->view('template_user/footer');
