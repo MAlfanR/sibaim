@@ -45,6 +45,11 @@ class User_model extends CI_Model {
     return $data;
   }
 
+  function get_inventory(){
+    $data = $this->db->get('inventory')->result_array();
+    return $data;
+  }
+
 }
 
 /* End of file User_model.php */
