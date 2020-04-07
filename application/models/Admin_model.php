@@ -76,6 +76,12 @@ class Admin_model extends CI_Model {
     return $data;
   }
 
+  function delete_barangtemu($id){
+    $this->db->where('id_barangtemu', $id);
+    $this->db->delete('barangtemu');
+    return $this->db->affected_rows();
+  }
+
   function insert_teks_tentang($data){
     $this->db->insert('tekstentang', $data);
     return $this->db->affected_rows();

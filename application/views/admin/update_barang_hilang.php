@@ -39,6 +39,7 @@
           </div>
           <button type="submit" value="upload" class="btn btn-dark">Tambah</button>
         </form>
+        <a href="<?= base_url('Daftar_barang_hilang'); ?>" class="btn btn-dark float-right">Lihat Daftar Barang Hilang</a>
       </div>
     </div>
   </div>

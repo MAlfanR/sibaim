@@ -175,6 +175,6 @@
 			</div>
 		</div>
 	</div>
-	<footer class="text-center mt-1 mb-1">Copyright 2020 by Masjid Baitul Ilmi</footer>
+	<footer class="text-center mt-1 mb-1">Copyright 2020 by Masjid Baitul Ilmi <br> v07042020</footer>
 	<!-- end footer -->
 
