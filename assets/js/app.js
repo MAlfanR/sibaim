@@ -35,3 +35,19 @@
 			}
 		});
 	}
+
+	function editModalBarangInventori(id){
+		
+		$.ajax({
+			url: 'http://localhost/sibaim/Update_peminjaman_inventori/getEdit',
+			data: {id : id},
+			method: 'post',
+			dataType: 'json',
+			success: function(data){
+				$('#id').val(data.id_inventory);
+				$('#nama').val(data.nama_inventory);
+				$('#jumlah').val(data.jumlah_inventory);
+				$('#biaya').val(data.harga_inventory);
+			}
+		});
+	}

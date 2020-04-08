@@ -26,14 +26,7 @@ class Update_peminjaman_inventori extends CI_Controller {
   }
 
   public function tambahInventori(){
-    $config['upload_path']    = 'assets/images/Inventori/';
-    $config['allowed_types']  = 'jpg|png';
-    
-    $this->load->library('upload', $config);
 
-    if(! $this->upload->do_upload('foto')){
-      echo "foto tidak tersimpan";
-    }else{
       $nama = $this->input->post('nama');
       $jumlah = $this->input->post('jumlah');
       $biaya = $this->input->post('biaya');
@@ -44,8 +37,6 @@ class Update_peminjaman_inventori extends CI_Controller {
         'nama_inventory' => $nama,
         'jumlah_inventory' => $jumlah,
         'harga_inventory' => $biaya,
-        'foto_inventory' => $foto,
-        'denda_inventory' => $denda
       );
 
       $row = $this->Admin_model->insertInventori($data);
@@ -55,17 +46,41 @@ class Update_peminjaman_inventori extends CI_Controller {
       }else{
         echo "data tidak berhasil disimpan";
       }
-    }
   }
 
   public function delete_inventory($id){
     $query = $this->db->query('SELECT foto_inventory FROM inventory WHERE id_inventory = '.$id);
-    $foto = $query->result_array()[0]["foto_inventory"];
     $row = $this->Admin_model->delete_inventory($id);
     if($row > 0){
-      unlink('assets/images/Inventori/'.$foto);
+      redirect(base_url('Update_peminjaman_inventori'));
     }else{
+      echo "data tidak berhasil dihapus";
+    }
+  }
+
+  public function getEdit(){
+    echo json_encode($this->Admin_model->get_barang_inventori_byId($_POST['id']));
+  }
+
+  public function editInventori(){
+    $id = $this->input->post('id');
+
+    $data = array(
+      'nama_inventory' => $this->input->post('nama'),
+      'jumlah_inventory' => $this->input->post('jumlah'),
+      'harga_inventory' => $this->input->post('biaya')
+    );
+
+    $this->db->where('id_inventory', $id);
+    $this->db->update('inventory',$data);
+    $row = $this->db->affected_rows();
+
+    if($row > 0){
       
+      redirect(base_url('Update_peminjaman_inventori'));
+      
+    }else{
+      echo "data tidak berhasil di update";
     }
   }
 }

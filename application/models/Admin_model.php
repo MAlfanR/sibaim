@@ -112,6 +112,11 @@ class Admin_model extends CI_Model {
     $this->db->delete('inventory');
     return $this->db->affected_rows();
   }
+
+  function get_barang_inventori_byId($id){
+    $data = $this->db->get_where('inventory', array('id_inventory' => $id))->result_array();
+    return $data[0];
+  }
 }
 
 /* End of file Admin_model.php */
