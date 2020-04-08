@@ -76,6 +76,11 @@ class Admin_model extends CI_Model {
     return $data;
   }
 
+  function get_barang_hilang_byId($id){
+    $data = $this->db->get_where('barangtemu', array('id_barangtemu' => $id))->result_array();
+    return $data[0];
+  }
+
   function delete_barangtemu($id){
     $this->db->where('id_barangtemu', $id);
     $this->db->delete('barangtemu');

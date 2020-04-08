@@ -35,6 +35,46 @@ class Daftar_barang_hilang extends CI_Controller {
         }
     }
 
+    public function getEdit(){
+        echo json_encode($this->Admin_model->get_barang_hilang_byId($_POST['id']));
+    }
+
+    public function editData(){
+        $id = $this->input->post('id');
+        $nama_barangtemu = $this->input->post('nama');
+        $tanggal_barangtemu = $this->input->post('tanggal');
+        $lokasi_barangtemu = $this->input->post('lokasi');
+        $keterangan_barangtemu = $this->input->post('keterangan');
+
+        if($_FILES["foto"]["name"] != ""){
+            $data = array(
+                'nama_barangtemu' => $nama_barangtemu,
+                'tanggal_barangtemu' => $tanggal_barangtemu,
+                'lokasi_barangtemu' => $lokasi_barangtemu,
+                'keterangan_barangtemu' => $keterangan_barangtemu,
+                'foto_barangtemu' => $_FILES['foto']['name']
+            );
+        }else{
+            $data = array(
+                'nama_barangtemu' => $nama_barangtemu,
+                'tanggal_barangtemu' => $tanggal_barangtemu,
+                'lokasi_barangtemu' => $lokasi_barangtemu,
+                'keterangan_barangtemu' => $keterangan_barangtemu
+            );
+        }
+
+
+        $this->db->where('id_barangtemu',$id);
+        $this->db->update('barangtemu',$data);
+        $row = $this->db->affected_rows();
+        
+        if($row > 0){
+            redirect(base_url('Daftar_barang_hilang'));
+        }else{
+            echo "data tidak berhasil diubah";
+        }
+    }
+
 }
 
 
