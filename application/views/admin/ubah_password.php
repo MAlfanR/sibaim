@@ -45,9 +45,15 @@
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">New Password</label>
+            <label class="col-sm-2 col-form-label">Password baru</label>
             <div class="col-sm-10">
               <input type="password" class="form-control" name="password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Ketik ulang password baru</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="rePassword">
             </div>
           </div>
           <button type="submit" class="btn btn-dark">Ubah</button>

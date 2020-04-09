@@ -49,8 +49,8 @@ class Lupa_password extends CI_Controller {
   
       $this->email->from('sibaimitera@gmail.com', 'sibaim');
       $this->email->to($email);
-      $this->email->subject('Change Password');
-      $this->email->message('Klik tautan untuk mengubah password : <a href="'.base_url().'Ubah_password/index?email='.$email.'&token='. urlencode($token) .'">Ubah Password</a>');
+      $this->email->subject('Sibaim change password instruction');
+      $this->email->message('Hi Admin, atas permintaan Anda untuk reset password, silahkan klik tautan untuk mengubah password : <a href="'.base_url().'Ubah_password/index?email='.$email.'&token='. urlencode($token) .'">Ubah Password</a>');
   
       $this->email->send();
     }
