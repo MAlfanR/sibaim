@@ -16,8 +16,6 @@
             <th scope="col">Nama Barang</th>
             <th scope="col">Jumlah</th>
             <th scope="col">Harga (perhari/perbuah)</th>
-            <th scope="col">Denda</th>
-            <th scope="col">Foto</th>
           </tr>
         </thead>
         <tbody class="t-body">
@@ -29,8 +27,6 @@
             <td><?= $row['nama_inventory']; ?></td>
             <td><?= $row['jumlah_inventory']; ?></td>
             <td><?= $row['harga_inventory']; ?></td>
-            <td><?= $row['denda_inventory']; ?></td>
-            <td></td>
           </tr>
           <?php $i++;
           endforeach; ?>
