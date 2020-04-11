@@ -7,65 +7,60 @@ class Form_peminjaman extends CI_Controller {
 
   public function index()
   {
+    $data['barang'] = $this->User_model->get_inventory();
+
 		$this->load->view('template_user/header');
-		$this->load->view('user/form_peminjaman');
+		$this->load->view('user/form_peminjaman', $data);
 		$this->load->view('template_user/footer');
   }
 
-  public function new_form(){
-    var_dump($_POST);
-    die;
-    $ktp = $_FILES['jaminan']['name'];
-    $surat = $_FILES['surat_permohonan']['name'];
+  /***
+   * urutan status : penyusunan -> menunggu -> sewa -> selesai
+   */
+  public function addDataBaru(){
+    $tglPengajuan = $_POST['tglSewa'];
+    $denda = $this->denda($tglPengajuan);
 
-    $this->load->library('upload');
+    $data = array(
+      'judul_kegiatan' => $_POST['judul'],
+      'penyelenggara_kegiatan' => $_POST['penyelenggara'],
+      'penanggung_jawab' => $_POST['penanggung'],
+      'noHp' => $_POST['hp'],
+      'jaminan' => $_POST['jaminan'],
+      'tanggal_peminjaman' => $_POST['tglSewa'],
+      'tanggal_pengembalian' => $_POST['tglKembali'],
+      'denda_peminjaman' => $denda,
+      'total_harga' => 0,
+      'status' => 'penyusunan'
+    );
 
-    $config['upload_path']    = 'assets/files/jaminan/';
-    $config['allowed_types']  = 'jpg|png|pdf';
-    $config['overwrite']      = true;
-
-    $this->upload->initialize($config);
-
-    if(! $this->upload->do_upload('jaminan')){
-      echo "jaminan tidak tersimpan";
+    $this->db->insert('peminjaman', $data);
+    $id_peminjaman = $this->db->insert_id();
+    $row = $this->db->affected_rows();
+    
+    if($row > 0){
+      redirect(base_url('Peminjaman_inventori/index/'.$id_peminjaman));
+      
     }else{
-      $config['upload_path']    = 'assets/files/surat permohonan pinjaman/';
-      $config['overwrite']      = true;
-      
-      $this->upload->initialize($config);
-      
-      if(! $this->upload->do_upload('surat_permohonan')){
-        $error = array('error' => $this->upload->display_errors(),
-      'surat' => $surat);
-        $this->load->view('eror',$error);
-      }else{
-        echo "semuanya tersimpan";
-      }
+      echo "data tidak berhasil disimpan";
     }
   }
 
-  public function send_form(){
-    $config = [
-      'protocol'  => 'smtp',
-      'smtp_host' => 'ssl://smtp.googlemail.com',
-      'smtp_user' => 'sibaimitera@gmail.com',
-      'smtp_pass' => '1rengoku^',
-      'smtp_port' => 465,
-      'mailtype'  => 'html',
-      'charset'   => 'utf-8',
-      'newline'   => "\r\n"
-    ];
+  function denda($tglPengajuan){
+    $time = strtotime($tglPengajuan) - time();
+    $denda = 0;
 
-    $this->email->initialize($config);
+    if($time < 86400 ){
+      $denda = 15000;
+    }else if($time < 172800){
+      $denda = 10000;
+    }else if($time < 259200){
+      $denda = 5000;
+    }else{
+      $denda = 0;
+    }
 
-    $this->email->from('sibaimitera@gmail.com', 'sibaim');
-    $this->email->to($email);
-    $this->email->subject('Pengjuan Peminjaman Barang');
-    
-    $this->email->attach('assets/files/jaminan/');
-    $this->email->attach('assets/files/surat permohonan pinjaman/');
-  
-    $this->email->send();
+    return $denda;
   }
 
 }

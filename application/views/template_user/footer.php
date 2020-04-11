@@ -5,6 +5,9 @@
 	</script>
 	<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>">
 	</script>
+	<script src="<?= base_url('assets/js/app.js'); ?>">
+	<script src="<?= base_url('assets/js/peminjaman.js'); ?>"></script>
+	</script>
 </body>
 
 </html>
