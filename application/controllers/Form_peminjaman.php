@@ -27,11 +27,12 @@ class Form_peminjaman extends CI_Controller {
       'penanggung_jawab' => $_POST['penanggung'],
       'noHp' => $_POST['hp'],
       'jaminan' => $_POST['jaminan'],
+      'lokasi' => $_POST['lokasi'],
       'tanggal_peminjaman' => $_POST['tglSewa'],
       'tanggal_pengembalian' => $_POST['tglKembali'],
       'denda_peminjaman' => $denda,
       'total_harga' => 0,
-      'status' => 'penyusunan'
+      'status_permintaan' => 'penyusunan'
     );
 
     $this->db->insert('peminjaman', $data);
