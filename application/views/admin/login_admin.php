@@ -24,7 +24,6 @@
       <h1>SIBAIM</h1>
       <h6>Sistem Informasi Masjid Baitul Ilmi</h6>
     </div>
-
     <!-- card login -->
     <div class="card w-75 mx-auto rounded-lg">
       <div class="card-body text-white text-center ">
@@ -46,7 +45,7 @@
 
           <button type="submit" class="btn btn-dark font-weight-bold">Login</button>
         </form>
-
+    
       </div>
     </div>
     <!-- end card login -->
