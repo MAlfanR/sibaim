@@ -26,6 +26,7 @@
 
 			<div class="col-md-2 text-center">
 				<img src="<?= base_url('assets/images/logoBaim.png'); ?>" class="img-fluid" id="logo" alt="Responsive image">
+				
 			</div>
 
 			<div class="col-md-5">
@@ -51,7 +52,7 @@
 							<a href="#" class="nav-link dropdown-toogle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PELAYANAN</a>
 							<div class="dropdown-menu">
 								<a href="<?= base_url('Peminjaman_barang_user'); ?>" class="dropdown-item">Peminjaman Barang</a>
-								<a href="#" class="dropdown-item">Info Barang Hilang</a>
+								<a href="<?=base_url('Info_barang_hilang');?>" class="dropdown-item">Info Barang Hilang</a>
 							</div>
 						</li>
 						<li class="nav-item">

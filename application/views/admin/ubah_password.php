@@ -33,15 +33,16 @@
 
         <form action="<?= base_url('Ubah_password/act_ubah_password'); ?>" method="POST">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Email</label>
+            <!-- <label class="col-sm-2 col-form-label"></label> -->
             <div class="col-sm-10">
-              <input type="email" class="form-control" name="email" value="<?= $email; ?>" readonly>
+              <input type="hidden" class="form-control" name="email" value="<?= $email; ?>" readonly>
             </div>
           </div>
+
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Token</label>
+            <!-- <label class="col-sm-2 col-form-label">Token</label> -->
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="token" value="<?= $token; ?>" readonly>
+              <input type="hidden" class="form-control" name="token" value="<?= $token; ?>" readonly>
             </div>
           </div>
           <div class="form-group row">

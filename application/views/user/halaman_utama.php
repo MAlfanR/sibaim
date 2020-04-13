@@ -136,7 +136,7 @@
 				</div>
 
 				<div class="col-lg">
-					<a href="#">
+					<a href="<?=base_url('Info_barang_hilang'); ?>" </a>
 						<div class="card">
 							<h5 class="card-title text-center text-white">Informasi barang hilang</h5>
 							<div class="card-body text-center">
