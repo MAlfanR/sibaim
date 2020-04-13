@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Apr 2020 pada 07.18
+-- Waktu pembuatan: 13 Apr 2020 pada 12.50
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -89,16 +89,32 @@ INSERT INTO `barangtemu` (`id_barangtemu`, `nama_barangtemu`, `tanggal_barangtem
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `civitas`
+-- Struktur dari tabel `datapeminjaman`
 --
 
-CREATE TABLE `civitas` (
-  `id_civitas` int(40) NOT NULL,
-  `nama_civitas` varchar(50) NOT NULL,
-  `kontak_civitas` int(14) NOT NULL,
-  `instansi_civitas` varchar(50) NOT NULL,
-  `jaminan_civitas` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `datapeminjaman` (
+  `id` int(11) NOT NULL,
+  `id_peminjaman` int(11) NOT NULL,
+  `id_inventory` int(11) NOT NULL,
+  `jumlahDipinjam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `datapeminjaman`
+--
+
+INSERT INTO `datapeminjaman` (`id`, `id_peminjaman`, `id_inventory`, `jumlahDipinjam`) VALUES
+(1, 3, 7, 1),
+(2, 3, 8, 3),
+(5, 6, 9, 1),
+(6, 6, 12, 3),
+(7, 7, 7, 1),
+(8, 7, 11, 1),
+(9, 10, 7, 1),
+(10, 10, 11, 1),
+(11, 10, 10, 1),
+(12, 11, 7, 1),
+(13, 12, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -194,14 +210,30 @@ CREATE TABLE `lampiran` (
 
 CREATE TABLE `peminjaman` (
   `id_peminjaman` int(11) NOT NULL,
-  `id_civitas` int(40) NOT NULL,
-  `keperluan_peminjaman` varchar(300) NOT NULL,
+  `judul_kegiatan` varchar(100) NOT NULL,
+  `penyelenggara_kegiatan` varchar(100) NOT NULL,
+  `penanggung_jawab` varchar(100) NOT NULL,
+  `noHp` varchar(15) NOT NULL,
+  `jaminan` varchar(50) NOT NULL,
+  `lokasi` varchar(50) NOT NULL,
   `tanggal_peminjaman` date NOT NULL,
   `tanggal_pengembalian` date NOT NULL,
-  `totalharga_peminjaman` int(8) DEFAULT NULL,
-  `status_peminjaman` varchar(50) DEFAULT NULL,
-  `denda_peminjaman` int(8) DEFAULT NULL
+  `denda_peminjaman` int(8) DEFAULT NULL,
+  `total_harga` int(11) NOT NULL,
+  `status_permintaan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id_peminjaman`, `judul_kegiatan`, `penyelenggara_kegiatan`, `penanggung_jawab`, `noHp`, `jaminan`, `lokasi`, `tanggal_peminjaman`, `tanggal_pengembalian`, `denda_peminjaman`, `total_harga`, `status_permintaan`) VALUES
+(3, 'mabit', 'madani', 'karno', '086678908976', 'ktp', '', '2020-04-12', '2020-04-13', 10000, 0, 'menunggu'),
+(6, 'makrab', 'hmif', 'dino', '086678908976', 'ktp', 'wira garden', '2020-04-13', '2020-04-15', 10000, 0, 'penyusunan'),
+(7, 'senam', 'akademik', 'bu layla', '089765432145', 'ktp', 'lapangan basket', '2020-04-13', '2020-04-15', 15000, 40000, 'penyusunan'),
+(10, 'seminar', 'mahasiswa', 'rahman', '082299796878', 'KTM', 'Aula Gedung E', '2020-04-13', '2020-04-14', 15000, 50000, 'menunggu'),
+(11, 'senam', 'hmif', 'dino', '086678908976', 'KTM', 'lapangan basket', '2020-04-16', '2020-04-17', 5000, 25000, 'menunggu'),
+(12, 'makrab', 'hmif', 'dino', '08229897', 'ktp', 'wira garden', '2020-04-28', '2020-04-29', 0, 25000, 'menunggu');
 
 -- --------------------------------------------------------
 
@@ -211,7 +243,6 @@ CREATE TABLE `peminjaman` (
 
 CREATE TABLE `pengambil` (
   `id_pengambil` int(11) NOT NULL,
-  `id_civitas` int(11) NOT NULL,
   `id_barangtemu` int(11) NOT NULL,
   `keterangan_pengambil` varchar(200) DEFAULT NULL,
   `namabarang_pengambil` varchar(50) NOT NULL,
@@ -262,10 +293,12 @@ ALTER TABLE `barangtemu`
   ADD PRIMARY KEY (`id_barangtemu`);
 
 --
--- Indeks untuk tabel `civitas`
+-- Indeks untuk tabel `datapeminjaman`
 --
-ALTER TABLE `civitas`
-  ADD PRIMARY KEY (`id_civitas`);
+ALTER TABLE `datapeminjaman`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_peminjaman` (`id_peminjaman`),
+  ADD KEY `id_inventory` (`id_inventory`);
 
 --
 -- Indeks untuk tabel `donasi`
@@ -289,15 +322,13 @@ ALTER TABLE `inventory`
 -- Indeks untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  ADD PRIMARY KEY (`id_peminjaman`),
-  ADD KEY `id_civitas` (`id_civitas`);
+  ADD PRIMARY KEY (`id_peminjaman`);
 
 --
 -- Indeks untuk tabel `pengambil`
 --
 ALTER TABLE `pengambil`
   ADD PRIMARY KEY (`id_pengambil`),
-  ADD KEY `id_civitas` (`id_civitas`),
   ADD KEY `id_barangtemu` (`id_barangtemu`);
 
 --
@@ -329,6 +360,12 @@ ALTER TABLE `barangtemu`
   MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT untuk tabel `datapeminjaman`
+--
+ALTER TABLE `datapeminjaman`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
@@ -350,7 +387,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengambil`
@@ -369,16 +406,16 @@ ALTER TABLE `tekstentang`
 --
 
 --
--- Ketidakleluasaan untuk tabel `peminjaman`
+-- Ketidakleluasaan untuk tabel `datapeminjaman`
 --
-ALTER TABLE `peminjaman`
-  ADD CONSTRAINT `peminjaman_ibfk_1` FOREIGN KEY (`id_civitas`) REFERENCES `civitas` (`id_civitas`);
+ALTER TABLE `datapeminjaman`
+  ADD CONSTRAINT `datapeminjaman_ibfk_1` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`),
+  ADD CONSTRAINT `datapeminjaman_ibfk_2` FOREIGN KEY (`id_inventory`) REFERENCES `inventory` (`id_inventory`);
 
 --
 -- Ketidakleluasaan untuk tabel `pengambil`
 --
 ALTER TABLE `pengambil`
-  ADD CONSTRAINT `pengambil_ibfk_1` FOREIGN KEY (`id_civitas`) REFERENCES `civitas` (`id_civitas`),
   ADD CONSTRAINT `pengambil_ibfk_2` FOREIGN KEY (`id_barangtemu`) REFERENCES `barangtemu` (`id_barangtemu`);
 COMMIT;
 
