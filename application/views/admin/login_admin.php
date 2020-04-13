@@ -29,7 +29,7 @@
       <div class="card-body text-white text-center ">
 
         <h3 class="card-title">Login</h3>
-
+        <?= $this->session->flashdata('wrong'); ?>
         <form action="<?= base_url('login/login'); ?>" method="POST">
           <div class="form-group">
             <label for="" class="float-left">Username</label>
@@ -52,7 +52,7 @@
   </div>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="assets/js/jquery-3.2.1.slim.min.js">
+	<script src="assets/js/jquery-3.4.1.min.js">
 	</script>
 	<script src="assets/js/popper.min.js">
 	</script>

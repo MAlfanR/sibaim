@@ -1,3 +1,4 @@
+$(document).ready(function(){
 	function hitung_total(total_db, value_db) {
 		
 		// mengambil inputan di elemen yang id nya donasi
@@ -52,6 +53,4 @@
 		});
 	}
 
-
-
-	
+});

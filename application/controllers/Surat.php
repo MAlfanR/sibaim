@@ -9,6 +9,10 @@ class Surat extends CI_Controller {
     {
         $query = $this->db->query('SELECT * FROM peminjaman INNER JOIN datapeminjaman ON peminjaman.id_peminjaman=datapeminjaman.id_peminjaman INNER JOIN inventory ON datapeminjaman.id_inventory=inventory.id_inventory WHERE datapeminjaman.id_peminjaman='.$id);
 
+        $status = array('status_permintaan' => 'menunggu');
+        $this->db->where('id_peminjaman',$id);
+        $this->db->update('peminjaman',$status);
+
         $data['data'] = $query->result_array();
         $this->load->view('surat/surat',$data);
         $html = $this->output->get_output();
@@ -22,6 +26,7 @@ class Surat extends CI_Controller {
 
         $dompdf->render();
         $dompdf->stream();
+
     }
 
 }

@@ -39,9 +39,16 @@ class Login extends CI_Controller {
 
       
       redirect(base_url('admin'));
-
+      
     }else{
-   
+      $this->session->set_flashdata('wrong','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Gagal!</strong> ada kesalahan dalam memasukkan username atau password.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>');
+
+      redirect(base_url('login'));
     }
 
   }

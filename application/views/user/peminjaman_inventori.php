@@ -54,7 +54,7 @@
 
         <div class="text-center">
             <a href="<?= base_url('Peminjaman_inventori/cancel/'.$id_peminjaman); ?>" class="btn btn-danger mr-5">Cancel</a>
-            <a href="<?= base_url('Surat/index/'.$id_peminjaman); ?>" class="btn btn-success ml-5">Ajukan</a>
+            <a href="<?= base_url('Pengajuan_page/index/'.$id_peminjaman); ?>" class="btn btn-success ml-5">Selesai</a>
         </div>
     </div>
 </div>

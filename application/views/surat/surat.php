@@ -25,7 +25,7 @@
         <div style="text-align: center;">
             <h5>SURAT IZIN PENYEWAAN PERALATAN</h5>
         </div>
-        <h5>Nomor Tiket : </h5>
+        <h5>Nomor Tiket : <?= $data[0]['id_peminjaman']; ?></h5>
         <p>Sehubungan dengan hadirnya surat ini, kami mengajukan permohonan penyewaan peralatan untuk kegiatan sebagai berikut.</p>
         <div>
             <div style="width: 41.65%; float: left;">Judul Kegiatan</div>
@@ -82,12 +82,13 @@
         <p>Adapun peralatan tersebut digunakan pada</p>
         <div class="row">
             <div style="width: 41.65%; float: left;">Lokasi</div>
-            <div class="col-7">: </div>
+            <div class="col-7">: <?= $data[0]['lokasi']; ?></div>
         </div>
         <div style="clear: left;">
             <div style="width: 41.65%; float: left;"><p style="margin: 0; padding:0;">Tanggal Penyewaan & Pengembalian</p></div>
             <div style="width: 58.35%; float: left;"> <p style="margin: 0; padding:0;">: <?= $data[0]['tanggal_peminjaman']; ?> s.d <?= $data[0]['tanggal_pengembalian']; ?></p></div>
         </div>
+        <p><strong>Surat ini tidak menunjukkan bahwa permintaan meminjam barang diterima, Anda perlu menghubungi pengurus masjid untuk meminta persetujuan.</strong></p>
         <div style="text-align: center;">
             <p style="margin-top: 60px;">Lampung Selatan,</p>
             <img class="img-fluid mt-4 mb-0" src="assets/images/surat/madani.png" style="height: 70px;">

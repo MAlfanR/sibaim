@@ -3,6 +3,12 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h3>Alur Penyewaan Barang Masjid & Madani</h3>
+        <p class="mb-0">1. Calon peminjam dapat melihat daftar barang dan jumlah yang tersedia di halaman ini</p>
+        <p class="mb-0">2. Setelah memastikan jumlah barang cukup sesuai keinginan, calon peminjam dapat memulai membuat permintaan dengan klik tombol "Ajukan Peminjaman Baru" pada bagian bawah halaman ini.</p>
+        <p class="mb-0">3. Calon peminjam mengisi form dengan benar</p>
+        <p class="mb-0">4. Setelah calon peminjam mengisi form dan menentukan barang yang ingin dipinjam sesuai keinginan, calon peminjam mengunduh file surat yang akan dibuat otomatis dan mengirimkannya ke pengurus masjid (WA : contoh xxxx) untuk meminta persetujuan</p>
+        <p class="mb-0">5. Calon peminjam bisa mengecek status permintaannya di tabel "Daftar Peminjam Barang" yang ada di halaman ini</p>
+        <p class="mb-0">6. Jika permintaan disetujui peminjam dapat mengambil barang di tempat & waktu sesuai kesepakatan dengan pengurus masjid</p>
       </div>
     </div>
     <div class="card-title text-center text-white">
@@ -41,83 +47,28 @@
         <thead class="t-head">
           <tr class="text-white">
             <th scope="col">No. Tiket</th>
-            <th scope="col">Nama peminjam</th>
-            <th scope="col">Barang</th>
-            <th scope="col">Jumlah</th>
+            <th scope="col">Nama peminjam / (yang bertanggung jawab)</th>
             <th scope="col">Tanggal Pinjam</th>
             <th scope="col">Tanggal Kembali</th>
-            <th scope="col">Instansi</th>
-            <th scope="col">Keperluan</th>
             <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody class="t-body">
+          <?php foreach($peminjam as $row): ?>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <th scope="row"><?= $row['id_peminjaman']; ?></th>
+            <td><?= $row['penanggung_jawab'] ?></td>
+            <td><?= $row['tanggal_peminjaman']; ?></td>
+            <td><?= $row['tanggal_pengembalian']; ?></td>
+            <?php if($row['status_permintaan'] == 'menunggu'){?>
+              <td class="badge badge-warning"><?= $row['status_permintaan']; ?></td>
+            <?php }else if($row['status_permintaan'] == 'disetujui'){?>
+              <td class="badge badge-success"><?= $row['status_permintaan']; ?></td>
+            <?php }else if($row['status_permintaan'] == 'ditolak'){?>
+              <td class="badge badge-danger"><?= $row['status_permintaan']; ?></td>
+            <?php } ?>
           </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
