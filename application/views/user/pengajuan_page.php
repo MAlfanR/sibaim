@@ -8,3 +8,4 @@
       <div class="text-center"><a class="btn btn-primary mt-5" href="<?= base_url('Surat/index/'.$id); ?>">Simpan Surat</a></div>
     </div>
 </div>
+  
