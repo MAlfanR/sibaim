@@ -104,6 +104,14 @@ class Update_peminjaman_inventori extends CI_Controller {
 
     echo $html;
   }
+
+  public function getDetailTanggal(){
+    $id = $_POST['id'];
+
+    $data = $this->db->get_where('peminjaman', array('id_peminjaman' => $id))->result_array()[0];
+
+    echo json_encode($data);
+  }
 }
 
 /* End of file Update_peminjaman_inventori.php */
