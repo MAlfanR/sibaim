@@ -38,7 +38,7 @@
             <td><?= $row['penanggung_jawab']; ?></td>
             <td><?= $row['noHp'] ?></td>
             <td><a href="" onclick="detailModalBarang(<?= $row['id_peminjaman']; ?>)" class="badge badge-primary badge-pill" data-toggle="modal" data-target="#detailBarang">detail</a></td>
-            <td><a href="" class="badge badge-warning badge-pill">detail</a></td>
+            <td><a href="" onclick="detailModalTanggal(<?= $row['id_peminjaman']; ?>)" class="badge badge-warning badge-pill" data-toggle="modal" data-target="#detailTanggal">detail</a></td>
             <td><?= $row['denda_peminjaman'] + $row['total_harga']; ?></td>
             <td><?= $row['status_permintaan']; ?></td>
             <td>
@@ -225,6 +225,30 @@
   </div>
 </div>
 <!-- End Modal detail barang -->
+
+<!-- Modal tanggal -->
+<div class="modal fade" id="detailTanggal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tanggal Peminjaman</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Tanggal Peminjaman</label>
+        <input id="inputTglPinjam" type="date" class="form-control" value="" readonly>
+        <label>Tanggal Pengembalian</label>
+        <input id="inputTglKembali" type="date" class="form-control" value="" readonly>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal tanggal -->
 
   <!-- End Modal section  -->
 <!-- load footer admin in controller -->

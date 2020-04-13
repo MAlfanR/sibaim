@@ -8,3 +8,16 @@ function detailModalBarang(id){
         }
     });
 }
+
+function detailModalTanggal(id){
+    $.ajax({
+        url: 'http://localhost/sibaim/Update_peminjaman_inventori/getDetailTanggal',
+        data: {id : id},
+        method: 'post',
+        dataType: 'json',
+        success: function(data){
+            $('#inputTglPinjam').val(data.tanggal_peminjaman);
+            $('#inputTglKembali').val(data.tanggal_pengembalian);
+        }
+    });
+}
