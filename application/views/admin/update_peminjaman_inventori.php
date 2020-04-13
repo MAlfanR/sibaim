@@ -37,7 +37,7 @@
             <td><?= $row['penyelenggara_kegiatan']; ?></td>
             <td><?= $row['penanggung_jawab']; ?></td>
             <td><?= $row['noHp'] ?></td>
-            <td><a href="" class="badge badge-primary badge-pill">detail</a></td>
+            <td><a href="" onclick="detailModalBarang(<?= $row['id_peminjaman']; ?>)" class="badge badge-primary badge-pill" data-toggle="modal" data-target="#detailBarang">detail</a></td>
             <td><a href="" class="badge badge-warning badge-pill">detail</a></td>
             <td><?= $row['denda_peminjaman'] + $row['total_harga']; ?></td>
             <td><?= $row['status_permintaan']; ?></td>
@@ -53,14 +53,15 @@
         <thead class="t-head">
           <tr class="text-white">
             <th scope="col">No. Tiket</th>
-            <th scope="col">Nama peminjam</th>
+            <th scope="col">Judul Kegiatan</th>
+            <th scope="col">Penyelenggara</th>
+            <th scope="col">Penanggung Jawab</th>
+            <th scope="col">No Hp</th>
             <th scope="col">Barang</th>
-            <th scope="col">Jumlah</th>
-            <th scope="col">Tanggal Pinjam</th>
-            <th scope="col">Tanggal Kembali</th>
-            <th scope="col">Instansi</th>
-            <th scope="col">Keperluan</th>
+            <th scope="col">Durasi</th>
+            <th scope="col">Total Pembayaran</th>
             <th scope="col">Status</th>
+            <th scope="col">Aksi</th>
           </tr>
         </thead>
         <tbody class="t-body">
@@ -68,6 +69,7 @@
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
+            <td>@mdo</td>
             <td>@mdo</td>
             <td>@mdo</td>
             <td>@mdo</td>
@@ -187,5 +189,42 @@
   </div>
 </div>
 <!-- End Edit inventori masjid -->
+
+<!-- Modal detail barang -->
+<div class="modal fade" id="detailBarang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detail Barang</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <td>No</td>
+                <td>Jenis Barang</td>
+                <td>Jumlah</td>
+              </tr>
+            </thead>
+            <tbody id="bodyDetailBarang">
+              <tr>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal detail barang -->
+
   <!-- End Modal section  -->
 <!-- load footer admin in controller -->

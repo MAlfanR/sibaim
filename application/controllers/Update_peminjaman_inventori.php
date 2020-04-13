@@ -84,6 +84,26 @@ class Update_peminjaman_inventori extends CI_Controller {
       echo "data tidak berhasil di update";
     }
   }
+
+  public function getDetailBarang(){
+    $id_peminjaman = $_POST['id_peminjaman'];
+
+    $query = $this->db->query('SELECT * FROM datapeminjaman INNER JOIN inventory ON datapeminjaman.id_inventory=inventory.id_inventory WHERE id_peminjaman = '.$id_peminjaman);
+    $barang = $query->result_array();
+
+    $i = 1;
+    $html = '';
+    foreach($barang as $row){
+      $html = $html . '<tr>
+      <td>'.$i.'</td>
+      <td>'.$row['nama_inventory'].'</td>
+      <td>'.$row['jumlahDipinjam'].'</td>
+    </tr>';
+    $i++;
+    }
+
+    echo $html;
+  }
 }
 
 /* End of file Update_peminjaman_inventori.php */
