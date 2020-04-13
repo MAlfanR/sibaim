@@ -39,9 +39,9 @@ class Login extends CI_Controller {
 
       
       redirect(base_url('admin'));
-      
-    }else{
 
+    }else{
+   
     }
 
   }
