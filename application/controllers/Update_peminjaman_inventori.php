@@ -19,7 +19,7 @@ class Update_peminjaman_inventori extends CI_Controller {
   {
     // ambil data barang inventori
     $data['inventori'] = $this->Admin_model->get_inventori();
-    $data['peminjaman'] = $this->db->get('peminjaman')->result_array();
+    $data['proposal_peminjaman'] = $this->db->get_where('peminjaman',)->result_array();
 
     $this->load->view('template_admin/header');
     $this->load->view('admin/update_peminjaman_inventori', $data);

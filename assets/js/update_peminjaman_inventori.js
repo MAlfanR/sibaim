@@ -21,3 +21,7 @@ function detailModalTanggal(id){
         }
     });
 }
+
+
+
+

@@ -30,7 +30,7 @@
           </tr>
         </thead>
         <tbody class="t-body">
-        <?php foreach($peminjaman as $row): ?>
+        <?php foreach($proposal_peminjaman as $row): ?>
           <tr>
             <th scope="row"><?= $row['id_peminjaman']; ?></th>
             <td><?= $row['judul_kegiatan']; ?></td>
@@ -65,6 +65,7 @@
           </tr>
         </thead>
         <tbody class="t-body">
+        <?php foreach($peminjaman )
           <tr>
             <th scope="row">1</th>
             <td>Mark</td>
