@@ -57,7 +57,7 @@
 							</div>
 						</li>
 						<li class="nav-item">
-							<a href="#kontak" class="nav-link">KONTAK</a>
+							<a href="<?= base_url('#kontak'); ?>" class="nav-link">KONTAK</a>
 						</li>
 					</ul>
 				</div>
