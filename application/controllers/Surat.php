@@ -25,7 +25,7 @@ class Surat extends CI_Controller {
         $dompdf->setPaper('A4','Portrait');
 
         $dompdf->render();
-        $dompdf->stream();
+        $dompdf->stream('Surat-Permohonan-Tiket-'.$id);
 
     }
 
