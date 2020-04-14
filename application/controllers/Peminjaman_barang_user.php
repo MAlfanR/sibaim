@@ -11,6 +11,15 @@ class Peminjaman_barang_user extends CI_Controller {
   $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan <> "penyusunan"');
   $data['peminjam'] = $query->result_array();
 
+  // pagination
+  $this->load->library('pagination');
+
+  $config['base_url'] = base_url();
+  $config['total_rows'] = 
+  $config['per_page'] = 5;
+
+  $this->pagination->initialize($config);
+
 	$this->load->view('template_user/header');
 	$this->load->view('user/daftar_peminjaman_barang',$data);
 	$this->load->view('template_user/footer');

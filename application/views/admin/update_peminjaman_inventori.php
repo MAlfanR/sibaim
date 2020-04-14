@@ -14,7 +14,7 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><table class="table table-bordered mt-4 text-center">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><table id="table_id" class="table table-bordered mt-4 text-center">
         <thead class="t-head">
           <tr class="text-white">
             <th scope="col">No. Tiket</th>
@@ -32,7 +32,7 @@
         <tbody class="t-body">
         <?php foreach($proposal_peminjaman as $row): ?>
           <tr>
-            <th scope="row"><?= $row['id_peminjaman']; ?></th>
+            <td scope="row"><?= $row['id_peminjaman']; ?></td>
             <td><?= $row['judul_kegiatan']; ?></td>
             <td><?= $row['penyelenggara_kegiatan']; ?></td>
             <td><?= $row['penanggung_jawab']; ?></td>
@@ -49,7 +49,7 @@
         <?php endforeach; ?>
         </tbody>
       </table></div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><table class="table table-bordered mt-4 text-center">
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><table id="table_id2" class="table table-bordered mt-4 text-center">
         <thead class="t-head">
           <tr class="text-white">
             <th scope="col">No. Tiket</th>
@@ -67,7 +67,7 @@
         <tbody class="t-body">
         <?php foreach($peminjaman as $row):?>
           <tr>
-            <th scope="row"><?= $row['id_peminjaman']; ?></th>
+            <td scope="row"><?= $row['id_peminjaman']; ?></td>
             <td><?= $row['judul_kegiatan']; ?></td>
             <td><?= $row['penyelenggara_kegiatan']; ?></td>
             <td><?= $row['penanggung_jawab']; ?></td>
@@ -91,7 +91,7 @@
   <button type="button" class="btn btn-primary mb-3 mt-4" data-toggle="modal" data-target="#formInventori">
         Tambah Barang Inventory
       </button>
-      <table class="table table-bordered">
+      <table id="table_id3" class="table table-bordered">
         <thead class="t-head">
           <tr class="text-white">
             <th scope="col">No.</th>
@@ -104,7 +104,7 @@
         <tbody class="t-body">
           <?php $i=1; foreach($inventori as $row): ?>
           <tr>
-            <th scope="row"><?= $i; ?></th>
+            <td scope="row"><?= $i; ?></td>
             <td><?= $row['nama_inventory'];?></td>
             <td><?= $row['jumlah_inventory']; ?></td>
             <td><?= $row['harga_inventory']; ?></td>

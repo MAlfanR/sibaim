@@ -43,26 +43,26 @@
       <h2>Daftar Peminjaman Barang</h2>
     </div>
     <div class="card-body">
-      <table class="table table-bordered">
-        <thead class="t-head">
-          <tr class="text-white">
-            <th scope="col">No. Tiket</th>
-            <th scope="col">Nama peminjam / (yang bertanggung jawab)</th>
-            <th scope="col">Tanggal Pinjam</th>
-            <th scope="col">Tanggal Kembali</th>
-            <th scope="col">Status</th>
+      <table id="table_id" class="table table-bordered text-center">
+        <thead class="t-head text-white">
+          <tr>
+            <th>No. Tiket</th>
+            <th>Nama peminjam / (yang bertanggung jawab)</th>
+            <th>Tanggal Pinjam</th>
+            <th>Tanggal Kembali</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody class="t-body">
           <?php foreach($peminjam as $row): ?>
           <tr>
-            <th scope="row"><?= $row['id_peminjaman']; ?></th>
+            <td><?= $row['id_peminjaman']; ?></td>
             <td><?= $row['penanggung_jawab'] ?></td>
             <td><?= $row['tanggal_peminjaman']; ?></td>
             <td><?= $row['tanggal_pengembalian']; ?></td>
             <?php if($row['status_permintaan'] == 'menunggu'){?>
               <td class="badge badge-warning"><?= $row['status_permintaan']; ?></td>
-            <?php }else if($row['status_permintaan'] == 'disetujui'){?>
+            <?php }else if($row['status_permintaan'] == 'diterima'){?>
               <td class="badge badge-success"><?= $row['status_permintaan']; ?></td>
             <?php }else if($row['status_permintaan'] == 'ditolak'){?>
               <td class="badge badge-danger"><?= $row['status_permintaan']; ?></td>

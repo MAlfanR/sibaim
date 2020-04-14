@@ -1,15 +1,15 @@
 <div class="card">
     <h4 class="card-title text-center text-white">Daftar Barang Hilang</h4>
     <div class="card-body">
-        <table class="table table-bordered">
+        <table id="table_id" class="table table-bordered">
             <thead class="t-head">
                 <tr class="text-white">
-                    <td>Barang</td>
-                    <td>Tanggal ditemukan</td>
-                    <td>Lokasi ditemukan</td>
-                    <td>Keterangan</td>
-                    <td>Foto</td>
-                    <td>Aksi</td>
+                    <th>Barang</th>
+                    <th>Tanggal ditemukan</th>
+                    <th>Lokasi ditemukan</th>
+                    <th>Keterangan</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody class="t-body">
