@@ -19,7 +19,10 @@ class Update_peminjaman_inventori extends CI_Controller {
   {
     // ambil data barang inventori
     $data['inventori'] = $this->Admin_model->get_inventori();
-    $data['proposal_peminjaman'] = $this->db->get_where('peminjaman',)->result_array();
+    $data['proposal_peminjaman'] = $this->db->get_where('peminjaman', array('status_permintaan' => 'menunggu'))->result_array();
+
+    $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan = "diterima" OR status_permintaan = "ditolak"');
+    $data['peminjaman'] = $query->result_array();
 
     $this->load->view('template_admin/header');
     $this->load->view('admin/update_peminjaman_inventori', $data);
@@ -49,20 +52,6 @@ class Update_peminjaman_inventori extends CI_Controller {
       }
   }
 
-  public function delete_inventory($id){
-    $query = $this->db->query('SELECT foto_inventory FROM inventory WHERE id_inventory = '.$id);
-    $row = $this->Admin_model->delete_inventory($id);
-    if($row > 0){
-      redirect(base_url('Update_peminjaman_inventori'));
-    }else{
-      echo "data tidak berhasil dihapus";
-    }
-  }
-
-  public function getEdit(){
-    echo json_encode($this->Admin_model->get_barang_inventori_byId($_POST['id']));
-  }
-
   public function editInventori(){
     $id = $this->input->post('id');
 
@@ -85,6 +74,44 @@ class Update_peminjaman_inventori extends CI_Controller {
     }
   }
 
+  public function delete_inventory($id){
+    $query = $this->db->query('SELECT foto_inventory FROM inventory WHERE id_inventory = '.$id);
+    $row = $this->Admin_model->delete_inventory($id);
+    if($row > 0){
+      redirect(base_url('Update_peminjaman_inventori'));
+    }else{
+      echo "data tidak berhasil dihapus";
+    }
+  }
+
+  public function diterima($id){
+    $data = array('status_permintaan' => 'diterima');
+    $this->db->where('id_peminjaman',$id);
+    $this->db->update('peminjaman',$data);
+    
+    redirect(base_url('Update_peminjaman_inventori'));
+  }
+
+  public function ditolak($id){
+    $data = array('status_permintaan' => 'ditolak');
+    $this->db->where('id_peminjaman',$id);
+    $this->db->update('peminjaman',$data);
+    
+    redirect(base_url('Update_peminjaman_inventori'));
+  }
+
+  public function deletePeminjaman($id){
+    $this->db->delete('datapeminjaman', array('id_peminjaman' => $id));
+    $this->db->delete('peminjaman', array('id_peminjaman' => $id));
+
+    redirect(base_url('Update_peminjaman_inventori'));
+  }
+
+  public function getEdit(){
+    echo json_encode($this->Admin_model->get_barang_inventori_byId($_POST['id']));
+  }
+
+  
   public function getDetailBarang(){
     $id_peminjaman = $_POST['id_peminjaman'];
 
