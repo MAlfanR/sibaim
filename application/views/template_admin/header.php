@@ -39,16 +39,15 @@
           <div class="col">
             <div class="dropdown">
               <button type="button" class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Administrator
+                aria-haspopup="true" aria-expanded="false"><svg class="bi bi-person-fill mr-1" width="1.1em" height="1.1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+            </svg><?= $_SESSION['name']; ?>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="<?= base_url('Profile'); ?>">Profile</a>
                 <a class="dropdown-item" href="<?= base_url('Login/logout'); ?>">Sign-out</a>
               </div>
             </div>
-          </div>
-          <div class="col text-center">
-            <p><img src="<?= base_url('assets/images/administrator.png'); ?>" class="w-100" alt=""></p>
           </div>
         </div>
       </div>

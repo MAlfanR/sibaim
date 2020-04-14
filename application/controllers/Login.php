@@ -29,9 +29,16 @@ class Login extends CI_Controller {
     $cek = $this->Admin_model->cek_login("admin",$where)->num_rows();
     if($cek > 0){
 
+      $data = $this->db->get_where('admin',array('username_admin' => $username))->result_array()[0];
+
       // session data yang ingin disimpan
       $data_session = array(
+        'id'       => $data['id_admin'],
         'username' => $username,
+        'password' => $password,
+        'name'     => $data['nama_admin'],
+        'email'    => $data['email_admin'],
+        'kontak'   => $data['kontak_admin'],
         'status'   => "login"
       );
 
