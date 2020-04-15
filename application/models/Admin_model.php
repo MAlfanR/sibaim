@@ -12,11 +12,13 @@ class Admin_model extends CI_Model {
   // fungsi mengambil total donasi
   function ambil_total_donasi(){
     // mendapatkan row terakhir di table donasi
-    $last_row = $this->db->order_by('id_donasi', 'DESC')->limit(1)->get('donasi')->result_array();
+    $donasi = $this->db->get('donasi')->result_array();
+    $total_donasi = 0;
+    foreach($donasi as $row){
+      $total_donasi = $total_donasi + $row['jumlah_donasi'];
+    }
     // ambil indeks ke-0
-    $donasi = $last_row[0];
-
-    return $donasi['total_langsung_donasi'];
+    return $total_donasi;
   }
 
   function ambil_total_kitabisa(){

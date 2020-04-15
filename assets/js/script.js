@@ -52,3 +52,4 @@ function editModalBarangInventori(id){
         }
     });
 }
+

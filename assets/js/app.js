@@ -8,3 +8,4 @@ $(document).ready(function(){
     $('select').addClass("custom-select");
     $('select').css("width","41%");
 });
+

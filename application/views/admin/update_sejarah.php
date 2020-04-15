@@ -14,7 +14,7 @@
                 <form class="form-inline" action="<?= base_url('Update_sejarah/foto'); ?>" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="label" value="Sejarah">
                     <div class="form-group">
-                        <label for="fotoSejarah">Foto</label>
+                        <label for="fotoSejarah" class="text-dark">Foto</label>
                         <input type="file" class="form-control-file" id="fotoSejarah" name="foto">
                     </div>
                     <button type="submit" class="btn btn-primary mt-4">Simpan</button>
@@ -22,7 +22,7 @@
                 <form action="<?= base_url('Update_sejarah/teks'); ?>" method="POST">
                     <input type="hidden" name="label" value="Sejarah">
                     <div class="form-group">
-                        <label for="teksSejarah">Teks Paragraf</label>
+                        <label for="teksSejarah" class="text-dark">Teks Paragraf</label>
                         <textarea class="form-control" id="teksSejarah" rows="6" name="teks"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Simpan</button>
@@ -38,7 +38,7 @@
                     <form class="form-inline" action="<?= base_url('Update_sejarah/foto'); ?>" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="label" value="Organisasi">
                         <div class="form-group">
-                            <label for="fotoOrganisasi">Foto</label>
+                            <label for="fotoOrganisasi" class="text-dark">Foto</label>
                             <input type="file" class="form-control-file" id="fotoOrganisasi" name="foto">
                         </div>
                         <button type="submit" class="btn btn-primary mt-4">Simpan</button>
@@ -46,7 +46,7 @@
                     <form action="<?= base_url('Update_sejarah/teks'); ?>" method="POST">
                         <input type="hidden" name="label" value="Organisasi">
                         <div class="form-group">
-                            <label for="teksOrganisasi">Teks Paragraf</label>
+                            <label for="teksOrganisasi" class="text-dark">Teks Paragraf</label>
                             <textarea class="form-control" id="teksOrganisasi" rows="6" name="teks"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>

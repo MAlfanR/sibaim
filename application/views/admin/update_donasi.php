@@ -44,5 +44,9 @@
         <button type="submit" class="btn bg-dark text-white">Tambah</button>
       </form>
     </div>
+
+    <div>
+    <a href="<?= base_url('Tabel_donasi'); ?>" class="btn btn-dark float-right m-5">Lihat Tabel Donasi</a>
+    </div> 
   </div>
 </div>
