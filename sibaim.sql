@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Apr 2020 pada 12.50
+-- Waktu pembuatan: 15 Apr 2020 pada 14.49
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_admin`, `email_admin`, `nama_admin`) VALUES
-(1, 'admin', '6562c5c1f33db6e05a082a88cddab5ea', '082299794677', 'janatri1398@gmail.com', 'Ranger');
+(1, 'admin', '6562c5c1f33db6e05a082a88cddab5ea', '082299794677', 'janatri1398@gmail.com', 'minda');
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,8 @@ CREATE TABLE `barangtemu` (
 --
 
 INSERT INTO `barangtemu` (`id_barangtemu`, `nama_barangtemu`, `tanggal_barangtemu`, `foto_barangtemu`, `lokasi_barangtemu`, `keterangan_barangtemu`) VALUES
-(4, 'dompet kulit', '2020-04-02', 'dompet.jpg', 'dekat keran masjid', 'terbuat dari kulit');
+(4, 'dompet kulit', '2020-04-02', 'dompet.jpg', 'dekat keran masjid', 'terbuat dari kulit'),
+(8, 'jam', '2020-04-14', 'jam.jpg', 'baim', 'jam');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,8 @@ INSERT INTO `datapeminjaman` (`id`, `id_peminjaman`, `id_inventory`, `jumlahDipi
 (10, 10, 11, 1),
 (11, 10, 10, 1),
 (12, 11, 7, 1),
-(13, 12, 7, 1);
+(14, 13, 7, 4),
+(15, 13, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -136,11 +138,7 @@ CREATE TABLE `donasi` (
 --
 
 INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
-(1, 'Hamba Allah', '1000000', '2020-03-19', 1000000, 6854162),
-(2, 'Hamba Allah', '1000000', '2020-03-19', 2000000, 6854162),
-(3, 'aldi', '12000000', '2020-04-02', 14000000, 6854162),
-(4, 'aldo', '12000000', '2020-04-02', 26000000, 6854162),
-(5, 'TPB 5', '500000', '2020-04-07', 26500000, 6854162);
+(5, 'TPB 5', '500000', '2020-04-07', 500000, 6854162);
 
 -- --------------------------------------------------------
 
@@ -193,18 +191,6 @@ INSERT INTO `inventory` (`id_inventory`, `nama_inventory`, `jumlah_inventory`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lampiran`
---
-
-CREATE TABLE `lampiran` (
-  `id_lampiran` int(11) NOT NULL,
-  `foto_lampiran` varchar(50) NOT NULL,
-  `keterangan_lampiran` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `peminjaman`
 --
 
@@ -228,26 +214,12 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id_peminjaman`, `judul_kegiatan`, `penyelenggara_kegiatan`, `penanggung_jawab`, `noHp`, `jaminan`, `lokasi`, `tanggal_peminjaman`, `tanggal_pengembalian`, `denda_peminjaman`, `total_harga`, `status_permintaan`) VALUES
-(3, 'mabit', 'madani', 'karno', '086678908976', 'ktp', '', '2020-04-12', '2020-04-13', 10000, 0, 'menunggu'),
+(3, 'mabit', 'madani', 'karno', '086678908976', 'ktp', '', '2020-04-12', '2020-04-13', 10000, 0, 'diterima'),
 (6, 'makrab', 'hmif', 'dino', '086678908976', 'ktp', 'wira garden', '2020-04-13', '2020-04-15', 10000, 0, 'penyusunan'),
 (7, 'senam', 'akademik', 'bu layla', '089765432145', 'ktp', 'lapangan basket', '2020-04-13', '2020-04-15', 15000, 40000, 'penyusunan'),
-(10, 'seminar', 'mahasiswa', 'rahman', '082299796878', 'KTM', 'Aula Gedung E', '2020-04-13', '2020-04-14', 15000, 50000, 'menunggu'),
+(10, 'seminar', 'mahasiswa', 'rahman', '082299796878', 'KTM', 'Aula Gedung E', '2020-04-13', '2020-04-14', 15000, 50000, 'ditolak'),
 (11, 'senam', 'hmif', 'dino', '086678908976', 'KTM', 'lapangan basket', '2020-04-16', '2020-04-17', 5000, 25000, 'menunggu'),
-(12, 'makrab', 'hmif', 'dino', '08229897', 'ktp', 'wira garden', '2020-04-28', '2020-04-29', 0, 25000, 'menunggu');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `pengambil`
---
-
-CREATE TABLE `pengambil` (
-  `id_pengambil` int(11) NOT NULL,
-  `id_barangtemu` int(11) NOT NULL,
-  `keterangan_pengambil` varchar(200) DEFAULT NULL,
-  `namabarang_pengambil` varchar(50) NOT NULL,
-  `fotobarang_pengambil` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(13, 'senam', 'akademik', 'karno', '086678908976', 'KTM', 'dekat keran masjid', '2020-04-15', '2020-04-15', 15000, 150000, 'menunggu');
 
 -- --------------------------------------------------------
 
@@ -325,13 +297,6 @@ ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`);
 
 --
--- Indeks untuk tabel `pengambil`
---
-ALTER TABLE `pengambil`
-  ADD PRIMARY KEY (`id_pengambil`),
-  ADD KEY `id_barangtemu` (`id_barangtemu`);
-
---
 -- Indeks untuk tabel `tekstentang`
 --
 ALTER TABLE `tekstentang`
@@ -357,13 +322,13 @@ ALTER TABLE `admin_token`
 -- AUTO_INCREMENT untuk tabel `barangtemu`
 --
 ALTER TABLE `barangtemu`
-  MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `datapeminjaman`
 --
 ALTER TABLE `datapeminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `donasi`
@@ -387,13 +352,7 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT untuk tabel `pengambil`
---
-ALTER TABLE `pengambil`
-  MODIFY `id_pengambil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tekstentang`
@@ -411,12 +370,6 @@ ALTER TABLE `tekstentang`
 ALTER TABLE `datapeminjaman`
   ADD CONSTRAINT `datapeminjaman_ibfk_1` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`),
   ADD CONSTRAINT `datapeminjaman_ibfk_2` FOREIGN KEY (`id_inventory`) REFERENCES `inventory` (`id_inventory`);
-
---
--- Ketidakleluasaan untuk tabel `pengambil`
---
-ALTER TABLE `pengambil`
-  ADD CONSTRAINT `pengambil_ibfk_2` FOREIGN KEY (`id_barangtemu`) REFERENCES `barangtemu` (`id_barangtemu`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

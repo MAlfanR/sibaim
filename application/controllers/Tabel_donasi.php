@@ -58,6 +58,26 @@ class Tabel_donasi extends CI_Controller {
 
         echo json_encode($data);
     }
+
+    public function editDonasi(){
+        $data = array(
+            'nama_donasi' => $_POST['nama_donasi'],
+            'jumlah_donasi' => $_POST['jumlah_donasi'],
+            'tanggal_donasi' => $_POST['tanggal_donasi'],
+            'total_langsung_donasi' => $_POST['total_langsung_donasi']
+        );
+
+        $this->db->where('id_donasi', $_POST['id_donasi']);
+        $this->db->update('donasi', $data);
+
+        $row = $this->db->affected_rows();
+
+        if($row > 0){
+            redirect(base_url('Tabel_donasi'));
+        }else{
+            echo "data tidak berhasil diubah";
+        }
+    }
 }
 
 /* End of file Tabel_donasi.php */

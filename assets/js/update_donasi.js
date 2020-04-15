@@ -5,6 +5,7 @@ function getDataDonasi(id){
         method: 'post',
         dataType: 'json',
         success: function(data){
+            $('#id_donasi').val(data.id_donasi);
              $('#nama_donasi').val(data.nama_donasi);
             $('#tanggal_donasi').val(data.tanggal_donasi);
             $('#jumlah_donasi').val(data.jumlah_donasi);

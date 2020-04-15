@@ -41,7 +41,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form action="<?= base_url('Tabel_donasi/editDonasi'); ?>" method="POST">
+            <input type="hidden" name="id_donasi" id="id_donasi" value="">
             <div class="form-group">
                 <label class="text-dark">Nama Donatur</label>
                 <input type="text" id="nama_donasi" name="nama_donasi" class="form-control">
