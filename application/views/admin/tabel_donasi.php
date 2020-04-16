@@ -1,4 +1,9 @@
+
 <div class="container">
+<div>
+<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3">Kembali ke menu</a>
+    <a href="<?= base_url('Update_donasi'); ?>" class="btn btn-danger mt-0 mb-3">Tambah Donasi</a>
+</div> 
 <?= $this->session->flashdata('flash'); ?>
 <div class="card p-4">
     <h4 class="text-white text-center mb-3">Tabel Donasi</h4>
@@ -8,8 +13,6 @@
                 <td>Nama Donatur</td>
                 <td>Tanggal Donasi</td>
                 <td>Jumlah Donasi</td>
-                <td>Total Donasi Secara Langsung</td>
-                <td>Total Donasi Dari Kitabisa</td>
                 <td>Aksi</td>
             </tr>
         </thead>
@@ -19,8 +22,6 @@
                 <td><?= $row['nama_donasi']; ?></td>
                 <td><?= $row['tanggal_donasi']; ?></td>
                 <td><?= number_format($row['jumlah_donasi'],2,',','.'); ?></td>
-                <td><?= number_format($row['total_langsung_donasi'],2,',','.'); ?></td>
-                <td><?= number_format($row['total_kitabisa_donasi'],2,',','.'); ?></td>
                 <td><a href="#" onclick="getDataDonasi(<?= $row['id_donasi']; ?>)" class="badge badge-pill badge-warning" data-toggle="modal" data-target="#exampleModal">Edit</a>
                 <a href="<?= base_url('Tabel_donasi/delete/'.$row['id_donasi']); ?>" class="badge badge-pill badge-danger">Delete</a></td>
             </tr>
@@ -53,11 +54,7 @@
             </div>
             <div class="form-group">
                 <label class="text-dark">Jumlah Donasi</label>
-                <input type="number" id="jumlah_donasi" onkeyup="total_donasi(<?= $total_donasi_langsung; ?>, <?= $value_total_donasi; ?>)" name="jumlah_donasi" class="form-control">
-            </div>
-            <div class="form-group">
-                <label class="text-dark">Total Donasi Secara Langsung</label>
-                <input type="number" id="total_langsung_donasi" name="total_langsung_donasi" class="form-control" readonly>
+                <input type="number" id="jumlah_donasi" name="jumlah_donasi" class="form-control">
             </div>
       </div>
       <div class="modal-footer">

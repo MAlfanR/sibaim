@@ -10,7 +10,7 @@ class Peminjaman_barang_user extends CI_Controller {
   $data['barang'] = $this->User_model->get_inventory();
   $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan <> "penyusunan"');
   $data['peminjam'] = $query->result_array();
-
+  $data['admin'] = $this->db->get('admin')->result_array();
   // pagination
   $this->load->library('pagination');
 

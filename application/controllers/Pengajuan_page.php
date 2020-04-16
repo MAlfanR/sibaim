@@ -16,6 +16,8 @@ class Pengajuan_page extends CI_Controller {
              $total = $total + $row['harga_inventory'] * $row['jumlahDipinjam']; 
          }
  
+         $data['admin'] = $this->db->get('admin')->result_array();
+         
          $info = array('total_harga' => $total);
          $this->db->where('id_peminjaman',$id);
          $this->db->update('peminjaman', $info);

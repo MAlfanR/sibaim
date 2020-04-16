@@ -29,9 +29,21 @@ class Daftar_barang_hilang extends CI_Controller {
 
         if($row > 0){
             unlink("assets/images/BarangHilang/".$foto);
+            $this->session->set_flashdata('delete','<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Data berhasil dihapus.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
             redirect(base_url('Daftar_barang_hilang'));
         }else{
-            echo 'data tidak terhapus';
+            $this->session->set_flashdata('delete','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Data tidak berhasil dihapus.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            redirect(base_url('Daftar_barang_hilang'));
         }
     }
 
@@ -69,9 +81,21 @@ class Daftar_barang_hilang extends CI_Controller {
         $row = $this->db->affected_rows();
         
         if($row > 0){
+            $this->session->set_flashdata('edit','<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Data berhasil diubah.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
             redirect(base_url('Daftar_barang_hilang'));
         }else{
-            echo "data tidak berhasil diubah";
+            $this->session->set_flashdata('edit','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Data tidak berhasil diubah.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            redirect(base_url('Daftar_barang_hilang'));
         }
     }
 

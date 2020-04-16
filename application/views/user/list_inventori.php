@@ -1,3 +1,9 @@
+<div>
+<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
+<a href="<?= base_url('Update_peminjaman_inventori'); ?>" class="btn btn-danger mb-3">Daftar Pengajuan Peminjaman</a>
+<a href="<?= base_url('List_inventori'); ?>" class="btn btn-danger mb-3">List Inventori</a>
+</div>
+
 <div class="card">
   <div class="card-title text-center text-white"><h2>List inventori masjid baitul ilmi</h2></div>
 

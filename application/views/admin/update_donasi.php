@@ -1,4 +1,7 @@
-<div class="flash"></div>
+<div>
+<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-4">Kembali ke menu</a>
+    <a href="<?= base_url('Tabel_donasi'); ?>" class="btn btn-danger mt-0 mb-3">Lihat Tabel Donasi</a>
+</div> 
 <div class="container-fluid p-0">
   <div class="card text-white">
     <div class="card-title text-center">
@@ -44,9 +47,5 @@
         <button type="submit" class="btn bg-dark text-white">Tambah</button>
       </form>
     </div>
-
-    <div>
-    <a href="<?= base_url('Tabel_donasi'); ?>" class="btn btn-dark float-right m-5">Lihat Tabel Donasi</a>
-    </div> 
   </div>
 </div>

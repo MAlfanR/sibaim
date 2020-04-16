@@ -17,6 +17,7 @@ class User extends CI_Controller {
 
 		// mengambil data foto baranghilang
 		$data['foto_barangtemu'] = $this->User_model->get_foto_barangtemu();
+		$data['admin'] = $this->db->get('admin')->result_array();
 
 		$this->load->view('template_user/header');
 		$this->load->view('user/halaman_utama',$data);

@@ -1,5 +1,11 @@
+<div>
+<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
+    <a href="<?= base_url('Update_barang_hilang'); ?>" class="btn btn-danger mt-0 mb-3">Tambah Data Barang Hilang</a>
+</div> 
 <div class="card">
     <h4 class="card-title text-center text-white">Daftar Barang Hilang</h4>
+    <?= $this->session->flashdata('edit'); ?>
+    <?= $this->session->flashdata('delete'); ?>
     <div class="card-body">
         <table id="table_id" class="table table-bordered">
             <thead class="t-head">

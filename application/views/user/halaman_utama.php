@@ -162,7 +162,9 @@
 						</div>
 						<div class="col-5 text-white">
 							<p class="mb-0">Jl. Terusan Ryacudu Way Huwi~ 35131</p>
-							<p class="mb-0">Tlp. 08xx-xxxx-xxxx</p>
+							<?php foreach($admin as $row): ?>
+							<p class="mb-0">Tlp. <?= $row['kontak_admin']; ?></p>
+							<?php endforeach; ?>
 							<p class="mb-0">email: baim@email.com</p>
 							<p class="mb-0">www.baim.itera.ac.id</p>
 

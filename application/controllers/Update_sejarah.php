@@ -33,12 +33,41 @@ class Update_sejarah extends CI_Controller {
         $row = $this->Admin_model->insert_teks_tentang($data);
 
         if($row > 0){
-            
-            
-            redirect(base_url('Update_sejarah'));
-            
+            if($label == 'Sejarah'){
+                $this->session->set_flashdata('teks','<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Teks sejarah berhasil disimpan.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            }else if($label == 'Organisasi'){
+                $this->session->set_flashdata('teks','<div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Teks organisasi berhasil disimpan.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            }
+
+        redirect(base_url('Update_sejarah'));
+              
         }else{
-            echo "data tidak berhasil diinputkan";
+            if($label == 'Sejarah'){
+                $this->session->set_flashdata('teks','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Teks sejarah tidak berhasil disimpan.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            }else if($label == 'Organisasi'){
+                $this->session->set_flashdata('teks','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Teks organisasi tidak berhasil disimpan.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            }
+            redirect(base_url('Update_sejarah'));
         }
     }
 
@@ -60,7 +89,13 @@ class Update_sejarah extends CI_Controller {
         }else if($label == 'Organisasi'){
             $config['upload_path'] = 'assets/images/OrganisasiBaim';
         }else{
-            echo 'Path atau label salah';
+            $this->session->set_flashdata('foto','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> ada kesalahan sistem.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+            redirect(base_url('Update_sejarah'));
         }
 
         $this->load->library('upload', $config);
@@ -72,7 +107,22 @@ class Update_sejarah extends CI_Controller {
             $row = $this->Admin_model->insert_foto_tentang($data);
     
             if($row > 0){
-                echo "data berhasil disimpan";
+                if($label == 'Sejarah'){
+                    $this->session->set_flashdata('foto','<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Done!</strong> Foto sejarah berhasil disimpan.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+                }else if($label == 'Organisasi'){
+                    $this->session->set_flashdata('foto','<div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Done!</strong> Foto organisasi berhasil disimpan.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>');
+                }
+                redirect(base_url('Update_sejarah'));
             }else{
                 echo "Data tidak bisa disimpan di database";
                 unlink('assets/images/'.$foto);

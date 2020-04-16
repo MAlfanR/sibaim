@@ -6,7 +6,7 @@
         <p class="mb-0">1. Calon peminjam dapat melihat daftar barang dan jumlah yang tersedia di halaman ini</p>
         <p class="mb-0">2. Setelah memastikan jumlah barang cukup sesuai keinginan, calon peminjam dapat memulai membuat permintaan dengan klik tombol "Ajukan Peminjaman Baru" pada bagian bawah halaman ini.</p>
         <p class="mb-0">3. Calon peminjam mengisi form dengan benar</p>
-        <p class="mb-0">4. Setelah calon peminjam mengisi form dan menentukan barang yang ingin dipinjam sesuai keinginan, calon peminjam mengunduh file surat yang akan dibuat otomatis dan mengirimkannya ke pengurus masjid (WA : contoh xxxx) untuk meminta persetujuan</p>
+        <p class="mb-0">4. Setelah calon peminjam mengisi form dan menentukan barang yang ingin dipinjam sesuai keinginan, calon peminjam mengunduh file surat yang akan dibuat otomatis dan mengirimkannya ke pengurus masjid (WA : <?php foreach($admin as $row): echo $row['kontak_admin']; endforeach; ?>) untuk meminta persetujuan</p>
         <p class="mb-0">5. Calon peminjam bisa mengecek status permintaannya di tabel "Daftar Peminjam Barang" yang ada di halaman ini</p>
         <p class="mb-0">6. Jika permintaan disetujui peminjam dapat mengambil barang di tempat & waktu sesuai kesepakatan dengan pengurus masjid</p>
       </div>

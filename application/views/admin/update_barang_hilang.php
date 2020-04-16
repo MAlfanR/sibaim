@@ -1,4 +1,9 @@
 <!-- load header admin in controller -->
+<div>
+<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-4">Kembali ke menu</a>
+    <a href="<?= base_url('Daftar_barang_hilang'); ?>" class="btn btn-danger mt-0 mb-3">Lihat Tabel Barang Hilang</a>
+</div>
+
   <div class="card">
     <h4 class="card-title text-center text-white">Update Informasi Barang Hilang</h4>
     <div class="card-body">
@@ -39,7 +44,6 @@
           </div>
           <button type="submit" value="upload" class="btn btn-dark">Tambah</button>
         </form>
-        <a href="<?= base_url('Daftar_barang_hilang'); ?>" class="btn btn-dark float-right">Lihat Daftar Barang Hilang</a>
       </div>
     </div>
   </div>

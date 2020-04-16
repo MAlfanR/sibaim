@@ -73,9 +73,23 @@ class Tabel_donasi extends CI_Controller {
         $row = $this->db->affected_rows();
 
         if($row > 0){
+          $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Done!</strong> Data berhasil diubah.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>');
+
             redirect(base_url('Tabel_donasi'));
         }else{
-            echo "data tidak berhasil diubah";
+          $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Done!</strong> Data tidak berhasil diubah.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>');
+  
+              redirect(base_url('Tabel_donasi'));
         }
     }
 }

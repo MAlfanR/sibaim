@@ -22,11 +22,16 @@ class User_model extends CI_Model {
   }
 
   function jumlah_total_donasi(){
-    $last_row = $this->db->order_by('id_donasi', 'DESC')->limit(1)->get('donasi')->result_array();
-    // ambil indeks ke-0
-    $donasi = $last_row[0];
+    // mendapatkan row terakhir di table donasi
+    $donasi = $this->db->get('donasi')->result_array();
+    $total_donasi = 0;
+    foreach($donasi as $row){
+      $total_donasi = $total_donasi + $row['jumlah_donasi'];
+    }
 
-    return $donasi['total_langsung_donasi'] + $donasi['total_kitabisa_donasi'];
+    $kitabisa = $this->db->order_by('id_donasi','DESC')->get('donasi')->result_array()[0]['total_kitabisa_donasi'];
+    // ambil indeks ke-0
+    return $total_donasi + $kitabisa;
   }
 
   function get_teks($label){
