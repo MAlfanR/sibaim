@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Apr 2020 pada 14.49
+-- Waktu pembuatan: 16 Apr 2020 pada 14.18
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `kontak_admin`, `email_admin`, `nama_admin`) VALUES
-(1, 'admin', '6562c5c1f33db6e05a082a88cddab5ea', '082299794677', 'janatri1398@gmail.com', 'minda');
+(1, 'minda', '6562c5c1f33db6e05a082a88cddab5ea', '082299794677', 'janatri1398@gmail.com', 'minda');
 
 -- --------------------------------------------------------
 
@@ -111,12 +111,12 @@ INSERT INTO `datapeminjaman` (`id`, `id_peminjaman`, `id_inventory`, `jumlahDipi
 (6, 6, 12, 3),
 (7, 7, 7, 1),
 (8, 7, 11, 1),
-(9, 10, 7, 1),
-(10, 10, 11, 1),
-(11, 10, 10, 1),
 (12, 11, 7, 1),
 (14, 13, 7, 4),
-(15, 13, 7, 2);
+(15, 13, 7, 2),
+(17, 15, 9, 1),
+(18, 15, 12, 3),
+(23, 17, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +138,7 @@ CREATE TABLE `donasi` (
 --
 
 INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
-(5, 'TPB 5', '500000', '2020-04-07', 500000, 6854162);
+(6, 'Prodi IF 17', '500000', '2020-04-17', 0, 6854162);
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,9 @@ CREATE TABLE `fototentang` (
 
 INSERT INTO `fototentang` (`id_foto`, `foto`, `label`) VALUES
 (2, '1.JPG', 'Sejarah'),
-(10, '4.JPG', 'Organisasi');
+(10, '4.JPG', 'Organisasi'),
+(11, '6.JPG', 'Sejarah'),
+(12, '1.PNG', 'Sejarah');
 
 -- --------------------------------------------------------
 
@@ -185,8 +187,7 @@ INSERT INTO `inventory` (`id_inventory`, `nama_inventory`, `jumlah_inventory`, `
 (11, 'Tripod', 1, 15000),
 (12, 'Galon (Kosong)', 3, 5000),
 (13, 'LED', 2, 50000),
-(14, 'HDMI', 1, 5000),
-(16, 'Dispenser', 1, 10000);
+(14, 'HDMI', 1, 5000);
 
 -- --------------------------------------------------------
 
@@ -217,9 +218,10 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `judul_kegiatan`, `penyelenggara_kegi
 (3, 'mabit', 'madani', 'karno', '086678908976', 'ktp', '', '2020-04-12', '2020-04-13', 10000, 0, 'diterima'),
 (6, 'makrab', 'hmif', 'dino', '086678908976', 'ktp', 'wira garden', '2020-04-13', '2020-04-15', 10000, 0, 'penyusunan'),
 (7, 'senam', 'akademik', 'bu layla', '089765432145', 'ktp', 'lapangan basket', '2020-04-13', '2020-04-15', 15000, 40000, 'penyusunan'),
-(10, 'seminar', 'mahasiswa', 'rahman', '082299796878', 'KTM', 'Aula Gedung E', '2020-04-13', '2020-04-14', 15000, 50000, 'ditolak'),
-(11, 'senam', 'hmif', 'dino', '086678908976', 'KTM', 'lapangan basket', '2020-04-16', '2020-04-17', 5000, 25000, 'menunggu'),
-(13, 'senam', 'akademik', 'karno', '086678908976', 'KTM', 'dekat keran masjid', '2020-04-15', '2020-04-15', 15000, 150000, 'menunggu');
+(11, 'senam', 'hmif', 'dino', '086678908976', 'KTM', 'lapangan basket', '2020-04-16', '2020-04-17', 5000, 25000, 'diterima'),
+(13, 'senam', 'akademik', 'karno', '086678908976', 'KTM', 'dekat keran masjid', '2020-04-15', '2020-04-15', 15000, 150000, 'menunggu'),
+(15, 'makrab', 'hmif', 'dino', '086678908976', 'KTM', 'wira garden', '2020-04-18', '2020-04-20', 10000, 30000, 'menunggu'),
+(17, 'mabit', 'madani', 'karno', '086678908976', 'ktp', 'itera', '2020-04-17', '2020-04-17', 15000, 25000, 'menunggu');
 
 -- --------------------------------------------------------
 
@@ -240,7 +242,13 @@ CREATE TABLE `tekstentang` (
 INSERT INTO `tekstentang` (`id_teks`, `isi`, `label`) VALUES
 (3, 'Masjid Baitul Ilmi Itera merupakan masjid yang diinisiasi oleh Ikatan Orang Tua Mahasiswa dan pada tahun 2016 karena minimnya tempat ibadah yang tersedia waktu itu.\r\n<br>\r\nPada Rancangan awal, masjid ini membutuhkan dana senilai +- 500 juta rupiah. Saat ini, progres pembangunan telah sampai pada tahap 4 yakni pengerjaan plafond, tembok dan green wall. Setelah sebelumnya terhenti karena kekurangan dana.\r\n<br>\r\nMasjid ini berkapasitas +- 500 orang. Masjid ini digunakan untuk sholat berjamaah, sholat Jum\'at, kajian, dan kegiatan lainnya.', 'Sejarah'),
 (7, 'teks tentang organisasi', 'Organisasi'),
-(8, 'organisasi baim sudah berdiri sejak lama', 'Organisasi');
+(8, 'organisasi baim sudah berdiri sejak lama', 'Organisasi'),
+(9, 'coba sejarah baim', 'Sejarah'),
+(10, 'coba organisasi', 'Organisasi'),
+(11, 'coba sejarah', 'Sejarah'),
+(12, '', 'Sejarah'),
+(13, 'coba sejarah', 'Sejarah'),
+(14, 'sejarah baim', 'Sejarah');
 
 --
 -- Indexes for dumped tables
@@ -322,25 +330,25 @@ ALTER TABLE `admin_token`
 -- AUTO_INCREMENT untuk tabel `barangtemu`
 --
 ALTER TABLE `barangtemu`
-  MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_barangtemu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `datapeminjaman`
 --
 ALTER TABLE `datapeminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `fototentang`
 --
 ALTER TABLE `fototentang`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `inventory`
@@ -352,13 +360,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `tekstentang`
 --
 ALTER TABLE `tekstentang`
-  MODIFY `id_teks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_teks` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
