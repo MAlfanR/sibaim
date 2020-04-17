@@ -16,6 +16,7 @@ class Peminjaman_inventori extends CI_Controller {
     }
 
     public function addDataPeminjaman($id_peminjaman){
+        
         $data = array(
             'id_peminjaman'  => $id_peminjaman,
             'id_inventory'   => $_POST['selectBarang'],

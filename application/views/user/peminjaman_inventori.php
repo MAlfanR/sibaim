@@ -2,6 +2,9 @@
     <div class="card-title text-center">    
       <h2>Form Pengajuan Peminjaman Barang Masjid</h2>
     </div>
+
+    <?= $this->session->flashdata('flash'); ?>
+    
     <div class="card-body">
         <form action="<?= base_url('Peminjaman_inventori/addDataPeminjaman/'.$id_peminjaman); ?>" method="POST">
             <div class="row">

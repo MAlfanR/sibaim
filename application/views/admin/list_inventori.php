@@ -5,6 +5,8 @@
   <a href="<?= base_url('Daftar_peminjam'); ?>" class="btn btn-danger mb-3">Daftar Peminjam</a>
 </div>
 
+<?= $this->session->flashdata('flash'); ?>
+
 <div class="card">
   <div class="container">
     <h5 class="text-white text-center mb-0 mt-3">Barang Inventori</h5>
@@ -55,15 +57,15 @@
       <div class="modal-body">
         <form action="<?= base_url('List_inventori/tambahInventori') ?>" method="post">
           <div class="form-group">
-            <label>Nama Barang</label>
+            <label class="text-dark">Nama Barang</label>
             <input type="text" class="form-control" name="nama">
           </div>
           <div class="form-group">
-            <label>Jumlah Barang</label>
+            <label class="text-dark">Jumlah Barang</label>
             <input type="number" class="form-control" name="jumlah">
           </div>
           <div class="form-group">
-            <label>Biaya Barang</label>
+            <label class="text-dark">Biaya Barang</label>
             <input type="number" class="form-control" name="biaya">
           </div>
       </div>
@@ -91,15 +93,15 @@
         <form action="<?= base_url('List_inventori/editInventori') ?>" method="post">
           <div class="form-group">
             <input type="hidden" id="id" name="id">
-            <label>Nama Barang</label>
+            <label class="text-dark">Nama Barang</label>
             <input type="text" class="form-control" id="nama" name="nama">
           </div>
           <div class="form-group">
-            <label>Jumlah Barang</label>
+            <label class="text-dark">Jumlah Barang</label>
             <input type="number" class="form-control" id="jumlah" name="jumlah">
           </div>
           <div class="form-group">
-            <label>Biaya Barang</label>
+            <label class="text-dark">Biaya Barang</label>
             <input type="number" class="form-control" id="biaya" name="biaya">
           </div>
       </div>

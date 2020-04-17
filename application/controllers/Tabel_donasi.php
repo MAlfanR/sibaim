@@ -46,27 +46,39 @@ class Tabel_donasi extends CI_Controller {
     }
 
     public function editDonasi(){
-        $data = array(
+
+        $this->form_validation->set_rules('nama_donasi', 'Nama Donasi', 'required', array('required' => 'Anda harus memasukkan nama donatur'));
+        $this->form_validation->set_rules('tanggal_donasi', 'Tanggal Donasi', 'required', array('required' => 'Anda harus memasukkan tanggal donasi'));
+        $this->form_validation->set_rules('jumlah_donasi', 'Jumlah Donasi', 'required|is_natural_no_zero', array('required' => 'Anda harus memasukkan jumlah donasi', 'is_natural_no_zero' => 'jumlah donasi tidak boleh nol atau negatif'));
+        
+        
+        if ($this->form_validation->run() == TRUE) {
+          $data = array(
             'nama_donasi'           => $_POST['nama_donasi'],
             'jumlah_donasi'         => $_POST['jumlah_donasi'],
             'tanggal_donasi'        => $_POST['tanggal_donasi'],
             'total_langsung_donasi' => $_POST['total_langsung_donasi']
-        );
+          );
 
-        $this->db->where('id_donasi', $_POST['id_donasi']);
-        $this->db->update('donasi', $data);
+          $this->db->where('id_donasi', $_POST['id_donasi']);
+          $this->db->update('donasi', $data);
 
-        $row = $this->db->affected_rows();
+          $row = $this->db->affected_rows();
 
-        if($row > 0){
-          $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Done!</strong> Data berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+          if($row > 0){
+            $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Done!</strong> Data berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
-          redirect(base_url('Tabel_donasi'));
-        }else{
-          $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Done!</strong> Data tidak berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+            redirect(base_url('Tabel_donasi'));
+          }else{
+            $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Failed!</strong> Data tidak berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
   
-          redirect(base_url('Tabel_donasi'));
-        }
+            redirect(base_url('Tabel_donasi'));
+          }
+        } else {
+          $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Failed!</strong>'. validation_errors() .'.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+  
+            redirect(base_url('Tabel_donasi'));
+        } 
     }
 }
 
