@@ -1,16 +1,12 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Peminjaman_inventori extends CI_Controller {
 
-    public function index($id_peminjaman)
-    {
+    public function index($id_peminjaman){
         $data['id_peminjaman'] = $id_peminjaman;
-        $data['inventori'] = $this->db->get('inventory')->result_array();
+        $data['inventori']     = $this->db->get('inventory')->result_array();
 
-        // mendapatkan data barang yang dipesan
         $query = $this->db->query('SELECT * FROM datapeminjaman INNER JOIN inventory ON inventory.id_inventory = datapeminjaman.id_inventory WHERE id_peminjaman = ' . $id_peminjaman);
         $data['pesanan'] = $query->result_array();
 
@@ -21,8 +17,8 @@ class Peminjaman_inventori extends CI_Controller {
 
     public function addDataPeminjaman($id_peminjaman){
         $data = array(
-            'id_peminjaman' => $id_peminjaman,
-            'id_inventory' => $_POST['selectBarang'],
+            'id_peminjaman'  => $id_peminjaman,
+            'id_inventory'   => $_POST['selectBarang'],
             'jumlahDipinjam' => $_POST['selectJumlah']
         );
 
@@ -42,9 +38,7 @@ class Peminjaman_inventori extends CI_Controller {
         $row = $this->db->affected_rows();
 
         if($row > 0){
-            
             redirect(base_url('Peminjaman_inventori/index/'.$id_peminjaman));
-            
         }else{
             echo "data tidak berhasil dihapus";
         }
@@ -61,7 +55,6 @@ class Peminjaman_inventori extends CI_Controller {
             echo "pesanan tidak berhasil dibatalkan";
         }
     }
-
 }
 
 /* End of file Peminjaman_inventori.php */

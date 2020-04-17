@@ -1,25 +1,20 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Update_peminjaman_inventori extends CI_Controller {
 
-  
-  public function __construct()
-  {
+  public function __construct(){
     parent::__construct();
+
     if($this->session->userdata('status') != "login"){
       redirect(base_url('login'));
     }
   }
   
 
-  public function index()
-  {
-    // ambil data barang inventori
-    $data['inventori'] = $this->Admin_model->get_inventori();
-    $data['proposal_peminjaman'] = $this->db->get_where('peminjaman', array('status_permintaan' => 'menunggu'))->result_array();
+  public function index(){
+    $data['inventori']            = $this->Admin_model->get_inventori();
+    $data['proposal_peminjaman']  = $this->db->get_where('peminjaman', array('status_permintaan' => 'menunggu'))->result_array();
 
     $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan = "diterima" OR status_permintaan = "ditolak"');
     $data['peminjaman'] = $query->result_array();
@@ -31,16 +26,16 @@ class Update_peminjaman_inventori extends CI_Controller {
 
   public function tambahInventori(){
 
-      $nama = $this->input->post('nama');
+      $nama   = $this->input->post('nama');
       $jumlah = $this->input->post('jumlah');
-      $biaya = $this->input->post('biaya');
-      $denda = $this->input->post('denda');
-      $foto = $_FILES['foto']['name'];
+      $biaya  = $this->input->post('biaya');
+      $denda  = $this->input->post('denda');
+      $foto   = $_FILES['foto']['name'];
 
       $data = array(
-        'nama_inventory' => $nama,
-        'jumlah_inventory' => $jumlah,
-        'harga_inventory' => $biaya,
+        'nama_inventory'    => $nama,
+        'jumlah_inventory'  => $jumlah,
+        'harga_inventory'   => $biaya,
       );
 
       $row = $this->Admin_model->insertInventori($data);
@@ -56,19 +51,17 @@ class Update_peminjaman_inventori extends CI_Controller {
     $id = $this->input->post('id');
 
     $data = array(
-      'nama_inventory' => $this->input->post('nama'),
-      'jumlah_inventory' => $this->input->post('jumlah'),
-      'harga_inventory' => $this->input->post('biaya')
+      'nama_inventory'    => $this->input->post('nama'),
+      'jumlah_inventory'  => $this->input->post('jumlah'),
+      'harga_inventory'   => $this->input->post('biaya')
     );
 
     $this->db->where('id_inventory', $id);
     $this->db->update('inventory',$data);
     $row = $this->db->affected_rows();
 
-    if($row > 0){
-      
-      redirect(base_url('Update_peminjaman_inventori'));
-      
+    if($row > 0){ 
+      redirect(base_url('Update_peminjaman_inventori')); 
     }else{
       echo "data tidak berhasil di update";
     }
@@ -76,6 +69,7 @@ class Update_peminjaman_inventori extends CI_Controller {
 
   public function delete_inventory($id){
     $row = $this->Admin_model->delete_inventory($id);
+
     if($row > 0){
       redirect(base_url('Update_peminjaman_inventori'));
     }else{
@@ -120,22 +114,16 @@ class Update_peminjaman_inventori extends CI_Controller {
     $i = 1;
     $html = '';
     foreach($barang as $row){
-      $html = $html . '<tr>
-      <td>'.$i.'</td>
-      <td>'.$row['nama_inventory'].'</td>
-      <td>'.$row['jumlahDipinjam'].'</td>
-    </tr>';
-    $i++;
+      $html = $html . '<tr><td>'.$i.'</td><td>'.$row['nama_inventory'].'</td><td>'.$row['jumlahDipinjam'].'</td></tr>';
+      $i++;
     }
 
     echo $html;
   }
 
   public function getDetailTanggal(){
-    $id = $_POST['id'];
-
+    $id   = $_POST['id'];
     $data = $this->db->get_where('peminjaman', array('id_peminjaman' => $id))->result_array()[0];
-
     echo json_encode($data);
   }
 }

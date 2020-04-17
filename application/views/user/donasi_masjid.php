@@ -1,7 +1,8 @@
 <div class="card">
-  <div class="card-title"><h2 class="text-white text-center">Bantu Pembangunan Masjid Baitul Ilmi ITERA</h2></div>
+  <div class="card-title">
+    <h2 class="text-white text-center">Bantu Pembangunan Masjid Baitul Ilmi ITERA</h2>
+  </div>
   <div class="card-body">
-
     <div class="container">
       <div class="row">
 

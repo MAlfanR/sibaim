@@ -1,6 +1,4 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Daftar_peminjam extends CI_Controller {
@@ -13,10 +11,9 @@ class Daftar_peminjam extends CI_Controller {
         }
     }
 
-    public function index()
-    {
+    public function index(){
         $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan = "diterima" OR status_permintaan = "ditolak"');
-    $data['peminjaman'] = $query->result_array();
+        $data['peminjaman'] = $query->result_array();
 
         $this->load->view('template_admin/header');
         $this->load->view('admin/daftar_peminjam',$data);
@@ -32,22 +29,19 @@ class Daftar_peminjam extends CI_Controller {
         $i = 1;
         $html = '';
         foreach($barang as $row){
-          $html = $html . '<tr>
-          <td>'.$i.'</td>
-          <td>'.$row['nama_inventory'].'</td>
-          <td>'.$row['jumlahDipinjam'].'</td>
-        </tr>';
-        $i++;
+            $html = $html . '<tr><td>'.$i.'</td><td>'.$row['nama_inventory'].'</td><td>'.$row['jumlahDipinjam'].'</td></tr>';
+
+            $i++;
         }
     
         echo $html;
       }
 
       public function deletePeminjaman($id){
-        $this->db->delete('datapeminjaman', array('id_peminjaman' => $id));
-        $this->db->delete('peminjaman', array('id_peminjaman' => $id));
+          $this->db->delete('datapeminjaman', array('id_peminjaman' => $id));
+          $this->db->delete('peminjaman', array('id_peminjaman' => $id));
     
-        redirect(base_url('Update_peminjaman_inventori'));
+          redirect(base_url('Update_peminjaman_inventori'));
       }
 }
 

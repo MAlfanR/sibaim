@@ -1,21 +1,17 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tabel_donasi extends CI_Controller {
 
-    public function __construct()
-  {
-    parent::__construct();
+    public function __construct(){
+      parent::__construct();
 
-    if($this->session->userdata('status') != "login"){
+      if($this->session->userdata('status') != "login"){
         redirect(base_url('login'));
+      }
     }
-  }
 
-    public function index()
-    {
+    public function index(){
        $data['donasi'] = $this->db->order_by('id_donasi', 'DESC')->get('donasi')->result_array();
 
        $data['total_donasi_langsung'] = $this->Admin_model->ambil_total_donasi();
@@ -31,23 +27,13 @@ class Tabel_donasi extends CI_Controller {
         $row = $this->db->affected_rows();
 
         if($row > 0){
-            $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Done!</strong> Data berhasil dihapus.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>');
+            $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Done!</strong> Data berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
-      redirect(base_url('Tabel_donasi'));
+            redirect(base_url('Tabel_donasi'));
         }else{
-            $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Done!</strong> Data tidak berhasil dihapus.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>');
+            $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Done!</strong> Data tidak berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
-      redirect(base_url('Tabel_donasi'));
+            redirect(base_url('Tabel_donasi'));
         }
     }
 
@@ -61,9 +47,9 @@ class Tabel_donasi extends CI_Controller {
 
     public function editDonasi(){
         $data = array(
-            'nama_donasi' => $_POST['nama_donasi'],
-            'jumlah_donasi' => $_POST['jumlah_donasi'],
-            'tanggal_donasi' => $_POST['tanggal_donasi'],
+            'nama_donasi'           => $_POST['nama_donasi'],
+            'jumlah_donasi'         => $_POST['jumlah_donasi'],
+            'tanggal_donasi'        => $_POST['tanggal_donasi'],
             'total_langsung_donasi' => $_POST['total_langsung_donasi']
         );
 
@@ -73,23 +59,13 @@ class Tabel_donasi extends CI_Controller {
         $row = $this->db->affected_rows();
 
         if($row > 0){
-          $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Done!</strong> Data berhasil diubah.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>');
+          $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Done!</strong> Data berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
-            redirect(base_url('Tabel_donasi'));
+          redirect(base_url('Tabel_donasi'));
         }else{
-          $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <strong>Done!</strong> Data tidak berhasil diubah.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>');
+          $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Done!</strong> Data tidak berhasil diubah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
   
-              redirect(base_url('Tabel_donasi'));
+          redirect(base_url('Tabel_donasi'));
         }
     }
 }

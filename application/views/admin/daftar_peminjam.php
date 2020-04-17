@@ -1,49 +1,60 @@
+<!-- navigasi -->
 <div>
-<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
-<a href="<?= base_url('Update_peminjaman_inventori'); ?>" class="btn btn-danger mb-3">Daftar Pengajuan Peminjaman</a>
-<a href="<?= base_url('List_inventori'); ?>" class="btn btn-danger mb-3">List Inventori</a>
-</div> 
+  <a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
+  <a href="<?= base_url('Update_peminjaman_inventori'); ?>" class="btn btn-danger mb-3">Daftar Pengajuan Peminjaman</a>
+  <a href="<?= base_url('List_inventori'); ?>" class="btn btn-danger mb-3">List Inventori</a>
+</div>
+
+
 <div class="card">
-    <h5 class="text-white text-center mb-0 mt-3">Daftar Peminjam</h5>
-    <div class="container mt-3">
+  <h5 class="text-white text-center mb-0 mt-3">Daftar Peminjam</h5>
+  <div class="container mt-3">
+
+    <!-- table -->
     <table class="table table-bordered">
-    <thead class="t-head">
-          <tr class="text-white">
-            <th scope="col">No. Tiket</th>
-            <th scope="col">Judul Kegiatan</th>
-            <th scope="col">Penyelenggara</th>
-            <th scope="col">Penanggung Jawab</th>
-            <th scope="col">No Hp</th>
-            <th scope="col">Barang</th>
-            <th scope="col">Durasi</th>
-            <th scope="col">Total Pembayaran</th>
-            <th scope="col">Status</th>
-            <th scope="col">Aksi</th>
-          </tr>
-    </thead>
-    <tbody class="t-body">
-        <?php foreach($peminjaman as $row):?>
-          <tr>
-            <td scope="row"><?= $row['id_peminjaman']; ?></td>
-            <td><?= $row['judul_kegiatan']; ?></td>
-            <td><?= $row['penyelenggara_kegiatan']; ?></td>
-            <td><?= $row['penanggung_jawab']; ?></td>
-            <td><?= $row['noHp']; ?></td>
-            <td><a href="" onclick="detailModalBarang(<?= $row['id_peminjaman']; ?>)" class="badge badge-primary badge-pill" data-toggle="modal" data-target="#detailBarang">detail</a></td>
-            <td><a href="" onclick="detailModalTanggal(<?= $row['id_peminjaman']; ?>)" class="badge badge-warning badge-pill" data-toggle="modal" data-target="#detailTanggal">detail</a></td>
-            <td><?= $row['denda_peminjaman'] + $row['total_harga']; ?></td>
-            <td><?= $row['status_permintaan']; ?></td>
-            <td><?php if($row['status_permintaan'] == 'diterima'){?>
+      <thead class="t-head">
+        <tr class="text-white">
+          <th scope="col">No. Tiket</th>
+          <th scope="col">Judul Kegiatan</th>
+          <th scope="col">Penyelenggara</th>
+          <th scope="col">Penanggung Jawab</th>
+          <th scope="col">No Hp</th>
+          <th scope="col">Barang</th>
+          <th scope="col">Durasi</th>
+          <th scope="col">Total Pembayaran</th>
+          <th scope="col">Status</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody class="t-body">
+      <?php foreach($peminjaman as $row):?>
+        <tr>
+          <td scope="row"><?= $row['id_peminjaman']; ?></td>
+          <td><?= $row['judul_kegiatan']; ?></td>
+          <td><?= $row['penyelenggara_kegiatan']; ?></td>
+          <td><?= $row['penanggung_jawab']; ?></td>
+          <td><?= $row['noHp']; ?></td>
+          <td>
+            <a href="" onclick="detailModalBarang(<?= $row['id_peminjaman']; ?>)" class="badge badge-primary badge-pill" data-toggle="modal" data-target="#detailBarang">detail</a>
+          </td>
+          <td>
+            <a href="" onclick="detailModalTanggal(<?= $row['id_peminjaman']; ?>)" class="badge badge-warning badge-pill" data-toggle="modal" data-target="#detailTanggal">detail</a>
+          </td>
+          <td><?= $row['denda_peminjaman'] + $row['total_harga']; ?></td>
+          <td><?= $row['status_permintaan']; ?></td>
+          <td>
+            <?php if($row['status_permintaan'] == 'diterima'){?>
               <a href="<?= base_url('Daftar_peminjam/deletePeminjaman/'.$row['id_peminjaman']); ?>" class="badge badge-pill badge-success">telah dikembalikan</a>
             <?php }else if($row['status_permintaan'] == 'ditolak'){?>
               <a href="<?= base_url('Daftar_peminjam/deletePeminjaman/'.$row['id_peminjaman']); ?>" class="badge badge-pill badge-danger">hapus</a>
-            <?php }?>
-            </td>
-          </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-    </div>
+            <?php }?> 
+          </td>
+        </tr>
+      <?php endforeach; ?>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
 <!-- Modal detail barang -->
@@ -58,20 +69,20 @@
       </div>
       <div class="modal-body">
         <table class="table table-dark">
-            <thead>
-              <tr>
-                <td>No</td>
-                <td>Jenis Barang</td>
-                <td>Jumlah</td>
-              </tr>
-            </thead>
-            <tbody id="bodyDetailBarang">
-              <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <td>No</td>
+              <td>Jenis Barang</td>
+              <td>Jumlah</td>
+            </tr>
+          </thead>
+          <tbody id="bodyDetailBarang">
+            <tr>
+              <td>x</td>
+              <td>x</td>
+              <td>x</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div class="modal-footer">

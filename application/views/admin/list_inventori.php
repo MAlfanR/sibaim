@@ -1,42 +1,45 @@
+<!-- navigasi -->
 <div>
-<a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
-<a href="<?= base_url('Update_peminjaman_inventori'); ?>" class="btn btn-danger mb-3">Daftar Pengajuan Peminjaman</a>
-<a href="<?= base_url('Daftar_peminjam'); ?>" class="btn btn-danger mb-3">Daftar Peminjam</a>
+  <a href="<?= base_url('Admin'); ?>" class="btn btn-danger mt-0 mb-3 ml-3">Kembali ke menu</a>
+  <a href="<?= base_url('Update_peminjaman_inventori'); ?>" class="btn btn-danger mb-3">Daftar Pengajuan Peminjaman</a>
+  <a href="<?= base_url('Daftar_peminjam'); ?>" class="btn btn-danger mb-3">Daftar Peminjam</a>
 </div>
 
 <div class="card">
-    <div class="container">
+  <div class="container">
     <h5 class="text-white text-center mb-0 mt-3">Barang Inventori</h5>
     <button type="button" class="btn btn-primary mb-3 mt-4" data-toggle="modal" data-target="#formInventori">
         Tambah Barang Inventory
-      </button>
-      <table id="table_id3" class="table table-bordered">
-        <thead class="t-head">
-          <tr class="text-white">
-            <th scope="col">No.</th>
-            <th scope="col">Nama Barang</th>
-            <th scope="col">Jumlah Barang</th>
-            <th scope="col">Biaya per/hari</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody class="t-body">
-          <?php $i=1; foreach($inventori as $row): ?>
-          <tr>
-            <td scope="row"><?= $i; ?></td>
-            <td><?= $row['nama_inventory'];?></td>
-            <td><?= $row['jumlah_inventory']; ?></td>
-            <td><?= $row['harga_inventory']; ?></td>
-            <td>
-              <a href="" onclick="editModalBarangInventori(<?= $row['id_inventory']; ?>)" class="badge badge-warning" data-toggle="modal" data-target="#formEditInventori">Edit</a>
-              <a href="<?= base_url('Update_peminjaman_inventori/delete_inventory/'.$row['id_inventory']); ?>" class="badge badge-danger">Delete</a>
-            </td>
-            <?php $i++; ?>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
-    </div>
+    </button>
+
+    <table id="table_id3" class="table table-bordered">
+      <thead class="t-head">
+        <tr class="text-white">
+          <th scope="col">No.</th>
+          <th scope="col">Nama Barang</th>
+          <th scope="col">Jumlah Barang</th>
+          <th scope="col">Biaya per/hari</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody class="t-body">
+      <?php $i=1; foreach($inventori as $row): ?>
+        <tr>
+          <td scope="row"><?= $i; ?></td>
+          <td><?= $row['nama_inventory'];?></td>
+          <td><?= $row['jumlah_inventory']; ?></td>
+          <td><?= $row['harga_inventory']; ?></td>
+          <td>
+            <a href="" onclick="editModalBarangInventori(<?= $row['id_inventory']; ?>)" class="badge badge-warning" data-toggle="modal" data-target="#formEditInventori">Edit</a>
+            <a href="<?= base_url('Update_peminjaman_inventori/delete_inventory/'.$row['id_inventory']); ?>" class="badge badge-danger">Delete</a>
+          </td>
+        </tr>
+      <?php $i++; ?>
+      <?php endforeach; ?>
+      </tbody>
+    </table>
+    
+  </div>
 </div>
 
 <!-- Tambah inventori masjid -->
