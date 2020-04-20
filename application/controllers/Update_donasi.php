@@ -23,7 +23,7 @@ class Update_donasi extends CI_Controller {
   }
 
   public function act_update_donasi(){
-    $this->form_validation->set_rules('nama_donasi', 'Nama Donatur', 'required', array('required' => 'anda harus memasukkan nama donasi'));
+    $this->form_validation->set_rules('nama_donasi', 'Nama Donatur', 'required|callback_alpha_dash_space', array('required' => 'anda harus memasukkan nama donasi'));
     $this->form_validation->set_rules('jumlah_donasi', 'Jumlah Donasi', 'required|is_natural_no_zero', array('required' => 'anda harus memasukkan jumlah donasi', 'is_natural_no_zero' => 'jumlah donasi tidak boleh nol atau dibawahnya'));
     $this->form_validation->set_rules('tanggal_donasi', 'Tanggal Donasi', 'required|differs[0000-00-00]', array('required' => 'anda harus memasukkan tanggal donasi','differs[0000-00-00]' => 'anda harus memasukkan tanggal donasi'));
     $this->form_validation->set_rules('total_donasi_kitabisa', 'Donasi Kitabisa', 'required|is_natural', array('required' => 'anda harus memasukkan donasi dari kitabisa', 'is_natural' => 'jumlah donasi dari kitabisa tidak boleh negatif'));
@@ -62,6 +62,15 @@ class Update_donasi extends CI_Controller {
       $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Failed!</strong> '. validation_errors().'.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
         redirect(base_url('Update_donasi'));
+    }
+  }
+
+  function alpha_dash_space($fullname){
+    if (! preg_match('/^[()a-zA-Z\s]+$/', $fullname)) {
+        $this->form_validation->set_message('alpha_dash_space', 'The %s field may only contain alpha characters & White spaces');
+        return FALSE;
+    } else {
+        return TRUE;
     }
   }
 }

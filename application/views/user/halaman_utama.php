@@ -168,11 +168,9 @@
 							<p class="mb-0">Tlp. <?= $row['kontak_admin']; ?></p>
 							<?php endforeach; ?>
 							<p class="mb-0">email: baim@email.com</p>
-							<p class="mb-0">www.baim.itera.ac.id</p>
 
 							<h5 class="text-white">Sosial Media</h5>
-							<a href="#"><img src="assets/images/ig_icon.png" alt="ig_baim"></a>
-							<a href="#"><img src="assets/images/fb_icon.png" alt="fb_baim"></a>
+							<a href="https://www.instagram.com/baim.itera/"><img src="assets/images/ig_icon.png" alt="ig_baim"></a>
 						</div>
 					</div>
 				</div>

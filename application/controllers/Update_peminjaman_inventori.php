@@ -24,59 +24,6 @@ class Update_peminjaman_inventori extends CI_Controller {
     $this->load->view('template_admin/footer');
   }
 
-  public function tambahInventori(){
-
-      $nama   = $this->input->post('nama');
-      $jumlah = $this->input->post('jumlah');
-      $biaya  = $this->input->post('biaya');
-      $denda  = $this->input->post('denda');
-      $foto   = $_FILES['foto']['name'];
-
-      $data = array(
-        'nama_inventory'    => $nama,
-        'jumlah_inventory'  => $jumlah,
-        'harga_inventory'   => $biaya,
-      );
-
-      $row = $this->Admin_model->insertInventori($data);
-
-      if($row > 0){
-        echo "data berhasil disimpan";
-      }else{
-        echo "data tidak berhasil disimpan";
-      }
-  }
-
-  public function editInventori(){
-    $id = $this->input->post('id');
-
-    $data = array(
-      'nama_inventory'    => $this->input->post('nama'),
-      'jumlah_inventory'  => $this->input->post('jumlah'),
-      'harga_inventory'   => $this->input->post('biaya')
-    );
-
-    $this->db->where('id_inventory', $id);
-    $this->db->update('inventory',$data);
-    $row = $this->db->affected_rows();
-
-    if($row > 0){ 
-      redirect(base_url('Update_peminjaman_inventori')); 
-    }else{
-      echo "data tidak berhasil di update";
-    }
-  }
-
-  public function delete_inventory($id){
-    $row = $this->Admin_model->delete_inventory($id);
-
-    if($row > 0){
-      redirect(base_url('Update_peminjaman_inventori'));
-    }else{
-      echo "data tidak berhasil dihapus";
-    }
-  }
-
   public function diterima($id){
     $data = array('status_permintaan' => 'diterima');
     $this->db->where('id_peminjaman',$id);

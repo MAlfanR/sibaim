@@ -13,9 +13,9 @@ class List_inventori extends CI_Controller {
 
     public function tambahInventori(){
 
-        $this->form_validation->set_rules('nama', 'Nama Barang', 'required', array('required' => 'Anda harus memasukkan nama barang'));
+        $this->form_validation->set_rules('nama', 'Nama Barang', 'required|callback_alpha_dash_space', array('required' => 'Anda harus memasukkan nama barang'));
         $this->form_validation->set_rules('jumlah', 'Jumlah Barang', 'required|is_natural_no_zero', array('required' => 'Anda harus memasukkan jumlah barang', 'is_natural_no_zero' => 'Jumlah barang tidak boleh nol atau negatif'));
-        $this->form_validation->set_rules('biaya', 'Biaya Barang', 'required|is_natural', array('required' => 'Anda harus memasukkan biaya barang', 'is_natural_no_zero' => 'Biaya barang tidak boleh negatif'));
+        $this->form_validation->set_rules('biaya', 'Biaya Barang', 'required|is_natural', array('required' => 'Anda harus memasukkan biaya barang', 'is_natural' => 'Biaya barang tidak boleh negatif'));
         
         
         if ($this->form_validation->run() == TRUE) {
@@ -50,9 +50,9 @@ class List_inventori extends CI_Controller {
     }
   
     public function editInventori(){
-      $this->form_validation->set_rules('nama', 'Nama Barang', 'required', array('required' => 'Anda harus memasukkan nama barang'));
+      $this->form_validation->set_rules('nama', 'Nama Barang', 'required|callback_alpha_dash_space', array('required' => 'Anda harus memasukkan nama barang'));
       $this->form_validation->set_rules('jumlah', 'Jumlah Barang', 'required|is_natural_no_zero', array('required' => 'Anda harus memasukkan jumlah barang', 'is_natural_no_zero' => 'Jumlah barang tidak boleh nol atau negatif'));
-      $this->form_validation->set_rules('biaya', 'Biaya Barang', 'required|is_natural', array('required' => 'Anda harus memasukkan biaya barang', 'is_natural_no_zero' => 'Biaya barang tidak boleh negatif'));
+      $this->form_validation->set_rules('biaya', 'Biaya Barang', 'required|is_natural', array('required' => 'Anda harus memasukkan biaya barang', 'is_natural' => 'Biaya barang tidak boleh negatif'));
 
       if ($this->form_validation->run() == TRUE) {
         $id = $this->input->post('id');
@@ -87,9 +87,22 @@ class List_inventori extends CI_Controller {
       $row = $this->Admin_model->delete_inventory($id);
 
       if($row > 0){
+        $this->session->set_flashdata('flash','<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Done!</strong> Data berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
         redirect(base_url('List_inventori'));
       }else{
-        echo "data tidak berhasil dihapus";
+        $this->session->set_flashdata('flash','<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Failed!</strong> Data tidak berhasil dihapus.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
+        redirect(base_url('List_inventori'));
+      }
+    }
+
+    function alpha_dash_space($fullname){
+      if (! preg_match('/^[()a-zA-Z\s]+$/', $fullname)) {
+          $this->form_validation->set_message('alpha_dash_space', 'The %s field may only contain alpha characters & White spaces');
+          return FALSE;
+      } else {
+          return TRUE;
       }
     }
 }

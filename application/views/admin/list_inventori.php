@@ -33,7 +33,7 @@
           <td><?= $row['harga_inventory']; ?></td>
           <td>
             <a href="" onclick="editModalBarangInventori(<?= $row['id_inventory']; ?>)" class="badge badge-warning" data-toggle="modal" data-target="#formEditInventori">Edit</a>
-            <a href="<?= base_url('Update_peminjaman_inventori/delete_inventory/'.$row['id_inventory']); ?>" class="badge badge-danger">Delete</a>
+            <a href="<?= base_url('List_inventori/delete_inventory/'.$row['id_inventory']); ?>" class="badge badge-danger">Delete</a>
           </td>
         </tr>
       <?php $i++; ?>

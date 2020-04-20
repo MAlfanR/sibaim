@@ -9,20 +9,30 @@ class Lupa_password extends CI_Controller {
 
   public function forgot_password(){
     $email = $this->input->post('email');
-    $token = base64_encode(random_bytes(32));
-    $time  = time();
+    $cekEmail = $this->db->get_where('admin', array('email_admin' => $email))->num_rows();
+    
+    if($cekEmail > 0){
+      $token = base64_encode(random_bytes(32));
+      $time  = time();
      
-    $data = array(
+      $data = array(
       'email'         => $email,
       'token'         => $token,
       'time_created'  => $time
-    );
+      );
 
-    $this->Admin_model->insert_token($data);
+      $this->Admin_model->insert_token($data);
 
-    $this->_send_forgot_password($email, $token);
+      $this->_send_forgot_password($email, $token);
 
-    redirect(base_url('admin'));
+      $this->session->set_flashdata('wrong','<div class="alert alert-success alert-dismissible fade show" role="alert">Tautan untuk merubah password anda telah dikirim ke email anda. Silahkan cek.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
+      redirect(base_url('Login'));
+    }else{
+      $this->session->set_flashdata('wrong','<div class="alert alert-danger alert-dismissible fade show" role="alert">Maaf email yang anda masukkan tidak terdaftar.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
+      redirect(base_url('Lupa_password'));
+    }
   }
 
   private function _send_forgot_password($email, $token){
