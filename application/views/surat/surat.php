@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat</title>
-    <style>
-        body {
-            font-size: 10pt;
-        }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Surat</title>
+        <style>
+            body {
+                font-size: 10pt;
+            }
+        </style>
+    </head>
+    <body>
     
   
         <div style="text-align: center;">
@@ -94,5 +94,5 @@
             <img class="img-fluid mt-4 mb-0" src="assets/images/surat/madani.png" style="height: 70px;">
             <p>Pengurus Masjid/BKM Madani</p>
         </div>
-</body>
+    </body>
 </html>

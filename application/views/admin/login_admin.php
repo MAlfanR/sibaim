@@ -29,7 +29,10 @@
       <div class="card-body text-white text-center ">
 
         <h3 class="card-title">Login</h3>
+
         <?= $this->session->flashdata('wrong'); ?>
+        
+
         <form action="<?= base_url('login/login'); ?>" method="POST">
           <div class="form-group">
             <label for="" class="float-left">Username</label>

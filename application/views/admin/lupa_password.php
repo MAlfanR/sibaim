@@ -28,6 +28,7 @@
     <!-- card login -->
     <div class="card w-75 mx-auto rounded-lg">
       <div class="card-body text-white text-center ">
+      <?= $this->session->flashdata('wrong'); ?>
 
         <h3 class="card-title">Lupa Password</h3>
 

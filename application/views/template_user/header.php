@@ -46,7 +46,6 @@
 							<a href="#" class="nav-link dropdown-toogle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TENTANG</a>
 							<div class="dropdown-menu">
 								<a href="<?= base_url('sejarah'); ?>" class="dropdown-item">Sejarah</a>
-								<a href="<?= base_url('organisasi'); ?>" class="dropdown-item">Organisasi</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">

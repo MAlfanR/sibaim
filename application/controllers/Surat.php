@@ -1,12 +1,9 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Surat extends CI_Controller {
 
-    public function index($id)
-    {
+    public function index($id){
         $query = $this->db->query('SELECT * FROM peminjaman INNER JOIN datapeminjaman ON peminjaman.id_peminjaman=datapeminjaman.id_peminjaman INNER JOIN inventory ON datapeminjaman.id_inventory=inventory.id_inventory WHERE datapeminjaman.id_peminjaman='.$id);
 
         $status = array('status_permintaan' => 'menunggu');
@@ -28,7 +25,6 @@ class Surat extends CI_Controller {
         $dompdf->stream('Surat-Permohonan-Tiket-'.$id);
 
     }
-
 }
 
 /* End of file Surat.php */

@@ -158,17 +158,19 @@
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-4 text-center">
-							<img src="assets/images/peta.png" class="w-75" alt="peta">
+							<div>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3838519070173!2d105.31266081418545!3d-5.358258955128434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x93f2bd8e5315535!2sMasjid%20Baitul%20Ilmi%20ITERA!5e0!3m2!1sid!2sid!4v1587267376822!5m2!1sid!2sid" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+							</div>
 						</div>
 						<div class="col-5 text-white">
 							<p class="mb-0">Jl. Terusan Ryacudu Way Huwi~ 35131</p>
-							<p class="mb-0">Tlp. 08xx-xxxx-xxxx</p>
+							<?php foreach($admin as $row): ?>
+							<p class="mb-0">Tlp. <?= $row['kontak_admin']; ?></p>
+							<?php endforeach; ?>
 							<p class="mb-0">email: baim@email.com</p>
-							<p class="mb-0">www.baim.itera.ac.id</p>
 
 							<h5 class="text-white">Sosial Media</h5>
-							<a href="#"><img src="assets/images/ig_icon.png" alt="ig_baim"></a>
-							<a href="#"><img src="assets/images/fb_icon.png" alt="fb_baim"></a>
+							<a href="https://www.instagram.com/baim.itera/"><img src="assets/images/ig_icon.png" alt="ig_baim"></a>
 						</div>
 					</div>
 				</div>

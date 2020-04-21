@@ -4,6 +4,8 @@
       <h2>Form Pengajuan Peminjaman Barang Masjid</h2>
     </div>
     
+    <?= $this->session->flashdata('flash'); ?>
+    
     <div class="container">
       <form action="<?= base_url('Form_peminjaman/addDataBaru'); ?>" method="post">
         <div class="form-group row">

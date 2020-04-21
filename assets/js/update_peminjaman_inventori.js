@@ -22,9 +22,7 @@ function detailModalTanggal(id){
     });
 }
 
-function getDataDonasi(id){
-    console.log(id);
-}
+
 
 
 
