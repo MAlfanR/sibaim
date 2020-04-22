@@ -23,7 +23,9 @@ class Update_barang_hilang extends CI_Controller {
     $this->form_validation->set_rules('keterangan_barang', 'Keterangan Barang', 'required', array('required' => 'anda harus memasukkan keterangan barang'));
     $this->form_validation->set_rules('lokasi_barang', 'Lokasi Barang', 'required', array('required' => 'anda harus memasukkan lokasi barang ditemukan'));
     $this->form_validation->set_rules('tanggal_barang', 'Tanggal Barang', 'required', array('required' => 'anda harus memasukkan tanggal barang ditemukan'));
-    $this->form_validation->set_rules('foto', 'Foto Barang', 'required', array('required' => 'anda harus mengunggah foto barang'));
+    if(empty($_FILES['foto']['name'])){
+      $this->form_validation->set_rules('foto', 'Foto Barang', 'required', array('required' => 'anda harus mengunggah foto barang'));
+    }
     
     
     if ($this->form_validation->run() == TRUE) {
