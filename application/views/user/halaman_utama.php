@@ -71,33 +71,37 @@
 			if($i == 1){?>
 			<div class="carousel-item active">
 				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-4 text-left">
-							<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
-							<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
-							<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
-							<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+					<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-white">
+						<div class="row justify-content-center">
+							<div class="col-4 text-left">
+								<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
+								<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
+								<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
+								<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+							</div>
+							<div class="col-6">
+								<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+							</div>
 						</div>
-						<div class="col-6">
-							<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
-						</div>
-					</div>				
+					</a>			
 				</div>
 			</div>
 			<?php }else{?>
             <div class="carousel-item">
 				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-4 text-left">
-							<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
-							<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
-							<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
-							<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+					<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-white">
+						<div class="row justify-content-center">
+							<div class="col-4 text-left">
+								<h4>Nama : <?= $row['nama_barangtemu']; ?></h4>
+								<h4>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h4>
+								<h4>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h4>
+								<h4>Keterangan : <?= $row['keterangan_barangtemu'] ?></h4>
+							</div>
+							<div class="col-6">
+								<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+							</div>
 						</div>
-						<div class="col-6">
-							<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
-						</div>
-					</div>				
+					</a>				
 				</div>
             </div>
 			<?php }
