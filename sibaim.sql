@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Apr 2020 pada 14.18
+-- Waktu pembuatan: 22 Apr 2020 pada 15.35
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -62,7 +62,8 @@ CREATE TABLE `admin_token` (
 --
 
 INSERT INTO `admin_token` (`id`, `email`, `token`, `time_created`) VALUES
-(7, 'janatri1398@gmail.com', 'H1Tk8krrWhWOH63tZJV1qRpe//NJJIvWDe1ae3tt4Do=', 1586395345);
+(10, 'nardiyansah.14117037@student.itera.ac.id', 'IQtnG6VIHgSwlp4X0Ga/eHnJG872k079Axnpquvx0lU=', 1587358181),
+(11, 'janatri1398@gmail.com', 'doR38XT1YxSeFyuzAWeXCKeB3pvRbAExDURDuONnzEQ=', 1587358498);
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,7 @@ CREATE TABLE `barangtemu` (
 --
 
 INSERT INTO `barangtemu` (`id_barangtemu`, `nama_barangtemu`, `tanggal_barangtemu`, `foto_barangtemu`, `lokasi_barangtemu`, `keterangan_barangtemu`) VALUES
-(4, 'dompet kulit', '2020-04-02', 'dompet.jpg', 'dekat keran masjid', 'terbuat dari kulit'),
+(4, 'dompet', '2020-04-02', 'dompet.jpg', 'dekat keran masjid', 'terbuat dari kulit'),
 (8, 'jam', '2020-04-14', 'jam.jpg', 'baim', 'jam');
 
 -- --------------------------------------------------------
@@ -138,7 +139,9 @@ CREATE TABLE `donasi` (
 --
 
 INSERT INTO `donasi` (`id_donasi`, `nama_donasi`, `jumlah_donasi`, `tanggal_donasi`, `total_langsung_donasi`, `total_kitabisa_donasi`) VALUES
-(6, 'Prodi IF 17', '500000', '2020-04-17', 0, 6854162);
+(6, 'Prodi IF 17', '500000', '2020-04-17', 0, 6854162),
+(8, 'aldi', '10000', '2020-04-09', 510000, 6854162),
+(9, 'aldi', '12000', '2020-04-10', 522000, 6854162);
 
 -- --------------------------------------------------------
 
@@ -185,9 +188,7 @@ INSERT INTO `inventory` (`id_inventory`, `nama_inventory`, `jumlah_inventory`, `
 (9, 'Terpal', 4, 15000),
 (10, 'Stand Mic', 1, 10000),
 (11, 'Tripod', 1, 15000),
-(12, 'Galon (Kosong)', 3, 5000),
-(13, 'LED', 2, 50000),
-(14, 'HDMI', 1, 5000);
+(12, 'Galon (Kosong)', 3, 5000);
 
 -- --------------------------------------------------------
 
@@ -220,8 +221,8 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `judul_kegiatan`, `penyelenggara_kegi
 (7, 'senam', 'akademik', 'bu layla', '089765432145', 'ktp', 'lapangan basket', '2020-04-13', '2020-04-15', 15000, 40000, 'penyusunan'),
 (11, 'senam', 'hmif', 'dino', '086678908976', 'KTM', 'lapangan basket', '2020-04-16', '2020-04-17', 5000, 25000, 'diterima'),
 (13, 'senam', 'akademik', 'karno', '086678908976', 'KTM', 'dekat keran masjid', '2020-04-15', '2020-04-15', 15000, 150000, 'menunggu'),
-(15, 'makrab', 'hmif', 'dino', '086678908976', 'KTM', 'wira garden', '2020-04-18', '2020-04-20', 10000, 30000, 'menunggu'),
-(17, 'mabit', 'madani', 'karno', '086678908976', 'ktp', 'itera', '2020-04-17', '2020-04-17', 15000, 25000, 'menunggu');
+(15, 'makrab', 'hmif', 'dino', '086678908976', 'KTM', 'wira garden', '2020-04-18', '2020-04-20', 10000, 30000, 'diterima'),
+(17, 'mabit', 'madani', 'karno', '086678908976', 'ktp', 'itera', '2020-04-17', '2020-04-17', 15000, 25000, 'ditolak');
 
 -- --------------------------------------------------------
 
@@ -324,7 +325,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `admin_token`
 --
 ALTER TABLE `admin_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `barangtemu`
@@ -342,7 +343,7 @@ ALTER TABLE `datapeminjaman`
 -- AUTO_INCREMENT untuk tabel `donasi`
 --
 ALTER TABLE `donasi`
-  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_donasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `fototentang`
@@ -354,7 +355,7 @@ ALTER TABLE `fototentang`
 -- AUTO_INCREMENT untuk tabel `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_inventory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
