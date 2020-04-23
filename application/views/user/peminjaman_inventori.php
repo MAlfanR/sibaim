@@ -46,7 +46,7 @@
                     <td><?= $i; ?></td>
                     <td><?= $row['nama_inventory']; ?></td>
                     <td><?= $row['jumlahDipinjam']; ?></td>
-                    <td><?= $row['jumlahDipinjam'] * $row['harga_inventory']; ?></td>
+                    <td><?= number_format($row['jumlahDipinjam'] * $row['harga_inventory'],null,'','.'); ?></td>
                     <td><a class="btn btn-danger" href="<?= base_url('Peminjaman_inventori/hapus/'.$row['id'].'/'.$row['id_peminjaman']); ?>">Hapus</a></td>
                 </tr>
                 <?php $i++; endforeach; ?>

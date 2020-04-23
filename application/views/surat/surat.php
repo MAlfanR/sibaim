@@ -65,16 +65,16 @@
                         <td style="border: 1px solid black;"><?= $row['nama_inventory']; ?></td>
                         <td style="border: 1px solid black;"><?= $row['jumlahDipinjam']; ?></td>
                         <td style="border: 1px solid black;"></td>
-                        <td style="border: 1px solid black;"><?= $row['harga_inventory'] * $row['jumlahDipinjam']; ?></td>
+                        <td style="border: 1px solid black;"><?= number_format($row['harga_inventory'] * $row['jumlahDipinjam'],null,'','.'); ?></td>
                     </tr>
                 <?php $i++; endforeach; ?>
                 <tr>
                     <td style="border: 1px solid black;" colspan="4">Denda</td>
-                    <td style="border: 1px solid black;"><?= $row['denda_peminjaman']; ?></td>
+                    <td style="border: 1px solid black;"><?= number_format($row['denda_peminjaman'],null,'','.'); ?></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black;" colspan="4">Total Harga</td>
-                    <td style="border: 1px solid black;"><?= $row['denda_peminjaman'] + $row['total_harga']; ?></td>
+                    <td style="border: 1px solid black;"><?= number_format($row['denda_peminjaman'] + $row['total_harga'],null,'','.'); ?></td>
                 </tr>
             </tbody>
         </table>

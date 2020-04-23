@@ -32,7 +32,7 @@
             <th scope="row"><?= $i; ?></th>
             <td><?= $row['nama_inventory']; ?></td>
             <td><?= $row['jumlah_inventory']; ?></td>
-            <td><?= $row['harga_inventory']; ?></td>
+            <td><?= number_format($row['harga_inventory'],null,'','.'); ?></td>
           </tr>
       <?php $i++; endforeach; ?>
       </tbody>
