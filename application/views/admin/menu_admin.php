@@ -1,5 +1,9 @@
 <!-- load header admin in controller -->
-
+<style>
+h5{
+  padding: 15px 0px 0px 0px;
+}
+</style>
 <!-- menu admin -->
 <div class="row justify-content-center">
 
@@ -19,6 +23,7 @@
   <div class="col-lg-5">
     <a href="<?= base_url('Update_donasi'); ?>">
       <div class="card">
+
         <h5 class="card-title text-center text-white">Update Donasi</h5>
         <div class="card-body text-center">
           <img src="assets/images/ikon_update_donasi.png" alt="menu update donasi">
