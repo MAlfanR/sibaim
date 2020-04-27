@@ -4,12 +4,19 @@
 		background-image: url(../images/backgroundPattern.png);
 	}
 
+	.itera{
+		font-size: small;
+	}
+	.masjidbaim{
+		font-size: medium;
+	}
+
 	.img-masjid {
 		width: 150%;
 	}
 
 	#logo {
-		width: 50%;
+		width: 20%;
 	}
 
 	.nav-link {

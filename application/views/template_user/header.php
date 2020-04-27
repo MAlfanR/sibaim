@@ -31,9 +31,9 @@
 			</div>
 
 			<div class="col-md-5">
-				<h1>MASJID BAITUL ILMI</h1>
+				<h1 class="masjidbaim">MASJID BAITUL ILMI</h1>
 				<img src="<?= base_url('assets/images/logoItera.png'); ?>" class="float-left" alt="">
-				<h4>INSITITUT TEKNOLOGI SUMATERA</h4>
+				<h4 class="itera">INSITITUT TEKNOLOGI SUMATERA</h4>
 			</div>
 
 			<div class="col-md-5">
