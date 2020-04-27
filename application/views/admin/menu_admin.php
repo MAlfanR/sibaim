@@ -1,8 +1,11 @@
 <!-- load header admin in controller -->
 <style>
-h5{
-  padding: 15px 0px 0px 0px;
-}
+  h5{
+    padding: 15px 0px 0px 0px;
+  }
+@media (max-width: 576px) {
+  
+  }
 </style>
 <!-- menu admin -->
 <div class="row justify-content-center">

@@ -1,5 +1,12 @@
 /* mobile */
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+  .card {
+    background-color: rgba(133, 49, 43, 0.8);
+  }
+  a{
+    font-size: 8px;
+  }
+}
 
 /* web */
 @media (min-width: 578px) {

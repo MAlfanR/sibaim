@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 
   <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/datatables.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/menu_admin.css'); ?>">
   <!-- css -->
   <link rel="stylesheet" href="<?= base_url('assets/css/all.css'); ?>">
 
