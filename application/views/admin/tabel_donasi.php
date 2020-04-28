@@ -10,8 +10,8 @@
 
   <div class="card p-4">
     <h4 class="text-white text-center mb-3">Tabel Donasi</h4>
-    <table class="table table-bordered table-dark">
-      <thead>
+    <table class="table table-bordered" id="table_id">
+      <thead class="t-head text-white">
         <tr>
           <td>Nama Donatur</td>
           <td>Tanggal Donasi</td>

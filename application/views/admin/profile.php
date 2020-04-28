@@ -1,7 +1,7 @@
-<div class="container">
-    <div class="card p-5">
+
+    <div class="card">
     <?= $this->session->flashdata('flash'); ?>
-        <form action="<?= base_url('Profile/ubahProfile'); ?>" method="post">
+        <form action="<?= base_url('Profile/ubahProfile'); ?>" method="post" class="m-5">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
@@ -43,4 +43,3 @@
             </div>
         </form>
     </div>
-</div>

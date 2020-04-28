@@ -11,7 +11,7 @@
   <div class="container mt-3">
 
     <!-- table -->
-    <table class="table table-bordered">
+    <table class="table table-bordered" id="table_id">
       <thead class="t-head">
         <tr class="text-white">
           <th scope="col">No. Tiket</th>
@@ -68,7 +68,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <td>No</td>

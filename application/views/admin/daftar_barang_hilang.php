@@ -7,7 +7,7 @@
 
 <!-- main -->
 <div class="card">
-  <h4 class="card-title text-center text-white">Daftar Barang Hilang</h4>
+  <h4 class="card-title text-center text-white mt-3">Daftar Barang Hilang</h4>
 
   <!-- flashdata -->
   <?= $this->session->flashdata('edit'); ?>

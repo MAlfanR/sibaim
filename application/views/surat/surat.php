@@ -48,33 +48,33 @@
             <div style="width: 58.35%;">: <?= $data[0]['jaminan']; ?></div>
         </div>
         <div class="row"><p>Bersama surat ini kami memberikan izin penyewaan kepada pihak pemohon, untuk peralatan-peralatan sebagai berikut</p></div>
-        <table style="border-collapse: collapse; border: 1px solid black;">
+        <table style="border-collapse: collapse; border: 1px solid black; margin: auto;">
             <thead>
                 <tr>
-                    <th style="border: 1px solid black;">No</th>
-                    <th style="border: 1px solid black;">Jenis Peralatan</th>
-                    <th style="border: 1px solid black;">Jumlah</th>
-                    <th style="border: 1px solid black;">Keterangan</th>
-                    <th style="border: 1px solid black;">Harga</th>
+                    <th style="border: 1px solid black; width: 30px;">No</th>
+                    <th style="border: 1px solid black; width: 100px;">Jenis Peralatan</th>
+                    <th style="border: 1px solid black; width: 70px;">Jumlah</th>
+                    <th style="border: 1px solid black; width: 70px;">Keterangan</th>
+                    <th style="border: 1px solid black; width: 70px;">Harga</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $i=1; foreach($data as $row): ?>
                     <tr>
-                        <td style="border: 1px solid black;"><?= $i; ?></td>
-                        <td style="border: 1px solid black;"><?= $row['nama_inventory']; ?></td>
-                        <td style="border: 1px solid black;"><?= $row['jumlahDipinjam']; ?></td>
+                        <td style="border: 1px solid black; text-align: center; width: 30px;"><?= $i; ?></td>
+                        <td style="border: 1px solid black; width: 100px;"><?= $row['nama_inventory']; ?></td>
+                        <td style="border: 1px solid black; text-align: center; width: 70px;"><?= $row['jumlahDipinjam']; ?></td>
                         <td style="border: 1px solid black;"></td>
-                        <td style="border: 1px solid black;"><?= number_format($row['harga_inventory'] * $row['jumlahDipinjam'],null,'','.'); ?></td>
+                        <td style="border: 1px solid black; text-align: right;"><?= number_format($row['harga_inventory'] * $row['jumlahDipinjam'],null,'','.'); ?></td>
                     </tr>
                 <?php $i++; endforeach; ?>
                 <tr>
                     <td style="border: 1px solid black;" colspan="4">Denda</td>
-                    <td style="border: 1px solid black;"><?= number_format($row['denda_peminjaman'],null,'','.'); ?></td>
+                    <td style="border: 1px solid black; text-align: right;"><?= number_format($row['denda_peminjaman'],null,'','.'); ?></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black;" colspan="4">Total Harga</td>
-                    <td style="border: 1px solid black;"><?= number_format($row['denda_peminjaman'] + $row['total_harga'],null,'','.'); ?></td>
+                    <td style="border: 1px solid black; text-align: right;"><?= number_format($row['denda_peminjaman'] + $row['total_harga'],null,'','.'); ?></td>
                 </tr>
             </tbody>
         </table>
