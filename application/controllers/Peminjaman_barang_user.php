@@ -4,7 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Peminjaman_barang_user extends CI_Controller {
 
   public function index(){
+    
   $data['barang'] = $this->User_model->get_inventory();
+
+  $inventori = $data['barang'];
+
+  for($i=0; $i < count($inventori); $i++){
+    $dipinjam = $this->db->where('id_inventory', $inventori[$i]['id_inventory'])->select_sum('jumlahDipinjam')->get('datapeminjaman')->result_array();
+
+    $inventori[$i]['jumlah_inventory'] = $inventori[$i]['jumlah_inventory'] - $dipinjam[0]['jumlahDipinjam'];
+  }
+  $data['barang'] = $inventori;
 
   $query = $this->db->query('SELECT * FROM peminjaman WHERE status_permintaan <> "penyusunan"');
   $data['peminjam'] = $query->result_array();

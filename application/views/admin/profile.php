@@ -1,4 +1,4 @@
-
+<a href="<?= base_url('admin'); ?>" class="btn btn-danger ml-3 mb-2">Kembali ke menu</a>
     <div class="card">
     <?= $this->session->flashdata('flash'); ?>
         <form action="<?= base_url('Profile/ubahProfile'); ?>" method="post" class="m-5">
