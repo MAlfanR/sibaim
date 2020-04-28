@@ -24,8 +24,9 @@ class Peminjaman_inventori extends CI_Controller {
         );
 
         $tersedia = $this->db->where('id_inventory', $_POST['selectBarang'])->select('jumlah_inventory')->get('inventory')->result_array();
-       
-        if(($tersedia[0]['jumlah_inventory'] - $_POST['selectJumlah']) >= 0 ){
+        $dipinjam = $this->db->where('id_inventory', $_POST['selectBarang'])->select_sum('jumlahDipinjam')->get('datapeminjaman')->result_array();
+
+        if(($tersedia[0]['jumlah_inventory'] - $dipinjam[0]['jumlahDipinjam'] - $_POST['selectJumlah']) >= 0 ){
             $this->db->insert('datapeminjaman', $data);
             $row = $this->db->affected_rows();
     
