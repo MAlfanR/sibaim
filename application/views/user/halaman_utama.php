@@ -25,21 +25,21 @@
 		<div class="card-body">
 			<div class="container-fluid">
 				<div class="row text-white justify-content-center mb-2">
-					<div class="col-1"></div>
-					<div class="col-4">
+					<div class="col-lg-1 d-sm-none d-lg-block"></div>
+					<div class="col-lg-4 d-sm-none d-lg-block">
 						<p>"Barangsiapa meminjamkan kepada Allah dengan pinjaman yang baik, maka Allah akan mengembalikannya
 							berlipat
 							ganda untuknya, dan baginya pahala yang mulia."(QS. Al-Hadid:11)</p>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-3">
-						<img src="assets/images/masjid.png" class="img-masjid" alt="masjid">
+					<div class="col-lg-3 order-md-2 order-sm-2 order-xs-2 order-lg-1">
+						<img src="assets/images/masjid.png" class="img-masjid img-fluid" alt="masjid">
 					</div>
-					<div class="col-3">
+					<div class="col-lg-3 d-sm-none d-lg-block order-lg-2">
 
 					</div>
-					<div class="col-6 text-center text-white">
+					<div class="col-lg-6 text-center text-white order-md-1 order-sm-1 order-xs-1 order-lg-3">
 
 						<h4>Bantu Pembangunan</h4>
 						<h4>Masjid Baitul Ilmi ITERA</h4>
@@ -62,46 +62,46 @@
 	<section class="text-center m-3">
     <h1>informasi barang hilang</h1>
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" style="background-color: rgba(133, 49, 43, 0.8);">
         <div id="carouselBarangHilang" class="carousel slide" data-ride="carousel" data-interval="2000">
-          <div class="carousel-inner text-white">
+          <div class="carousel-inner text-white" >
 		  <?php
 		  $i = 1;
 		  foreach($foto_barangtemu as $row):
 			if($i == 1){?>
 			<div class="carousel-item active">
 				<div class="container">
-					<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-white">
-						<div class="row justify-content-center">
-							<div class="col-4 text-left">
-								<h5>Nama : <?= $row['nama_barangtemu']; ?></h5>
-								<h5>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h5>
-								<h5>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h5>
-								<h5>Keterangan : <?= $row['keterangan_barangtemu'] ?></h5>
+					<div class="text-white">
+						<div class="row justify-content-center" >
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2 text-left">
+								<p class="m-0 textBarangHilang ml-lg-5">Nama : <?= $row['nama_barangtemu']; ?></p>
+								<p class="m-0 textBarangHilang ml-lg-5">Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></p>
+								<p class="m-0 textBarangHilang ml-lg-5">Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></p>
+								<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-dark textBarangHilang ml-lg-5">Lihat Selengkapnya >></a>
 							</div>
-							<div class="col-6">
-								<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 order-lg-2 order-md-1 order-sm-1 order-xs-1">
+								<img class="img-fluid fotoBarangHilang" src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="">
 							</div>
 						</div>
-					</a>			
+					</div>			
 				</div>
 			</div>
 			<?php }else{?>
             <div class="carousel-item">
 				<div class="container">
-					<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-white">
+					<div class="text-white">
 						<div class="row justify-content-center">
-							<div class="col-4 text-left">
-								<h5>Nama : <?= $row['nama_barangtemu']; ?></h5>
-								<h5>Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></h5>
-								<h5>Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></h5>
-								<h5>Keterangan : <?= $row['keterangan_barangtemu'] ?></h5>
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2 text-left">
+								<p class="m-0 textBarangHilang ml-lg-5">Nama : <?= $row['nama_barangtemu']; ?></p>
+								<p class="m-0 textBarangHilang ml-lg-5">Tanggal ditemukan : <?= $row['tanggal_barangtemu']; ?></p>
+								<p class="m-0 textBarangHilang ml-lg-5">Lokasi ditemukan : <?= $row['lokasi_barangtemu']; ?></p>
+								<a href="<?= base_url('Detail_barang_hilang/index/'.$row['id_barangtemu']); ?>" class="text-dark textBarangHilang ml-lg-5">Lihat Selengkapnya >></a>
 							</div>
-							<div class="col-6">
-								<img src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="" style="height: 300px;">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 order-lg-2 order-md-1 order-sm-1 order-xs-1">
+								<img class="img-fluid fotoBarangHilang" src="<?= base_url('assets/images/BarangHilang/'.$row['foto_barangtemu']); ?>" alt="">
 							</div>
 						</div>
-					</a>				
+					</div>				
 				</div>
             </div>
 			<?php }
@@ -125,10 +125,10 @@
 	<!-- section layanan masjid -->
 	<section class="text-center m-3" id="layanan">
 		<h1>layanan masjid</h1>
-		<div class="container">
+		<div class="container-fluid px-md-0 px-sm-0 px-0 mx-md-0 mx-sm-0 mx-0">
 			<div class="row">
 
-				<div class="col-lg">
+				<div class="col-lg col-md-6 col-sm-6">
 				<a href="<?= base_url('Peminjaman_barang_user'); ?>"</a>
 						<div class="card">
 							<h5 class="card-title text-center text-white">Peminjaman Inventori Masjid</h5>
@@ -139,7 +139,7 @@
 					</a>
 				</div>
 
-				<div class="col-lg">
+				<div class="col-lg col-md-6 col-sm-6">
 					<a href="<?=base_url('Info_barang_hilang'); ?>" </a>
 						<div class="card">
 							<h5 class="card-title text-center text-white">Informasi barang hilang</h5>
@@ -161,12 +161,12 @@
 			<div class="card-body">
 				<div class="container">
 					<div class="row justify-content-center">
-						<div class="col-4 text-center">
+						<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 text-center">
 							<div>
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3838519070173!2d105.31266081418545!3d-5.358258955128434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x93f2bd8e5315535!2sMasjid%20Baitul%20Ilmi%20ITERA!5e0!3m2!1sid!2sid!4v1587267376822!5m2!1sid!2sid" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+								<iframe class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3838519070173!2d105.31266081418545!3d-5.358258955128434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x93f2bd8e5315535!2sMasjid%20Baitul%20Ilmi%20ITERA!5e0!3m2!1sid!2sid!4v1587267376822!5m2!1sid!2sid" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 							</div>
 						</div>
-						<div class="col-5 text-white">
+						<div class="col-5 col-md-6 col-sm-6 col-xs-6 text-white">
 							<p class="mb-0">Jl. Terusan Ryacudu Way Huwi~ 35131</p>
 							<?php foreach($admin as $row): ?>
 							<p class="mb-0">Tlp. <?= $row['kontak_admin']; ?></p>
