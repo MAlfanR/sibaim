@@ -8,14 +8,14 @@
   }
 </style>
 <!-- menu admin -->
-<div class="row justify-content-center">
+<div class="row justify-content-center col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
 
   <!-- button update informasi barang hilang -->
-  <div class="col-lg-5">
+  <div class="col-lg-5 col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
     <a href="<?= base_url('Update_barang_hilang'); ?>">
       <div class="card">
         <h5 class="card-title text-center text-white">Update Informasi Barang Hilang</h5>
-        <div class="card-body text-center">
+        <div class="card-body text-center col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
           <img src="assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang">
         </div>
       </div>
@@ -23,7 +23,7 @@
   </div>
 
   <!-- button update donasi -->
-  <div class="col-lg-5">
+  <div class="col-lg-5 col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
     <a href="<?= base_url('Update_donasi'); ?>">
       <div class="card">
 
