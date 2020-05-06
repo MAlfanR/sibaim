@@ -8,7 +8,7 @@
   }
 </style>
 <!-- menu admin -->
-<div class="row justify-content-center col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
+<div class="row justify-content-center">
 
   <!-- button update informasi barang hilang -->
   <div class="col-lg-5 col-xs-8 order-lg-1 order-md-2 order-sm-2 order-xs-2">
