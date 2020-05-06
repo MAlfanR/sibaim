@@ -16,7 +16,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-	<div class="container">
+	<div class="container-fluid">
 		<a class="navbar-brand" style="width: 10%;" href="#"><img src="<?= base_url('assets/images/logoBaim.png'); ?>" class="img-fluid mr-2 float-left" alt="Responsive image"></a>
 		
 		<span class="navbar-text">

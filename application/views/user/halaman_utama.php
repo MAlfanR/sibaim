@@ -143,6 +143,7 @@
 					<a href="<?=base_url('Info_barang_hilang'); ?>" </a>
 						<div class="card">
 							<h5 class="card-title text-center text-white">Informasi barang hilang</h5>
+							<div style="margin:9px"></div>
 							<div class="card-body text-center">
 								<img src="assets/images/ikon_barang_hilang.png" alt="menu informasi barang hilang" class="w-25">
 							</div>
